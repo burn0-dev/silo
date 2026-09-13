@@ -69,6 +69,26 @@ It writes to `.silo/environments/<name>/`:
 Two templates ship today: **Blank** and **ERP**. Both are copied from `templates/` as
 editable TypeScript source — they are yours to change once generated.
 
+### The ERP template
+
+A simulated mid-sized industrial distributor: 12 vendors, 12 customers, 22 products across
+4 warehouses, with connected procure-to-pay, order-to-cash, inventory and budget data. It
+ships with **185 tools**, 18 tasks spanning easy to hard, and a deterministic verifier for
+each task.
+
+The seed contains deliberate, realistic messes for agents to work through — an invoice
+billing more than was received, another billing above the agreed price, a payment that
+failed on stale bank details, a quotation that is cheapest but expired, a sales order no
+single warehouse can fill, and a requisition above its approver's limit.
+
+Two rules shape the whole environment:
+
+- **Time is simulated.** `state.now` is the only clock; nothing reads `Date.now()`. It
+  never advances on its own, so a task that does not call `advance_clock` runs at a single
+  instant and is perfectly reproducible.
+- **Verifiers inspect the world, not the transcript.** A task passes because stock moved,
+  an invoice settled or a status changed — never because the agent said it was done.
+
 ### Environment names
 
 Names must be unique within a project and may contain letters, numbers, hyphens, and

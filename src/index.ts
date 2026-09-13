@@ -1,17 +1,8 @@
+#!/usr/bin/env node
 import { init } from "./cli/init.js";
+import { run } from "./cli/run.js";
 
 const command = process.argv[2];
-
-if (!command) {
-  console.log(`
-Silo
-
-Usage:
-  silo init
-  silo run
-`);
-  process.exit(0);
-}
 
 switch (command) {
   case "init":
@@ -19,11 +10,15 @@ switch (command) {
     break;
 
   case "run":
-    console.log("Running Silo...");
+    await run();
     break;
 
   default:
-    console.error(`Unknown command: ${command}`);
+    console.log(`
+Silo
 
-    process.exit(1);
+Usage:
+  silo init
+  silo run --env <name> --task <id> [--agent ./silo.agent.ts]
+`);
 }
