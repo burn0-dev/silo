@@ -2,5 +2,8 @@ node_modules/
 dist/
 .silo/
 
+CLAUDE.md
+.claude/
+
 *.log
 .DS_Store
