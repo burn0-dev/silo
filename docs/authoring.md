@@ -376,6 +376,73 @@ Codes include `environment_not_found`, `environment_already_exists`,
 `state_type_not_found`, `template_not_found`. The CLI prints the same codes
 alongside its messages.
 
+## Building an environment with Claude or Codex
+
+Silo's commands are non-interactive, take explicit flags, emit `--json`, and fail
+with specific messages and non-zero exits. That is deliberate: a coding agent can
+drive the whole authoring flow and check its own work.
+
+Give the agent the brief below plus your description of the world. It has been
+run end to end against a freshly installed package more than once.
+
+```
+Create a Silo environment using the @burn0/silo CLI and SDK.
+
+Work in this order. Each step depends on the one before it:
+
+  1. silo init <name> --template blank
+  2. silo data add <collection> --env <name> --file <path>
+  3. edit state.ts    — define the world's types and domain helpers
+  4. edit environment.ts — load data/ and return a fresh cloned world
+  5. silo tool add <tool_name> --env <name> --description "..."
+  6. implement each tool's run()
+  7. silo task add --env <name> --id TASK-001 --title "..." \
+       --instruction "..." --verifier VER-001 --difficulty easy
+  8. silo verifier add VER-001 --env <name> --task TASK-001
+  9. implement each verifier's check()
+ 10. silo env validate --env <name>      <- must print OK before you stop
+ 11. silo run --env <name> --task TASK-001 --agent ./agent.ts
+
+Rules that matter:
+
+- Keep the state type named `State`. Scaffolded tools and verifiers import that
+  name; renaming it means editing every generated file for no benefit.
+- Write state.ts BEFORE scaffolding tools, so the generated stubs are correct
+  as written.
+- data/*.json holds facts only: quantities, prices, statuses, ids, dates. If a
+  number can be computed from other fields, compute it in state.ts and derive it
+  in environment.ts. Never store a total.
+- createState() must return structuredClone(...). Imported JSON is cached for
+  the life of the process, and without the clone one rollout's changes leak into
+  the next.
+- The agent only ever sees the task instruction, the tool schemas and what your
+  tools return. If it should be able to list something, write a tool for it.
+- A task states the objective and nothing else — no solution path, no list of
+  tools to use, no hidden answer.
+- Verifiers:
+    state-changing task  -> check finalState
+    answer-producing task -> derive the expected answer from initialState using
+                             your own domain helpers, then compare it against
+                             context.agentOutput
+  Never hardcode an answer that can be derived from the world. Do not grade
+  which tools were called unless the process itself is the task.
+- At least one check() per verifier must be required.
+- Generated stubs fail on purpose. A verifier you have not implemented must
+  never report a pass.
+
+You are done when `silo env validate` prints OK and a run produces the result
+you expect. Validate before you claim success: an environment can load and run
+while still failing to compile, and validate catches that.
+```
+
+### Why validate is the stopping condition
+
+`silo env validate` runs the real TypeScript compiler over the environment, not
+just a resource check. Type-only imports are erased before execution, so an
+environment can run perfectly while being uncompilable — "it ran" is not evidence
+that it is correct. Telling the agent to stop at `OK` rather than at "the run
+worked" is what makes the loop self-checking.
+
 ## Reference environments
 
 - [`examples/customer`](../examples/customer) — state-changing: block a customer,
