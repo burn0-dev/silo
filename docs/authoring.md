@@ -188,6 +188,35 @@ Both scaffolding commands infer the state type from `state.ts`. Pass
 
 ```bash
 silo run --env <env> --task TASK-001 --agent ./silo.agent.ts
+silo run --env <env> --task TASK-001 --agent ./silo.agent.ts --runs 5
+```
+
+`--runs` repeats the task from a fresh world each time and reports the pass
+rate. A model that is right once and wrong twice is not a model that passes, and
+a single run cannot tell you which you have.
+
+Each rollout writes `.silo/runs/<runId>/`:
+
+| File | What it holds |
+|---|---|
+| `trace.jsonl` | the whole rollout, one event per line |
+| `result.json` | verifier checks, reward, the agent's final output |
+| `state-diff.json` | what the rollout actually changed |
+| `run.json` | the task, the verifier, the config, timings |
+
+`trace.jsonl` is written to stand alone. It opens with `run_start` — the task,
+the config and every tool name offered — and closes with `agent_output`,
+`run_end` and `verifier_result`. Tool calls and results are paired by `callId`
+rather than by adjacency, and each result carries its own `durationMs`.
+
+A rollout that never calls a tool still writes a trace. Those are usually the
+ones worth reading:
+
+```json
+{"seq":1,"type":"run_start","task":{"id":"TASK-013",...},"tools":[...185 names]}
+{"seq":2,"type":"agent_output","output":""}
+{"seq":3,"type":"run_end","terminationReason":"agent_error","error":"fetch failed"}
+{"seq":4,"type":"verifier_result","verifierId":"VER-013","passed":false,"reward":0.2}
 ```
 
 ## A full walkthrough

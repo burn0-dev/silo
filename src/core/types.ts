@@ -130,11 +130,39 @@ export type TerminationReason =
   | "timeout"
   | "agent_error";
 
+/** Everything a rollout was configured with, recorded so a trace can be replayed. */
+export type RunConfig = {
+  maxToolCalls: number;
+  timeoutMs: number;
+  agentPath: string;
+};
+
+/**
+ * One line of `trace.jsonl`.
+ *
+ * The trace is written to be self-contained: it opens with what was asked and
+ * what was offered, and closes with what happened and how it was graded. A run
+ * that never calls a tool still produces a readable trace, which matters because
+ * those are usually the ones worth reading.
+ */
 export type TraceEvent =
+  | {
+      seq: number;
+      type: "run_start";
+      at: string;
+      runId: string;
+      environment: string;
+      task: SiloTask;
+      config: RunConfig;
+      /** Names of the tools handed to the agent, in the order it saw them. */
+      tools: string[];
+    }
   | {
       seq: number;
       type: "tool_call";
       at: string;
+      /** Pairs this call with its result; adjacency is not a safe assumption. */
+      callId: number;
       tool: string;
       input: unknown;
     }
@@ -142,7 +170,34 @@ export type TraceEvent =
       seq: number;
       type: "tool_result";
       at: string;
+      callId: number;
       tool: string;
       output: unknown;
       isError: boolean;
+      durationMs: number;
+    }
+  | {
+      seq: number;
+      type: "agent_output";
+      at: string;
+      output: string;
+    }
+  | {
+      seq: number;
+      type: "run_end";
+      at: string;
+      terminationReason: TerminationReason;
+      error: string | null;
+      toolCalls: number;
+      toolErrors: number;
+      durationMs: number;
+    }
+  | {
+      seq: number;
+      type: "verifier_result";
+      at: string;
+      verifierId: string;
+      passed: boolean;
+      reward: number;
+      checks: VerifierCheck[];
     };

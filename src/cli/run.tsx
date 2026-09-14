@@ -81,26 +81,70 @@ function Result({ result }: { result: RunResult }) {
   );
 }
 
+/** How a task scored across repeated rollouts. */
+function Summary({ results }: { results: RunResult[] }) {
+  const passed = results.filter((result) => result.passed).length;
+  const rewards = results.map((result) => result.reward);
+  const mean = rewards.reduce((total, reward) => total + reward, 0) / rewards.length;
+  const first = results[0];
+
+  return (
+    <Box flexDirection="column" paddingX={2} paddingY={1}>
+      <Text bold>Silo Runs</Text>
+
+      <Box flexDirection="column" marginTop={1}>
+        <Row label="Task" value={`${first!.task.id} — ${first!.task.title}`} />
+        <Row label="Rollouts" value={String(results.length)} />
+        <Row label="Passed" value={`${passed} / ${results.length}`} />
+        <Row label="Mean reward" value={mean.toFixed(2)} />
+        <Row label="Best" value={Math.max(...rewards).toFixed(2)} />
+        <Row label="Worst" value={Math.min(...rewards).toFixed(2)} />
+      </Box>
+
+      <Box flexDirection="column" marginTop={1}>
+        {results.map((result, index) => (
+          <Box key={result.run.runId}>
+            <Box width={14}>
+              <Text dimColor>{`run ${index + 1}`}</Text>
+            </Box>
+
+            <Box width={8}>
+              <Text color={result.passed ? "green" : "red"}>
+                {result.passed ? "PASS" : "FAIL"}
+              </Text>
+            </Box>
+
+            <Text dimColor>
+              {`reward ${result.reward.toFixed(2)}  ·  ${result.run.toolCallCount} calls  ·  ${result.run.terminationReason}`}
+            </Text>
+          </Box>
+        ))}
+      </Box>
+    </Box>
+  );
+}
+
 export async function run() {
   const environmentName = getFlag("--env");
   const taskId = getFlag("--task");
   const agentPath = getFlag("--agent") ?? "./silo.agent.ts";
   const maxToolCalls = Number(getFlag("--max-tool-calls") ?? 100);
   const timeoutMs = Number(getFlag("--timeout-ms") ?? 120_000);
+  const runs = Math.max(1, Number(getFlag("--runs") ?? 1));
 
   if (!environmentName) throw new Error("Missing --env.");
   if (!taskId) throw new Error("Missing --task.");
 
-  let result: RunResult;
+  const results: RunResult[] = [];
 
   try {
-    result = await runTask({
-      environmentName,
-      taskId,
-      agentPath,
-      maxToolCalls,
-      timeoutMs,
-    });
+    // Sequential on purpose: rollouts share a process, and a local model has
+    // one set of weights loaded. Running them at once would measure contention.
+    for (let index = 0; index < runs; index += 1) {
+      results.push(
+        await runTask({ environmentName, taskId, agentPath, maxToolCalls, timeoutMs }),
+      );
+    }
   } catch (error) {
     // A misconfigured environment is a user error, not a crash: say what is
     // wrong instead of printing a stack trace.
@@ -116,8 +160,12 @@ export async function run() {
     return;
   }
 
-  const instance = render(<Result result={result} />);
+  const instance = render(
+    results.length === 1 ? <Result result={results[0]!} /> : <Summary results={results} />,
+  );
+
   await instance.waitUntilExit();
 
-  if (!result.passed) process.exitCode = 1;
+  // Non-zero unless every rollout passed, so CI cannot be fooled by one good run.
+  if (results.some((result) => !result.passed)) process.exitCode = 1;
 }

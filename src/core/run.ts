@@ -5,6 +5,7 @@ import { tsImport } from "tsx/esm/api";
 
 import { openEnvironment } from "./environment.js";
 import type {
+  RunConfig,
   SiloTask,
   TerminationReason,
   Tool,
@@ -27,6 +28,11 @@ export type RunArtifact = {
   runId: string;
   environment: string;
   taskId: string;
+  /** The task as asked, so a run is readable without the environment to hand. */
+  task: SiloTask;
+  verifierId: string;
+  verifierName: string;
+  config: RunConfig;
   startedAt: string;
   finishedAt: string;
   durationMs: number;
@@ -61,9 +67,14 @@ class RunLimitError extends Error {
   }
 }
 
+/** Distinguishes rollouts started in the same second by the same process. */
+let runCounter = 0;
+
 function createRunId(startedAt: Date): string {
   const stamp = startedAt.toISOString().replace(/[-:.TZ]/g, "").slice(0, 14);
-  return `run_${stamp}_${process.pid.toString(36)}`;
+  const ordinal = (runCounter += 1).toString(36);
+
+  return `run_${stamp}_${process.pid.toString(36)}${ordinal}`;
 }
 
 /** Agents may return any shape; verifiers are handed text they can parse. */
@@ -210,8 +221,22 @@ export async function runTask(options: RunOptions): Promise<RunResult> {
     await appendFile(tracePath, `${JSON.stringify(event)}\n`);
   };
 
+  const config: RunConfig = { maxToolCalls, timeoutMs, agentPath: options.agentPath };
+
   const controller = new AbortController();
   const startedAt = Date.now();
+
+  seq += 1;
+  await record({
+    seq,
+    type: "run_start",
+    at: startedAtDate.toISOString(),
+    runId,
+    environment: options.environmentName,
+    task,
+    config,
+    tools: tools.map((tool) => tool.name),
+  });
 
   const timer = setTimeout(() => {
     terminationReason = "timeout";
@@ -230,8 +255,18 @@ export async function runTask(options: RunOptions): Promise<RunResult> {
     }
 
     toolCallCount += 1;
+    const callId = toolCallCount;
+    const calledAt = Date.now();
+
     seq += 1;
-    await record({ seq, type: "tool_call", at: new Date().toISOString(), tool: name, input });
+    await record({
+      seq,
+      type: "tool_call",
+      at: new Date().toISOString(),
+      callId,
+      tool: name,
+      input,
+    });
 
     const tool = toolMap.get(name);
 
@@ -250,9 +285,11 @@ export async function runTask(options: RunOptions): Promise<RunResult> {
       seq,
       type: "tool_result",
       at: new Date().toISOString(),
+      callId,
       tool: name,
       output: result.output,
       isError,
+      durationMs: Date.now() - calledAt,
     });
 
     return result;
@@ -286,10 +323,55 @@ export async function runTask(options: RunOptions): Promise<RunResult> {
     clearTimeout(timer);
   }
 
+  const outputText = asOutputText(agentOutput);
+
+  seq += 1;
+  await record({ seq, type: "agent_output", at: new Date().toISOString(), output: outputText });
+
+  seq += 1;
+  await record({
+    seq,
+    type: "run_end",
+    at: new Date().toISOString(),
+    terminationReason,
+    error,
+    toolCalls: toolCallCount,
+    toolErrors,
+    durationMs: Date.now() - startedAt,
+  });
+
   // The verifier runs whatever happened — a timed-out rollout still gets graded.
-  const verifierOutcome = verifier.check(state, initialState, {
-    agentOutput: asOutputText(agentOutput),
-    task,
+  // A verifier that throws must not take the run's artifacts down with it: the
+  // trace and the state diff are still the evidence of what occurred.
+  let verifierOutcome: VerifierOutcome;
+
+  try {
+    verifierOutcome = verifier.check(state, initialState, { agentOutput: outputText, task });
+  } catch (thrown) {
+    const message = thrown instanceof Error ? thrown.message : String(thrown);
+
+    error = error ?? `Verifier "${verifier.id}" threw: ${message}`;
+    verifierOutcome = {
+      verifierId: verifier.id,
+      taskId: task.id,
+      passed: false,
+      reward: 0,
+      requiredPassed: 0,
+      requiredTotal: 0,
+      failedRequired: [`Verifier "${verifier.id}" threw: ${message}`],
+      checks: [],
+    };
+  }
+
+  seq += 1;
+  await record({
+    seq,
+    type: "verifier_result",
+    at: new Date().toISOString(),
+    verifierId: verifierOutcome.verifierId,
+    passed: verifierOutcome.passed,
+    reward: verifierOutcome.reward,
+    checks: verifierOutcome.checks,
   });
 
   const finishedAtDate = new Date();
@@ -298,6 +380,10 @@ export async function runTask(options: RunOptions): Promise<RunResult> {
     runId,
     environment: options.environmentName,
     taskId: task.id,
+    task,
+    verifierId: verifierOutcome.verifierId,
+    verifierName: verifier.name,
+    config,
     startedAt: startedAtDate.toISOString(),
     finishedAt: finishedAtDate.toISOString(),
     durationMs: finishedAtDate.getTime() - startedAt,

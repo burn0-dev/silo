@@ -38,7 +38,10 @@ Verifiers — TypeScript that decides success
 
 Running
   silo run --env <env> --task <id> [--agent ./silo.agent.ts]
-           [--max-tool-calls 100] [--timeout-ms 120000]
+           [--runs 5] [--max-tool-calls 100] [--timeout-ms 120000]
+
+  --runs repeats the same task from a fresh world each time and reports the
+  pass rate, which is the only honest way to read a non-deterministic agent.
 
 "tool add" and "verifier add" generate a compiling stub and register it. They
 never write business logic: implement the TODO they leave behind, then run
