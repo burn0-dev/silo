@@ -27,6 +27,21 @@ export const VERIFIERS_DIRNAME = "verifiers";
  */
 const SAFE_NAME = /^[A-Za-z0-9][A-Za-z0-9._-]*$/;
 
+/** Generated files interpolate this as a bare type reference, so it must be an identifier. */
+const SAFE_TYPE_NAME = /^[A-Za-z_][A-Za-z0-9_]*$/;
+
+function assertSafeTypeName(name: string): string {
+  if (!SAFE_TYPE_NAME.test(name)) {
+    throw siloError(
+      "unsafe_name",
+      `Invalid state type name "${name}". Use a TypeScript identifier, for example "State".`,
+      { name },
+    );
+  }
+
+  return name;
+}
+
 export function assertSafeName(kind: string, name: string): string {
   if (!SAFE_NAME.test(name)) {
     throw siloError(
@@ -501,7 +516,7 @@ export async function scaffoldTool(options: {
 
   assertSafeName("tool", name);
 
-  const stateType = options.stateType ?? (await detectStateType(ref));
+  const stateType = assertSafeTypeName(options.stateType ?? (await detectStateType(ref)));
   const identifier = toIdentifier(name);
   const stem = toFileStem(name);
   const description = options.description ?? `TODO: describe what ${name} does.`;
@@ -551,8 +566,9 @@ export async function scaffoldVerifier(options: {
   const { ref, id, taskId } = options;
 
   assertSafeName("verifier id", id);
+  assertSafeName("task id", taskId);
 
-  const stateType = options.stateType ?? (await detectStateType(ref));
+  const stateType = assertSafeTypeName(options.stateType ?? (await detectStateType(ref)));
   const identifier = toIdentifier(id);
   const name = options.name ?? `TODO: name what ${id} proves.`;
 

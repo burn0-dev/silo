@@ -3,6 +3,7 @@ import { join } from "node:path";
 
 import { MANIFEST_FILENAME, environmentsDir, listEnvironments, siloDir } from "./environment.js";
 import { siloError } from "./errors.js";
+import { assertSafeName } from "./store.js";
 import { requireTemplate, templateSourceDir, type TemplateId } from "./templates.js";
 
 export type ScaffoldEnvironmentInput = {
@@ -59,6 +60,10 @@ export async function scaffoldEnvironment({
   tools,
   cwd,
 }: ScaffoldEnvironmentInput) {
+  // The name becomes a directory under .silo/environments, so it must not be
+  // able to climb out of it.
+  assertSafeName("environment", name);
+
   const definition = requireTemplate(template);
   const root = environmentsDir(cwd);
   const environmentDir = join(root, name);
