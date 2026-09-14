@@ -88,9 +88,32 @@ function diffState(initial: unknown, final: unknown) {
   const collections: Record<string, { added: string[]; removed: string[]; changed: string[] }> = {};
   const scalars: Array<{ field: string; from: unknown; to: unknown }> = [];
 
+  /** Rows carrying a string `id` diff like a collection, wherever they are stored. */
+  const keyById = (value: unknown): Record<string, unknown> | null => {
+    if (!Array.isArray(value)) return null;
+
+    const entries: Array<[string, unknown]> = [];
+
+    for (const [index, row] of value.entries()) {
+      const id =
+        typeof row === "object" && row !== null && typeof (row as { id?: unknown }).id === "string"
+          ? (row as { id: string }).id
+          : String(index);
+
+      entries.push([id, row]);
+    }
+
+    return Object.fromEntries(entries);
+  };
+
   for (const key of Object.keys(after ?? {})) {
     const beforeValue = before?.[key];
     const afterValue = after[key];
+
+    // An append-only log is an array, not a keyed map, but its entries still
+    // matter: without this, everything written to one is invisible in the diff.
+    const beforeRows = keyById(beforeValue);
+    const afterRows = keyById(afterValue);
 
     const isCollection =
       typeof afterValue === "object" &&
@@ -99,15 +122,15 @@ function diffState(initial: unknown, final: unknown) {
       typeof beforeValue === "object" &&
       beforeValue !== null;
 
-    if (!isCollection) {
+    if (!isCollection && !(beforeRows && afterRows)) {
       if (typeof afterValue !== "object" && beforeValue !== afterValue) {
         scalars.push({ field: key, from: beforeValue, to: afterValue });
       }
       continue;
     }
 
-    const beforeMap = beforeValue as Record<string, unknown>;
-    const afterMap = afterValue as Record<string, unknown>;
+    const beforeMap = (beforeRows ?? beforeValue) as Record<string, unknown>;
+    const afterMap = (afterRows ?? afterValue) as Record<string, unknown>;
 
     const added = Object.keys(afterMap).filter((id) => !(id in beforeMap));
     const removed = Object.keys(beforeMap).filter((id) => !(id in afterMap));

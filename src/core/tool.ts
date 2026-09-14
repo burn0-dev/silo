@@ -7,6 +7,7 @@
  */
 
 import type { SiloTool, Tool, ToolErrorCode, ToolInput } from "./types.js";
+import { validateToolInput } from "./validate-input.js";
 
 /** Thrown from a tool's `run` to report a structured, agent-readable failure. */
 export class ToolError extends Error {
@@ -63,10 +64,26 @@ export function bindTools<State>(state: State, tools: SiloTool<State>[]): Tool[]
     description: tool.description,
     inputSchema: tool.inputSchema,
     async execute(input: unknown) {
-      try {
-        const output = tool.run(state, (input ?? {}) as ToolInput);
+      const args = (input ?? {}) as ToolInput;
 
-        return { output: structuredClone(output) ?? null };
+      // Reported rather than ignored: an argument that contradicts the schema
+      // means the agent misunderstood the tool, and silently dropping it lets
+      // the tool answer a question that was never asked.
+      const problems = validateToolInput(tool.inputSchema, args);
+
+      if (problems.length > 0) {
+        return {
+          output: {
+            code: "invalid_input" satisfies ToolErrorCode,
+            message: `Invalid arguments for "${tool.name}": ${problems.join("; ")}.`,
+            details: { problems },
+          },
+          isError: true,
+        };
+      }
+
+      try {
+        return { output: structuredClone(tool.run(state, args)) ?? null };
       } catch (error) {
         return { output: errorPayload(error), isError: true };
       }
