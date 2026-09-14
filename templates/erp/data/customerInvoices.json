@@ -1,0 +1,146 @@
+[
+  {
+    "id": "CINV-401",
+    "customerId": "CUS-001",
+    "status": "paid",
+    "salesOrderId": "SO-301",
+    "fulfillmentIds": [
+      "FUL-001"
+    ],
+    "amountPaid": 4482,
+    "issueDate": "2026-02-20T00:00:00.000Z",
+    "dueDate": "2026-03-22T00:00:00.000Z",
+    "paidAt": "2026-03-02T13:00:00.000Z",
+    "lines": [
+      {
+        "salesOrderLineId": "SO-301-L1",
+        "productId": "PRD-001",
+        "description": "Deep Groove Ball Bearing 6205-2RS",
+        "quantity": 200,
+        "unitPrice": 9.5
+      },
+      {
+        "salesOrderLineId": "SO-301-L2",
+        "productId": "PRD-010",
+        "description": "V-Belt A42",
+        "quantity": 150,
+        "unitPrice": 15
+      }
+    ]
+  },
+  {
+    "id": "CINV-402",
+    "customerId": "CUS-002",
+    "status": "partially_paid",
+    "salesOrderId": "SO-302",
+    "fulfillmentIds": [
+      "FUL-002"
+    ],
+    "amountPaid": 1500,
+    "issueDate": "2026-03-11T00:00:00.000Z",
+    "dueDate": "2026-04-25T00:00:00.000Z",
+    "lines": [
+      {
+        "salesOrderLineId": "SO-302-L1",
+        "productId": "PRD-004",
+        "description": "Hex Bolt M8x40 Zinc (box of 100)",
+        "quantity": 60,
+        "unitPrice": 22.5
+      },
+      {
+        "salesOrderLineId": "SO-302-L2",
+        "productId": "PRD-006",
+        "description": "Nylon Lock Nut M8 (box of 200)",
+        "quantity": 80,
+        "unitPrice": 18
+      }
+    ]
+  },
+  {
+    "id": "CINV-403",
+    "customerId": "CUS-003",
+    "status": "issued",
+    "issueDate": "2026-01-05T00:00:00.000Z",
+    "dueDate": "2026-03-06T00:00:00.000Z",
+    "lines": [
+      {
+        "salesOrderLineId": null,
+        "productId": "PRD-009",
+        "description": "Gear Pump A12 Series",
+        "quantity": 30,
+        "unitPrice": 940
+      },
+      {
+        "salesOrderLineId": null,
+        "productId": "PRD-007",
+        "description": "Hydraulic Cylinder 50mm Bore",
+        "quantity": 30,
+        "unitPrice": 468
+      }
+    ]
+  },
+  {
+    "id": "CINV-404",
+    "customerId": "CUS-004",
+    "status": "issued",
+    "issueDate": "2026-01-28T00:00:00.000Z",
+    "dueDate": "2026-02-27T00:00:00.000Z",
+    "lines": [
+      {
+        "salesOrderLineId": null,
+        "productId": "PRD-018",
+        "description": "Grinding Disc 125mm (box of 25)",
+        "quantity": 60,
+        "unitPrice": 42
+      }
+    ]
+  },
+  {
+    "id": "CINV-405",
+    "customerId": "CUS-008",
+    "status": "issued",
+    "issueDate": "2026-03-10T00:00:00.000Z",
+    "dueDate": "2026-04-09T00:00:00.000Z",
+    "lines": [
+      {
+        "salesOrderLineId": null,
+        "productId": "PRD-003",
+        "description": "Deep Groove Ball Bearing 6309-ZZ",
+        "quantity": 300,
+        "unitPrice": 37.5
+      }
+    ]
+  },
+  {
+    "id": "CINV-406",
+    "customerId": "CUS-010",
+    "status": "written_off",
+    "issueDate": "2025-11-14T00:00:00.000Z",
+    "dueDate": "2025-12-14T00:00:00.000Z",
+    "lines": [
+      {
+        "salesOrderLineId": null,
+        "productId": "PRD-016",
+        "description": "Impact Wrench 1/2in",
+        "quantity": 20,
+        "unitPrice": 329
+      }
+    ]
+  },
+  {
+    "id": "CINV-407",
+    "customerId": "CUS-011",
+    "status": "issued",
+    "issueDate": "2026-01-15T00:00:00.000Z",
+    "dueDate": "2026-03-01T00:00:00.000Z",
+    "lines": [
+      {
+        "salesOrderLineId": null,
+        "productId": "PRD-014",
+        "description": "Variable Frequency Drive 5kW",
+        "quantity": 12,
+        "unitPrice": 1150
+      }
+    ]
+  }
+]

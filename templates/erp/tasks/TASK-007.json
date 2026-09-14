@@ -1,0 +1,12 @@
+{
+  "id": "TASK-007",
+  "title": "Receive the outstanding balance of a partial delivery",
+  "instruction": "Purchase order PO-202 was only partly delivered: 25 of 40 hydraulic cylinders arrived. The remaining 15 have now turned up at Warehouse North in good condition. Receive them and confirm the purchase order is now fully received. Act as Tom Braddock (USR-004).",
+  "difficulty": "medium",
+  "verifierId": "VER-007",
+  "entities": [
+    "PO-202",
+    "PRD-007",
+    "WH-001"
+  ]
+}

@@ -405,7 +405,7 @@ function registerInBarrel(
 ): string {
   const { arrayName, identifier, importPath, file } = options;
 
-  const declaration = new RegExp(`export\\s+const\\s+${arrayName}\\s*:[^=]*=\\s*\\[`);
+  const declaration = new RegExp(`export\\s+const\\s+${arrayName}\\s*(?::[^=]*)?=\\s*\\[`);
   const match = declaration.exec(source);
 
   if (!match) {
@@ -416,23 +416,23 @@ function registerInBarrel(
     );
   }
 
-  const open = match.index + match[0].length;
-  const close = source.indexOf("]", open);
-
-  if (close === -1) {
-    throw siloError("registry_not_found", `Could not find the end of the ${arrayName} array in ${file}.`, { file, arrayName });
-  }
-
-  const body = source.slice(open, close);
-
   if (new RegExp(`\\b${identifier}\\b`).test(source)) {
-    throw siloError("already_registered", `"${identifier}" is already registered in ${file}.`, { file, identifier });
+    throw siloError("already_registered", `"${identifier}" is already registered in ${file}.`, {
+      file,
+      identifier,
+    });
   }
 
-  const entries = body.trim();
-  const nextBody = entries === "" ? identifier : `${entries.replace(/,$/, "")}, ${identifier}`;
+  // Insert straight after the opening bracket. Appending would mean finding the
+  // array's closing bracket, and entries can themselves contain brackets — which
+  // is how a populated registry used to get an entry spliced into its middle.
+  const open = match.index + match[0].length;
+  const rest = source.slice(open);
+  const empty = /^\s*\]/.test(rest);
 
-  const withEntry = `${source.slice(0, open)}${nextBody}${source.slice(close)}`;
+  const withEntry = empty
+    ? `${source.slice(0, open)}\n  ${identifier},\n${rest.replace(/^\s*/, "")}`
+    : `${source.slice(0, open)}\n  ${identifier},${rest}`;
 
   const importLine = `import { ${identifier} } from "${importPath}";`;
   const imports = [...withEntry.matchAll(/^import .*;$/gm)];

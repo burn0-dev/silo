@@ -1,0 +1,410 @@
+[
+  {
+    "id": "CUS-001",
+    "code": "GRANITEPEAK",
+    "name": "Granite Peak Manufacturing",
+    "status": "active",
+    "segment": "heavy manufacturing",
+    "creditLimit": {
+      "amount": 250000,
+      "currency": "USD"
+    },
+    "paymentTerms": "NET_30",
+    "currency": "USD",
+    "contact": {
+      "name": "Della Monroe",
+      "email": "purchasing@granitepeakmfg.example",
+      "phone": "+1-406-555-0112"
+    },
+    "billingAddress": {
+      "line1": "900 Quarry Road",
+      "city": "Billings",
+      "region": "MT",
+      "postalCode": "59101",
+      "country": "US"
+    },
+    "shippingAddress": {
+      "line1": "902 Quarry Road Dock 4",
+      "city": "Billings",
+      "region": "MT",
+      "postalCode": "59101",
+      "country": "US"
+    },
+    "createdAt": "2020-05-11T00:00:00.000Z",
+    "statusReason": null
+  },
+  {
+    "id": "CUS-002",
+    "code": "LAKESIDE",
+    "name": "Lakeside Food Processing",
+    "status": "active",
+    "segment": "food & beverage",
+    "creditLimit": {
+      "amount": 150000,
+      "currency": "USD"
+    },
+    "paymentTerms": "NET_45",
+    "currency": "USD",
+    "contact": {
+      "name": "Victor Almeida",
+      "email": "maintenance@lakesidefoods.example",
+      "phone": "+1-608-555-0125"
+    },
+    "billingAddress": {
+      "line1": "17 Shoreline Drive",
+      "city": "Madison",
+      "region": "WI",
+      "postalCode": "53704",
+      "country": "US"
+    },
+    "shippingAddress": {
+      "line1": "17 Shoreline Drive",
+      "city": "Madison",
+      "region": "WI",
+      "postalCode": "53704",
+      "country": "US"
+    },
+    "createdAt": "2021-02-08T00:00:00.000Z",
+    "statusReason": null
+  },
+  {
+    "id": "CUS-003",
+    "code": "CORVUS",
+    "name": "Corvus Aerospace Components",
+    "status": "active",
+    "segment": "aerospace",
+    "creditLimit": {
+      "amount": 500000,
+      "currency": "USD"
+    },
+    "paymentTerms": "NET_60",
+    "currency": "USD",
+    "contact": {
+      "name": "Imani Blackwood",
+      "email": "ap@corvusaero.example",
+      "phone": "+1-316-555-0193"
+    },
+    "billingAddress": {
+      "line1": "4501 Airframe Boulevard",
+      "city": "Wichita",
+      "region": "KS",
+      "postalCode": "67209",
+      "country": "US"
+    },
+    "shippingAddress": {
+      "line1": "4501 Airframe Boulevard",
+      "city": "Wichita",
+      "region": "KS",
+      "postalCode": "67209",
+      "country": "US"
+    },
+    "createdAt": "2019-09-17T00:00:00.000Z",
+    "statusReason": null
+  },
+  {
+    "id": "CUS-004",
+    "code": "SUNBELT",
+    "name": "Sunbelt Agricultural Co-op",
+    "status": "active",
+    "segment": "agriculture",
+    "creditLimit": {
+      "amount": 100000,
+      "currency": "USD"
+    },
+    "paymentTerms": "NET_30",
+    "currency": "USD",
+    "contact": {
+      "name": "Roy Castellanos",
+      "email": "orders@sunbeltcoop.example",
+      "phone": "+1-806-555-0138"
+    },
+    "billingAddress": {
+      "line1": "2200 Farm Road 40",
+      "city": "Lubbock",
+      "region": "TX",
+      "postalCode": "79404",
+      "country": "US"
+    },
+    "shippingAddress": {
+      "line1": "2200 Farm Road 40",
+      "city": "Lubbock",
+      "region": "TX",
+      "postalCode": "79404",
+      "country": "US"
+    },
+    "createdAt": "2022-03-14T00:00:00.000Z",
+    "statusReason": null
+  },
+  {
+    "id": "CUS-005",
+    "code": "RIDGEWAY",
+    "name": "Ridgeway Mining Services",
+    "status": "credit_hold",
+    "segment": "mining",
+    "creditLimit": {
+      "amount": 300000,
+      "currency": "USD"
+    },
+    "paymentTerms": "NET_30",
+    "currency": "USD",
+    "contact": {
+      "name": "Brett Halloran",
+      "email": "accounts@ridgewaymining.example",
+      "phone": "+1-775-555-0166"
+    },
+    "billingAddress": {
+      "line1": "55 Comstock Way",
+      "city": "Elko",
+      "region": "NV",
+      "postalCode": "89801",
+      "country": "US"
+    },
+    "shippingAddress": {
+      "line1": "55 Comstock Way",
+      "city": "Elko",
+      "region": "NV",
+      "postalCode": "89801",
+      "country": "US"
+    },
+    "createdAt": "2020-11-02T00:00:00.000Z",
+    "statusReason": "Credit hold 2026-03-06: 62 days past due on prior balance."
+  },
+  {
+    "id": "CUS-006",
+    "code": "DELTAMARINE",
+    "name": "Delta Marine Works",
+    "status": "active",
+    "segment": "marine",
+    "creditLimit": {
+      "amount": 120000,
+      "currency": "USD"
+    },
+    "paymentTerms": "NET_30",
+    "currency": "USD",
+    "contact": {
+      "name": "Yvonne Trahan",
+      "email": "purchasing@deltamarineworks.example",
+      "phone": "+1-504-555-0121"
+    },
+    "billingAddress": {
+      "line1": "88 Levee Street",
+      "city": "New Orleans",
+      "region": "LA",
+      "postalCode": "70117",
+      "country": "US"
+    },
+    "shippingAddress": {
+      "line1": "88 Levee Street",
+      "city": "New Orleans",
+      "region": "LA",
+      "postalCode": "70117",
+      "country": "US"
+    },
+    "createdAt": "2021-08-23T00:00:00.000Z",
+    "statusReason": null
+  },
+  {
+    "id": "CUS-007",
+    "code": "HALCYON",
+    "name": "Halcyon Paper Mills",
+    "status": "active",
+    "segment": "pulp & paper",
+    "creditLimit": {
+      "amount": 200000,
+      "currency": "USD"
+    },
+    "paymentTerms": "NET_45",
+    "currency": "USD",
+    "contact": {
+      "name": "Stefan Novak",
+      "email": "mro@halcyonpaper.example",
+      "phone": "+1-207-555-0150"
+    },
+    "billingAddress": {
+      "line1": "3 Kennebec Avenue",
+      "city": "Bangor",
+      "region": "ME",
+      "postalCode": "04401",
+      "country": "US"
+    },
+    "shippingAddress": {
+      "line1": "3 Kennebec Avenue",
+      "city": "Bangor",
+      "region": "ME",
+      "postalCode": "04401",
+      "country": "US"
+    },
+    "createdAt": "2019-12-05T00:00:00.000Z",
+    "statusReason": null
+  },
+  {
+    "id": "CUS-008",
+    "code": "VERTEX",
+    "name": "Vertex Automotive Systems",
+    "status": "active",
+    "segment": "automotive",
+    "creditLimit": {
+      "amount": 400000,
+      "currency": "USD"
+    },
+    "paymentTerms": "NET_30",
+    "currency": "USD",
+    "contact": {
+      "name": "Nadia Farouk",
+      "email": "supplychain@vertexauto.example",
+      "phone": "+1-248-555-0174"
+    },
+    "billingAddress": {
+      "line1": "1600 Assembly Drive",
+      "city": "Warren",
+      "region": "MI",
+      "postalCode": "48089",
+      "country": "US"
+    },
+    "shippingAddress": {
+      "line1": "1600 Assembly Drive Gate 2",
+      "city": "Warren",
+      "region": "MI",
+      "postalCode": "48089",
+      "country": "US"
+    },
+    "createdAt": "2020-07-29T00:00:00.000Z",
+    "statusReason": null
+  },
+  {
+    "id": "CUS-009",
+    "code": "BRIGHTLINE",
+    "name": "Brightline Rail Maintenance",
+    "status": "active",
+    "segment": "rail",
+    "creditLimit": {
+      "amount": 180000,
+      "currency": "USD"
+    },
+    "paymentTerms": "NET_30",
+    "currency": "USD",
+    "contact": {
+      "name": "Curtis Nakamura",
+      "email": "procurement@brightlinerail.example",
+      "phone": "+1-904-555-0187"
+    },
+    "billingAddress": {
+      "line1": "210 Union Yard Road",
+      "city": "Jacksonville",
+      "region": "FL",
+      "postalCode": "32206",
+      "country": "US"
+    },
+    "shippingAddress": {
+      "line1": "210 Union Yard Road",
+      "city": "Jacksonville",
+      "region": "FL",
+      "postalCode": "32206",
+      "country": "US"
+    },
+    "createdAt": "2022-09-12T00:00:00.000Z",
+    "statusReason": null
+  },
+  {
+    "id": "CUS-010",
+    "code": "COBALT",
+    "name": "Cobalt Robotics",
+    "status": "blocked",
+    "segment": "robotics",
+    "creditLimit": {
+      "amount": 50000,
+      "currency": "USD"
+    },
+    "paymentTerms": "NET_15",
+    "currency": "USD",
+    "contact": {
+      "name": "Priscilla Vance",
+      "email": "finance@cobaltrobotics.example",
+      "phone": "+1-408-555-0199"
+    },
+    "billingAddress": {
+      "line1": "75 Innovation Court",
+      "city": "San Jose",
+      "region": "CA",
+      "postalCode": "95134",
+      "country": "US"
+    },
+    "shippingAddress": {
+      "line1": "75 Innovation Court",
+      "city": "San Jose",
+      "region": "CA",
+      "postalCode": "95134",
+      "country": "US"
+    },
+    "createdAt": "2023-04-18T00:00:00.000Z",
+    "statusReason": "Blocked 2026-01-09 after invoice written off as uncollectible."
+  },
+  {
+    "id": "CUS-011",
+    "code": "PRAIRIEWIND",
+    "name": "Prairie Wind Energy",
+    "status": "active",
+    "segment": "renewable energy",
+    "creditLimit": {
+      "amount": 350000,
+      "currency": "USD"
+    },
+    "paymentTerms": "NET_60",
+    "currency": "USD",
+    "contact": {
+      "name": "Hollis Dunbar",
+      "email": "ap@prairiewindenergy.example",
+      "phone": "+1-515-555-0143"
+    },
+    "billingAddress": {
+      "line1": "9000 Turbine Road",
+      "city": "Des Moines",
+      "region": "IA",
+      "postalCode": "50313",
+      "country": "US"
+    },
+    "shippingAddress": {
+      "line1": "9000 Turbine Road",
+      "city": "Des Moines",
+      "region": "IA",
+      "postalCode": "50313",
+      "country": "US"
+    },
+    "createdAt": "2021-06-21T00:00:00.000Z",
+    "statusReason": null
+  },
+  {
+    "id": "CUS-012",
+    "code": "STONEBRIDGE",
+    "name": "Stonebridge Facilities Group",
+    "status": "inactive",
+    "segment": "facilities management",
+    "creditLimit": {
+      "amount": 75000,
+      "currency": "USD"
+    },
+    "paymentTerms": "NET_30",
+    "currency": "USD",
+    "contact": {
+      "name": "Marta Quintero",
+      "email": "orders@stonebridgefm.example",
+      "phone": "+1-215-555-0158"
+    },
+    "billingAddress": {
+      "line1": "640 Market Street",
+      "city": "Philadelphia",
+      "region": "PA",
+      "postalCode": "19106",
+      "country": "US"
+    },
+    "shippingAddress": {
+      "line1": "640 Market Street",
+      "city": "Philadelphia",
+      "region": "PA",
+      "postalCode": "19106",
+      "country": "US"
+    },
+    "createdAt": "2020-01-30T00:00:00.000Z",
+    "statusReason": "Contract lapsed 2025-12-31; renewal under discussion."
+  }
+]

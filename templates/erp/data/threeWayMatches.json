@@ -1,0 +1,123 @@
+[
+  {
+    "id": "MATCH-001",
+    "vendorInvoiceId": "VINV-101",
+    "purchaseOrderId": "PO-201",
+    "goodsReceiptIds": [
+      "GR-001"
+    ],
+    "status": "matched",
+    "discrepancies": [],
+    "tolerance": {
+      "pricePercent": 2,
+      "quantityPercent": 0
+    },
+    "runAt": "2026-02-26T10:05:00.000Z",
+    "runByUserId": "USR-006"
+  },
+  {
+    "id": "MATCH-002",
+    "vendorInvoiceId": "VINV-102",
+    "purchaseOrderId": "PO-202",
+    "goodsReceiptIds": [
+      "GR-002"
+    ],
+    "status": "matched",
+    "discrepancies": [],
+    "tolerance": {
+      "pricePercent": 2,
+      "quantityPercent": 0
+    },
+    "runAt": "2026-03-11T09:25:00.000Z",
+    "runByUserId": "USR-006"
+  },
+  {
+    "id": "MATCH-003",
+    "vendorInvoiceId": "VINV-103",
+    "purchaseOrderId": "PO-206",
+    "goodsReceiptIds": [
+      "GR-004"
+    ],
+    "status": "failed",
+    "discrepancies": [
+      {
+        "type": "price",
+        "purchaseOrderLineId": "PO-206-L1",
+        "productId": "PRD-021",
+        "expected": 82,
+        "actual": 86,
+        "message": "Invoiced unit price 86.00 exceeds purchase order price 82.00 by 4.88%."
+      }
+    ],
+    "tolerance": {
+      "pricePercent": 2,
+      "quantityPercent": 0
+    },
+    "runAt": "2026-03-10T14:10:00.000Z",
+    "runByUserId": "USR-006"
+  },
+  {
+    "id": "MATCH-004",
+    "vendorInvoiceId": "VINV-104",
+    "purchaseOrderId": "PO-203",
+    "goodsReceiptIds": [
+      "GR-003"
+    ],
+    "status": "failed",
+    "discrepancies": [
+      {
+        "type": "quantity",
+        "purchaseOrderLineId": "PO-203-L1",
+        "productId": "PRD-004",
+        "expected": 250,
+        "actual": 400,
+        "message": "Invoiced quantity 400 exceeds received quantity 250 on PO-203."
+      }
+    ],
+    "tolerance": {
+      "pricePercent": 2,
+      "quantityPercent": 0
+    },
+    "runAt": "2026-03-10T14:55:00.000Z",
+    "runByUserId": "USR-006"
+  },
+  {
+    "id": "MATCH-005",
+    "vendorInvoiceId": "VINV-105",
+    "purchaseOrderId": null,
+    "goodsReceiptIds": [],
+    "status": "failed",
+    "discrepancies": [
+      {
+        "type": "missing_purchase_order",
+        "purchaseOrderLineId": null,
+        "productId": null,
+        "expected": 0,
+        "actual": 1566,
+        "message": "No purchase order or goods receipt could be matched to this invoice."
+      }
+    ],
+    "tolerance": {
+      "pricePercent": 2,
+      "quantityPercent": 0
+    },
+    "runAt": "2026-03-06T11:30:00.000Z",
+    "runByUserId": "USR-006"
+  },
+  {
+    "id": "MATCH-006",
+    "vendorInvoiceId": "VINV-107",
+    "purchaseOrderId": "PO-209",
+    "goodsReceiptIds": [
+      "GR-006"
+    ],
+    "status": "matched",
+    "discrepancies": [],
+    "tolerance": {
+      "pricePercent": 2,
+      "quantityPercent": 0
+    },
+    "runAt": "2026-03-05T09:40:00.000Z",
+    "runByUserId": "USR-006"
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "id": "TASK-002",
+  "title": "Block a vendor after quality failures",
+  "instruction": "Ironline Abrasives (VEN-007) has failed a third quality audit. Block them so no further purchase orders can be raised, recording the reason. Act as Priya Nair (USR-003).",
+  "difficulty": "easy",
+  "verifierId": "VER-002",
+  "entities": [
+    "VEN-007"
+  ]
+}

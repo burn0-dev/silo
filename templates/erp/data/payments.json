@@ -1,0 +1,174 @@
+[
+  {
+    "id": "PAY-001",
+    "number": "PAY-001",
+    "direction": "outbound",
+    "vendorId": "VEN-001",
+    "customerId": null,
+    "allocations": [
+      {
+        "invoiceId": "VINV-101",
+        "amount": {
+          "amount": 5907.6,
+          "currency": "USD"
+        }
+      }
+    ],
+    "amount": {
+      "amount": 5907.6,
+      "currency": "USD"
+    },
+    "method": "bank_transfer",
+    "status": "completed",
+    "reference": "ACH-20260306-0041",
+    "scheduledDate": "2026-03-05T00:00:00.000Z",
+    "processedAt": "2026-03-06T14:00:00.000Z",
+    "failureReason": null,
+    "createdByUserId": "USR-006",
+    "approvalId": null,
+    "approvedByUserId": "USR-007",
+    "createdAt": "2026-03-04T10:20:00.000Z"
+  },
+  {
+    "id": "PAY-002",
+    "number": "PAY-002",
+    "direction": "outbound",
+    "vendorId": "VEN-003",
+    "customerId": null,
+    "allocations": [
+      {
+        "invoiceId": "VINV-102",
+        "amount": {
+          "amount": 10775.16,
+          "currency": "USD"
+        }
+      }
+    ],
+    "amount": {
+      "amount": 10775.16,
+      "currency": "USD"
+    },
+    "method": "bank_transfer",
+    "status": "pending_approval",
+    "reference": "ACH-20260320-0052",
+    "scheduledDate": "2026-03-20T00:00:00.000Z",
+    "processedAt": null,
+    "failureReason": null,
+    "createdByUserId": "USR-006",
+    "approvalId": "APR-021",
+    "approvedByUserId": null,
+    "createdAt": "2026-03-13T11:00:00.000Z"
+  },
+  {
+    "id": "PAY-003",
+    "number": "PAY-003",
+    "direction": "outbound",
+    "vendorId": "VEN-002",
+    "customerId": null,
+    "allocations": [
+      {
+        "invoiceId": "VINV-108",
+        "amount": {
+          "amount": 2527.2,
+          "currency": "USD"
+        }
+      }
+    ],
+    "amount": {
+      "amount": 2527.2,
+      "currency": "USD"
+    },
+    "method": "ach",
+    "status": "failed",
+    "reference": "ACH-20260304-0033",
+    "scheduledDate": "2026-03-04T00:00:00.000Z",
+    "processedAt": "2026-03-04T16:45:00.000Z",
+    "failureReason": "Vendor bank account rejected the transfer; remittance details outdated.",
+    "createdByUserId": "USR-006",
+    "approvalId": null,
+    "approvedByUserId": "USR-007",
+    "createdAt": "2026-03-03T09:15:00.000Z"
+  },
+  {
+    "id": "PAY-004",
+    "number": "PAY-004",
+    "direction": "inbound",
+    "vendorId": null,
+    "customerId": "CUS-001",
+    "allocations": [
+      {
+        "invoiceId": "CINV-401",
+        "amount": {
+          "amount": 4482,
+          "currency": "USD"
+        }
+      }
+    ],
+    "amount": {
+      "amount": 4482,
+      "currency": "USD"
+    },
+    "method": "bank_transfer",
+    "status": "completed",
+    "reference": "RCPT-20260302-0011",
+    "scheduledDate": "2026-03-02T00:00:00.000Z",
+    "processedAt": "2026-03-02T13:00:00.000Z",
+    "failureReason": null,
+    "createdByUserId": "USR-006",
+    "approvalId": null,
+    "approvedByUserId": null,
+    "createdAt": "2026-03-02T12:40:00.000Z"
+  },
+  {
+    "id": "PAY-005",
+    "number": "PAY-005",
+    "direction": "inbound",
+    "vendorId": null,
+    "customerId": "CUS-002",
+    "allocations": [
+      {
+        "invoiceId": "CINV-402",
+        "amount": {
+          "amount": 1500,
+          "currency": "USD"
+        }
+      }
+    ],
+    "amount": {
+      "amount": 1500,
+      "currency": "USD"
+    },
+    "method": "check",
+    "status": "completed",
+    "reference": "CHK-448201",
+    "scheduledDate": "2026-03-13T00:00:00.000Z",
+    "processedAt": "2026-03-13T15:30:00.000Z",
+    "failureReason": null,
+    "createdByUserId": "USR-006",
+    "approvalId": null,
+    "approvedByUserId": null,
+    "createdAt": "2026-03-13T15:10:00.000Z"
+  },
+  {
+    "id": "PAY-006",
+    "number": "PAY-006",
+    "direction": "outbound",
+    "vendorId": null,
+    "customerId": null,
+    "allocations": [],
+    "amount": {
+      "amount": 1240,
+      "currency": "USD"
+    },
+    "method": "ach",
+    "status": "completed",
+    "reference": "REIMB-EXP-001",
+    "scheduledDate": "2026-02-12T00:00:00.000Z",
+    "processedAt": "2026-02-12T11:00:00.000Z",
+    "failureReason": null,
+    "createdByUserId": "USR-006",
+    "approvalId": null,
+    "approvedByUserId": "USR-008",
+    "createdAt": "2026-02-10T09:30:00.000Z"
+  }
+]

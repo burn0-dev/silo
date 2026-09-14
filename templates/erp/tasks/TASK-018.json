@@ -1,0 +1,11 @@
+{
+  "id": "TASK-018",
+  "title": "Reconcile a cancelled order that was still invoiced",
+  "instruction": "Purchase order PO-207 was cancelled, but invoice VINV-106 from Summit Safety Products is still on file against it. Confirm nothing was ever received against that order, then close the invoice out correctly so it cannot be paid, and record what you did. Act as Marcus Lindqvist (USR-006).",
+  "difficulty": "hard",
+  "verifierId": "VER-018",
+  "entities": [
+    "PO-207",
+    "VINV-106"
+  ]
+}

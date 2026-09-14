@@ -698,7 +698,7 @@ export type AuditEvent = {
   changes: AuditChange[];
 };
 
-export type ErpState = {
+export type State = {
   now: string;
   company: Company;
   departments: Record<string, Department>;
@@ -769,7 +769,7 @@ export function inventoryId(productId: string, warehouseId: string): string {
 }
 
 export function findInventory(
-  state: ErpState,
+  state: State,
   productId: string,
   warehouseId: string,
 ): InventoryRecord | undefined {
@@ -867,7 +867,7 @@ export function formatId(prefix: string, value: number, pad = 3): string {
  * Deterministic ID minting. Sequence counters live in state so repeated runs of
  * the same task produce identical IDs.
  */
-export function nextId(state: ErpState, prefix: string, pad = 3): string {
+export function nextId(state: State, prefix: string, pad = 3): string {
   const next = (state.sequences[prefix] ?? 1) + 1;
   state.sequences[prefix] = next;
   return formatId(prefix, next, pad);
@@ -886,7 +886,7 @@ export function indexById<T extends { id: string }>(
 }
 
 export function recordAudit(
-  state: ErpState,
+  state: State,
   event: Omit<AuditEvent, "id" | "at"> & { at?: string },
 ): AuditEvent {
   const auditEvent: AuditEvent = {

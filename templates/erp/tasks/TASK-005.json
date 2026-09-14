@@ -1,0 +1,11 @@
+{
+  "id": "TASK-005",
+  "title": "Approve a requisition only if the budget allows",
+  "instruction": "Requisition PR-002 is waiting on Priya Nair (USR-003). Approve it only if the Facilities supplies budget can cover it. If the budget cannot cover it, reject the requisition instead and state the budget shortfall in the rejection reason. Act as Priya Nair (USR-003).",
+  "difficulty": "medium",
+  "verifierId": "VER-005",
+  "entities": [
+    "PR-002",
+    "BUD-004"
+  ]
+}

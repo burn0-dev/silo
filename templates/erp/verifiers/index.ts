@@ -6,8 +6,10 @@
  * said — a task passes only because the ERP ends up in the right shape.
  */
 
+import { check, defineVerifier, optional } from "@burn0/silo";
+
 import {
-  type ErpState,
+  type State,
   availableQuantity,
   inventoryId,
   isOverdue,
@@ -15,79 +17,11 @@ import {
   round2,
 } from "../state.js";
 
-export type VerifierCheck = {
-  label: string;
-  passed: boolean;
-  detail: string;
-  /**
-   * Required checks define success: if one fails the task fails outright,
-   * however much else went right. Optional checks only move the reward.
-   */
-  required: boolean;
-};
-
-export type VerifierOutcome = {
-  verifierId: string;
-  taskId: string;
-  /** True only when every required check passed. */
-  passed: boolean;
-  /** Partial progress across all checks, 0-1. Independent of `passed`. */
-  reward: number;
-  requiredPassed: number;
-  requiredTotal: number;
-  failedRequired: string[];
-  checks: VerifierCheck[];
-};
-
-export type ErpVerifier = {
-  id: string;
-  taskId: string;
-  name: string;
-  check: (finalState: ErpState, initialState: ErpState) => VerifierOutcome;
-};
-
-/** A check that defines success. Failing one fails the task. */
-function check(label: string, passed: boolean, detail = ""): VerifierCheck {
-  return { label, passed, detail, required: true };
-}
-
-/** Corroborating evidence: contributes to reward but cannot fail the task alone. */
-function optional(label: string, passed: boolean, detail = ""): VerifierCheck {
-  return { label, passed, detail, required: false };
-}
-
-function outcome(
-  verifierId: string,
-  taskId: string,
-  checks: VerifierCheck[],
-): VerifierOutcome {
-  const passedCount = checks.filter((entry) => entry.passed).length;
-  const required = checks.filter((entry) => entry.required);
-  const failedRequired = required.filter((entry) => !entry.passed);
-
-  if (required.length === 0) {
-    throw new Error(
-      `${verifierId} has no required checks; a task cannot be graded on optional evidence alone.`,
-    );
-  }
-
-  return {
-    verifierId,
-    taskId,
-    passed: failedRequired.length === 0,
-    reward: checks.length === 0 ? 0 : round2(passedCount / checks.length),
-    requiredPassed: required.length - failedRequired.length,
-    requiredTotal: required.length,
-    failedRequired: failedRequired.map((entry) => entry.label),
-    checks,
-  };
-}
-
-function stockOnHand(state: ErpState, productId: string, warehouseId: string): number {
+function stockOnHand(state: State, productId: string, warehouseId: string): number {
   return state.inventory[inventoryId(productId, warehouseId)]?.quantityOnHand ?? 0;
 }
 
-function completedPaymentsFor(state: ErpState, invoiceId: string): number {
+function completedPaymentsFor(state: State, invoiceId: string): number {
   return round2(
     Object.values(state.payments)
       .filter((payment) => payment.status === "completed")
@@ -97,14 +31,14 @@ function completedPaymentsFor(state: ErpState, invoiceId: string): number {
   );
 }
 
-function latestMatchFor(state: ErpState, invoiceId: string) {
+function latestMatchFor(state: State, invoiceId: string) {
   return Object.values(state.threeWayMatches)
     .filter((match) => match.vendorInvoiceId === invoiceId)
     .sort((a, b) => a.id.localeCompare(b.id))
     .at(-1);
 }
 
-function newIds(final: ErpState, initial: ErpState, collection: keyof ErpState): string[] {
+function newIds(final: State, initial: State, collection: keyof State): string[] {
   const before = new Set(Object.keys(initial[collection] as Record<string, unknown>));
 
   return Object.keys(final[collection] as Record<string, unknown>).filter(
@@ -112,15 +46,15 @@ function newIds(final: ErpState, initial: ErpState, collection: keyof ErpState):
   );
 }
 
-export const erpVerifiers: ErpVerifier[] = [
-  {
+export const verifiers = [
+  defineVerifier<State>({
     id: "VER-001",
     taskId: "TASK-001",
     name: "Vendor payment terms updated",
     check(final) {
       const vendor = final.vendors["VEN-002"];
 
-      return outcome("VER-001", "TASK-001", [
+      return [
         check(
           "VEN-002 is on NET_30",
           vendor?.paymentTerms === "NET_30",
@@ -131,29 +65,29 @@ export const erpVerifiers: ErpVerifier[] = [
           vendor?.status === "active",
           `status = ${vendor?.status}`,
         ),
-      ]);
+      ];
     },
-  },
+  }),
 
-  {
+  defineVerifier<State>({
     id: "VER-002",
     taskId: "TASK-002",
     name: "Vendor blocked with a reason",
     check(final) {
       const vendor = final.vendors["VEN-007"];
 
-      return outcome("VER-002", "TASK-002", [
+      return [
         check("VEN-007 is blocked", vendor?.status === "blocked", `status = ${vendor?.status}`),
         check(
           "A block reason was recorded",
           typeof vendor?.statusReason === "string" && vendor.statusReason.trim().length > 0,
           `statusReason = ${vendor?.statusReason ?? "null"}`,
         ),
-      ]);
+      ];
     },
-  },
+  }),
 
-  {
+  defineVerifier<State>({
     id: "VER-003",
     taskId: "TASK-003",
     name: "Largest overdue debtor placed on credit hold",
@@ -168,7 +102,7 @@ export const erpVerifiers: ErpVerifier[] = [
         (invoice) => final.customerInvoices[invoice.id]?.status !== "written_off",
       );
 
-      return outcome("VER-003", "TASK-003", [
+      return [
         check(
           "CUS-003 (largest overdue balance) is on credit hold",
           customer?.status === "credit_hold",
@@ -184,11 +118,11 @@ export const erpVerifiers: ErpVerifier[] = [
           untouched,
           `${overdueAbove10k.length} invoice(s) above $10k checked`,
         ),
-      ]);
+      ];
     },
-  },
+  }),
 
-  {
+  defineVerifier<State>({
     id: "VER-004",
     taskId: "TASK-004",
     name: "Shortage escalated as a requisition, stock untouched",
@@ -204,7 +138,7 @@ export const erpVerifiers: ErpVerifier[] = [
       const product = final.products["PRD-012"];
       const line = match?.lines.find((candidate) => candidate.productId === "PRD-012");
 
-      return outcome("VER-004", "TASK-004", [
+      return [
         check(
           "A requisition was raised for PRD-012",
           match !== undefined,
@@ -225,11 +159,11 @@ export const erpVerifiers: ErpVerifier[] = [
           stockOnHand(final, "PRD-012", "WH-001") === stockOnHand(initial, "PRD-012", "WH-001"),
           `on hand = ${stockOnHand(final, "PRD-012", "WH-001")}`,
         ),
-      ]);
+      ];
     },
-  },
+  }),
 
-  {
+  defineVerifier<State>({
     id: "VER-005",
     taskId: "TASK-005",
     name: "Requisition rejected because the budget cannot cover it",
@@ -239,7 +173,7 @@ export const erpVerifiers: ErpVerifier[] = [
       const budget = final.budgets["BUD-004"];
       const initialBudget = initial.budgets["BUD-004"];
 
-      return outcome("VER-005", "TASK-005", [
+      return [
         check(
           "PR-002 was rejected, not approved",
           requisition?.status === "rejected",
@@ -260,11 +194,11 @@ export const erpVerifiers: ErpVerifier[] = [
           budget?.committedAmount.amount === initialBudget?.committedAmount.amount,
           `committed = ${budget?.committedAmount.amount}`,
         ),
-      ]);
+      ];
     },
-  },
+  }),
 
-  {
+  defineVerifier<State>({
     id: "VER-006",
     taskId: "TASK-006",
     name: "Stock rebalanced above the reorder point",
@@ -278,7 +212,7 @@ export const erpVerifiers: ErpVerifier[] = [
       const destBefore = stockOnHand(initial, "PRD-010", "WH-002");
       const destAfter = stockOnHand(final, "PRD-010", "WH-002");
 
-      return outcome("VER-006", "TASK-006", [
+      return [
         check(
           "Warehouse South received 200 units",
           destAfter === destBefore + 200,
@@ -304,11 +238,11 @@ export const erpVerifiers: ErpVerifier[] = [
           ),
           "transfer movements present",
         ),
-      ]);
+      ];
     },
-  },
+  }),
 
-  {
+  defineVerifier<State>({
     id: "VER-007",
     taskId: "TASK-007",
     name: "Outstanding delivery received and order completed",
@@ -317,7 +251,7 @@ export const erpVerifiers: ErpVerifier[] = [
       const line = order?.lines.find((candidate) => candidate.id === "PO-202-L1");
       const record = final.inventory[inventoryId("PRD-007", "WH-001")];
 
-      return outcome("VER-007", "TASK-007", [
+      return [
         check(
           "All 40 cylinders are now received",
           line?.quantityReceived === 40,
@@ -338,11 +272,11 @@ export const erpVerifiers: ErpVerifier[] = [
           record?.quantityInbound === 0,
           `inbound = ${record?.quantityInbound}`,
         ),
-      ]);
+      ];
     },
-  },
+  }),
 
-  {
+  defineVerifier<State>({
     id: "VER-008",
     taskId: "TASK-008",
     name: "Invoice due this week paid in full",
@@ -350,7 +284,7 @@ export const erpVerifiers: ErpVerifier[] = [
       const invoice = final.vendorInvoices["VINV-107"];
       const paid = completedPaymentsFor(final, "VINV-107");
 
-      return outcome("VER-008", "TASK-008", [
+      return [
         check("VINV-107 is paid", invoice?.status === "paid", `status = ${invoice?.status}`),
         check(
           "The full amount was paid",
@@ -367,11 +301,11 @@ export const erpVerifiers: ErpVerifier[] = [
           invoice !== undefined && outstandingAmount(invoice).amount === 0,
           `outstanding = ${invoice ? outstandingAmount(invoice).amount : "n/a"}`,
         ),
-      ]);
+      ];
     },
-  },
+  }),
 
-  {
+  defineVerifier<State>({
     id: "VER-009",
     taskId: "TASK-009",
     name: "Unapproved purchase order cancelled",
@@ -381,7 +315,7 @@ export const erpVerifiers: ErpVerifier[] = [
       const budget = final.budgets["BUD-001"];
       const initialBudget = initial.budgets["BUD-001"];
 
-      return outcome("VER-009", "TASK-009", [
+      return [
         check("PO-205 is cancelled", order?.status === "cancelled", `status = ${order?.status}`),
         check(
           "A cancellation reason was recorded",
@@ -398,11 +332,11 @@ export const erpVerifiers: ErpVerifier[] = [
           budget?.committedAmount.amount === initialBudget?.committedAmount.amount,
           `committed = ${budget?.committedAmount.amount}`,
         ),
-      ]);
+      ];
     },
-  },
+  }),
 
-  {
+  defineVerifier<State>({
     id: "VER-010",
     taskId: "TASK-010",
     name: "Shipped order invoiced",
@@ -415,7 +349,7 @@ export const erpVerifiers: ErpVerifier[] = [
       const order = final.salesOrders["SO-306"];
       const line = invoice?.lines[0];
 
-      return outcome("VER-010", "TASK-010", [
+      return [
         check(
           "An invoice was raised against SO-306",
           invoice !== undefined,
@@ -441,11 +375,11 @@ export const erpVerifiers: ErpVerifier[] = [
           order?.status === "invoiced",
           `status = ${order?.status}`,
         ),
-      ]);
+      ];
     },
-  },
+  }),
 
-  {
+  defineVerifier<State>({
     id: "VER-011",
     taskId: "TASK-011",
     name: "Cheapest valid quotation awarded and order raised",
@@ -463,7 +397,7 @@ export const erpVerifiers: ErpVerifier[] = [
       const hoseLine = order?.lines.find((line) => line.productId === "PRD-008");
       const beltLine = order?.lines.find((line) => line.productId === "PRD-010");
 
-      return outcome("VER-011", "TASK-011", [
+      return [
         check(
           "RFQ-002 was awarded to QUO-006",
           rfq?.awardedQuotationId === "QUO-006" && winner?.status === "accepted",
@@ -497,11 +431,11 @@ export const erpVerifiers: ErpVerifier[] = [
           order?.warehouseId === "WH-001" && order.budgetId === "BUD-002",
           `warehouse = ${order?.warehouseId}, budget = ${order?.budgetId}`,
         ),
-      ]);
+      ];
     },
-  },
+  }),
 
-  {
+  defineVerifier<State>({
     id: "VER-012",
     taskId: "TASK-012",
     name: "Quantity mismatch corrected and invoice approved",
@@ -512,7 +446,7 @@ export const erpVerifiers: ErpVerifier[] = [
       const orderLine = order?.lines.find((candidate) => candidate.id === "PO-203-L1");
       const match = latestMatchFor(final, "VINV-104");
 
-      return outcome("VER-012", "TASK-012", [
+      return [
         check(
           "The bolt line now bills the 250 boxes received",
           line?.quantity === 250,
@@ -538,11 +472,11 @@ export const erpVerifiers: ErpVerifier[] = [
           invoice?.status === "approved" || invoice?.status === "paid",
           `status = ${invoice?.status}`,
         ),
-      ]);
+      ];
     },
-  },
+  }),
 
-  {
+  defineVerifier<State>({
     id: "VER-013",
     taskId: "TASK-013",
     name: "Price mismatch corrected to the agreed rate",
@@ -551,7 +485,7 @@ export const erpVerifiers: ErpVerifier[] = [
       const line = invoice?.lines[0];
       const match = latestMatchFor(final, "VINV-103");
 
-      return outcome("VER-013", "TASK-013", [
+      return [
         check(
           "The line is priced at the agreed $82.00",
           line?.unitPrice.amount === 82,
@@ -577,11 +511,11 @@ export const erpVerifiers: ErpVerifier[] = [
           invoice?.status === "approved" || invoice?.status === "paid",
           `status = ${invoice?.status}`,
         ),
-      ]);
+      ];
     },
-  },
+  }),
 
-  {
+  defineVerifier<State>({
     id: "VER-014",
     taskId: "TASK-014",
     name: "Order filled from multiple warehouses",
@@ -607,7 +541,7 @@ export const erpVerifiers: ErpVerifier[] = [
           movement.occurredAt >= initial.now,
       );
 
-      return outcome("VER-014", "TASK-014", [
+      return [
         check(
           "All 150 units shipped",
           line?.quantityFulfilled === 150 && shippedUnits === 150,
@@ -633,11 +567,11 @@ export const erpVerifiers: ErpVerifier[] = [
           !transferred,
           transferred ? "transfer movements found" : "no transfers",
         ),
-      ]);
+      ];
     },
-  },
+  }),
 
-  {
+  defineVerifier<State>({
     id: "VER-015",
     taskId: "TASK-015",
     name: "Requisition escalated and approved by an authorised user",
@@ -653,7 +587,7 @@ export const erpVerifiers: ErpVerifier[] = [
       const decider = deciding?.decidedByUserId ? final.users[deciding.decidedByUserId] : undefined;
       const limit = decider?.approvalLimit?.amount ?? 0;
 
-      return outcome("VER-015", "TASK-015", [
+      return [
         check(
           "PR-006 is approved",
           requisition?.status === "approved",
@@ -674,11 +608,11 @@ export const erpVerifiers: ErpVerifier[] = [
           requisition?.estimatedTotal.amount === initialRequisition?.estimatedTotal.amount,
           `total = ${requisition?.estimatedTotal.amount}`,
         ),
-      ]);
+      ];
     },
-  },
+  }),
 
-  {
+  defineVerifier<State>({
     id: "VER-016",
     taskId: "TASK-016",
     name: "Failed payment recovered and invoice settled",
@@ -688,7 +622,7 @@ export const erpVerifiers: ErpVerifier[] = [
       const vendor = final.vendors["VEN-002"];
       const paid = completedPaymentsFor(final, "VINV-108");
 
-      return outcome("VER-016", "TASK-016", [
+      return [
         check("VINV-108 is paid", invoice?.status === "paid", `status = ${invoice?.status}`),
         check(
           "A completed payment covers the full amount",
@@ -710,11 +644,11 @@ export const erpVerifiers: ErpVerifier[] = [
           invoice !== undefined && !isOverdue(invoice, final.now),
           `outstanding = ${invoice ? outstandingAmount(invoice).amount : "n/a"}`,
         ),
-      ]);
+      ];
     },
-  },
+  }),
 
-  {
+  defineVerifier<State>({
     id: "VER-017",
     taskId: "TASK-017",
     name: "Full procure-to-pay cycle completed",
@@ -750,7 +684,7 @@ export const erpVerifiers: ErpVerifier[] = [
         candidate.lines.some((candidateLine) => candidateLine.productId === "PRD-020"),
       );
 
-      return outcome("VER-017", "TASK-017", [
+      return [
         check(
           "A requisition was raised and approved",
           requisition !== undefined &&
@@ -784,11 +718,11 @@ export const erpVerifiers: ErpVerifier[] = [
             paid === round2(invoice.totalAmount.amount),
           `status = ${invoice?.status}, completed payments = ${paid}`,
         ),
-      ]);
+      ];
     },
-  },
+  }),
 
-  {
+  defineVerifier<State>({
     id: "VER-018",
     taskId: "TASK-018",
     name: "Invoice against a cancelled order closed out",
@@ -799,7 +733,7 @@ export const erpVerifiers: ErpVerifier[] = [
 
       const received = order?.lines.reduce((total, line) => total + line.quantityReceived, 0) ?? 0;
 
-      return outcome("VER-018", "TASK-018", [
+      return [
         check(
           "VINV-106 can no longer be paid",
           invoice?.status === "cancelled" || invoice?.status === "rejected",
@@ -813,24 +747,10 @@ export const erpVerifiers: ErpVerifier[] = [
           final.auditLog.some((event) => event.entityId === "VINV-106"),
           "audit entry present",
         ),
-      ]);
+      ];
     },
-  },
+  }),
 ];
-
-export function getVerifier(id: string): ErpVerifier | undefined {
-  return erpVerifiers.find((verifier) => verifier.id === id);
-}
-
-export function verifyTask(
-  taskId: string,
-  finalState: ErpState,
-  initialState: ErpState,
-): VerifierOutcome | undefined {
-  const verifier = erpVerifiers.find((candidate) => candidate.taskId === taskId);
-
-  return verifier?.check(finalState, initialState);
-}
 
 /** Re-exported so verifier authors have the derived helpers to hand. */
 export { availableQuantity, outstandingAmount, isOverdue };

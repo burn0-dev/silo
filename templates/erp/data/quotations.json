@@ -1,0 +1,156 @@
+[
+  {
+    "id": "QUO-001",
+    "rfqId": "RFQ-001",
+    "vendorId": "VEN-001",
+    "status": "accepted",
+    "lines": [
+      [
+        "PRD-001",
+        500,
+        4.1
+      ],
+      [
+        "PRD-002",
+        300,
+        11.4
+      ]
+    ],
+    "leadTimeDays": 7,
+    "validUntil": "2026-03-31T00:00:00.000Z",
+    "receivedAt": "2026-02-10T11:00:00.000Z",
+    "notes": "Awarded; stock held for immediate release."
+  },
+  {
+    "id": "QUO-002",
+    "rfqId": "RFQ-001",
+    "vendorId": "VEN-006",
+    "status": "rejected",
+    "lines": [
+      [
+        "PRD-001",
+        500,
+        4.35
+      ],
+      [
+        "PRD-002",
+        300,
+        11.9
+      ]
+    ],
+    "leadTimeDays": 10,
+    "validUntil": "2026-03-15T00:00:00.000Z",
+    "receivedAt": "2026-02-09T15:20:00.000Z",
+    "notes": "Higher unit pricing on both lines."
+  },
+  {
+    "id": "QUO-003",
+    "rfqId": "RFQ-001",
+    "vendorId": "VEN-012",
+    "status": "rejected",
+    "lines": [
+      [
+        "PRD-001",
+        500,
+        4.05
+      ],
+      [
+        "PRD-002",
+        300,
+        12.6
+      ]
+    ],
+    "leadTimeDays": 21,
+    "validUntil": "2026-03-20T00:00:00.000Z",
+    "receivedAt": "2026-02-11T09:40:00.000Z",
+    "notes": "Cheapest on PRD-001 but highest overall and longest lead time."
+  },
+  {
+    "id": "QUO-004",
+    "rfqId": "RFQ-002",
+    "vendorId": "VEN-003",
+    "status": "received",
+    "lines": [
+      [
+        "PRD-008",
+        600,
+        6.4
+      ],
+      [
+        "PRD-010",
+        500,
+        7.05
+      ]
+    ],
+    "leadTimeDays": 14,
+    "validUntil": "2026-04-15T00:00:00.000Z",
+    "receivedAt": "2026-03-09T10:10:00.000Z",
+    "notes": "Standard terms, stock on hand."
+  },
+  {
+    "id": "QUO-005",
+    "rfqId": "RFQ-002",
+    "vendorId": "VEN-004",
+    "status": "expired",
+    "lines": [
+      [
+        "PRD-008",
+        600,
+        6.25
+      ],
+      [
+        "PRD-010",
+        500,
+        6.9
+      ]
+    ],
+    "leadTimeDays": 30,
+    "validUntil": "2026-03-14T00:00:00.000Z",
+    "receivedAt": "2026-03-08T16:45:00.000Z",
+    "notes": "Lowest total but validity lapsed on 2026-03-14."
+  },
+  {
+    "id": "QUO-006",
+    "rfqId": "RFQ-002",
+    "vendorId": "VEN-012",
+    "status": "received",
+    "lines": [
+      [
+        "PRD-008",
+        600,
+        6.55
+      ],
+      [
+        "PRD-010",
+        500,
+        6.8
+      ]
+    ],
+    "leadTimeDays": 12,
+    "validUntil": "2026-04-10T00:00:00.000Z",
+    "receivedAt": "2026-03-11T13:25:00.000Z",
+    "notes": "Cheapest quotation still valid at the current date."
+  },
+  {
+    "id": "QUO-007",
+    "rfqId": "RFQ-003",
+    "vendorId": "VEN-005",
+    "status": "received",
+    "lines": [
+      [
+        "PRD-013",
+        120,
+        41
+      ],
+      [
+        "PRD-015",
+        2000,
+        2.28
+      ]
+    ],
+    "leadTimeDays": 10,
+    "validUntil": "2026-04-20T00:00:00.000Z",
+    "receivedAt": "2026-03-13T10:50:00.000Z",
+    "notes": "Awaiting second response from VEN-012."
+  }
+]

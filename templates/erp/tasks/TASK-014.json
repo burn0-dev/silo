@@ -1,0 +1,13 @@
+{
+  "id": "TASK-014",
+  "title": "Fulfil an order that no single warehouse can cover",
+  "instruction": "Sales order SO-307 needs 150 units of bearing PRD-003 for Vertex Automotive Systems, but no single warehouse holds that many. Ship the order in full using stock from more than one warehouse, without moving stock between warehouses first. Act as Tom Braddock (USR-004).",
+  "difficulty": "hard",
+  "verifierId": "VER-014",
+  "entities": [
+    "SO-307",
+    "PRD-003",
+    "WH-001",
+    "WH-002"
+  ]
+}

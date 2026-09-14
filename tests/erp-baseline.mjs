@@ -14,7 +14,7 @@
  * Usage:  npm run test:erp [-- --update]
  */
 
-import { mkdtemp, readFile, readdir, rm, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, readFile, readdir, rm, symlink, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
@@ -32,6 +32,12 @@ const runsDir = join(project, "runs");
 // Environment modules are ESM; without this the loader treats them as CommonJS
 // and the contract exports end up nested under `.default`.
 await writeFile(join(project, "package.json"), '{"name":"silo-erp-baseline","type":"module"}\n');
+
+// Environment code imports @burn0/silo by name, exactly as a user's project
+// would, so the package has to resolve from inside the throwaway project.
+const packageRoot = new URL("../", import.meta.url).pathname;
+await mkdir(join(project, "node_modules", "@burn0"), { recursive: true });
+await symlink(packageRoot, join(project, "node_modules", "@burn0", "silo"), "dir");
 
 await scaffoldEnvironment({ name: ENVIRONMENT, template: "erp", tools: [], cwd: project });
 

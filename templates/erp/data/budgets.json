@@ -1,0 +1,128 @@
+[
+  {
+    "id": "BUD-001",
+    "name": "Procurement — Indirect",
+    "departmentId": "DEPT-PROC",
+    "fiscalYear": "FY2026",
+    "category": "indirect",
+    "allocatedAmount": {
+      "amount": 60000,
+      "currency": "USD"
+    },
+    "committedAmount": {
+      "amount": 20401.2,
+      "currency": "USD"
+    },
+    "spentAmount": {
+      "amount": 12840,
+      "currency": "USD"
+    },
+    "currency": "USD",
+    "status": "active"
+  },
+  {
+    "id": "BUD-002",
+    "name": "Operations — MRO",
+    "departmentId": "DEPT-OPS",
+    "fiscalYear": "FY2026",
+    "category": "mro",
+    "allocatedAmount": {
+      "amount": 450000,
+      "currency": "USD"
+    },
+    "committedAmount": {
+      "amount": 25077.6,
+      "currency": "USD"
+    },
+    "spentAmount": {
+      "amount": 41297.76,
+      "currency": "USD"
+    },
+    "currency": "USD",
+    "status": "active"
+  },
+  {
+    "id": "BUD-003",
+    "name": "IT — Equipment",
+    "departmentId": "DEPT-IT",
+    "fiscalYear": "FY2026",
+    "category": "equipment",
+    "allocatedAmount": {
+      "amount": 90000,
+      "currency": "USD"
+    },
+    "committedAmount": {
+      "amount": 0,
+      "currency": "USD"
+    },
+    "spentAmount": {
+      "amount": 34500,
+      "currency": "USD"
+    },
+    "currency": "USD",
+    "status": "active"
+  },
+  {
+    "id": "BUD-004",
+    "name": "Facilities — Supplies",
+    "departmentId": "DEPT-FAC",
+    "fiscalYear": "FY2026",
+    "category": "supplies",
+    "allocatedAmount": {
+      "amount": 24000,
+      "currency": "USD"
+    },
+    "committedAmount": {
+      "amount": 3120,
+      "currency": "USD"
+    },
+    "spentAmount": {
+      "amount": 18480,
+      "currency": "USD"
+    },
+    "currency": "USD",
+    "status": "active"
+  },
+  {
+    "id": "BUD-005",
+    "name": "Sales — Travel & Entertainment",
+    "departmentId": "DEPT-SALES",
+    "fiscalYear": "FY2026",
+    "category": "travel",
+    "allocatedAmount": {
+      "amount": 75000,
+      "currency": "USD"
+    },
+    "committedAmount": {
+      "amount": 865.5,
+      "currency": "USD"
+    },
+    "spentAmount": {
+      "amount": 22315.5,
+      "currency": "USD"
+    },
+    "currency": "USD",
+    "status": "active"
+  },
+  {
+    "id": "BUD-006",
+    "name": "Finance — Operating",
+    "departmentId": "DEPT-FIN",
+    "fiscalYear": "FY2026",
+    "category": "operating",
+    "allocatedAmount": {
+      "amount": 40000,
+      "currency": "USD"
+    },
+    "committedAmount": {
+      "amount": 0,
+      "currency": "USD"
+    },
+    "spentAmount": {
+      "amount": 9120,
+      "currency": "USD"
+    },
+    "currency": "USD",
+    "status": "active"
+  }
+]

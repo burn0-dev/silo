@@ -1,0 +1,12 @@
+{
+  "id": "TASK-003",
+  "title": "Find the large overdue receivables",
+  "instruction": "Finance wants to chase big debts. Identify every customer invoice that is overdue as of today with a total above $10,000, and place the customer with the single largest overdue balance on credit hold, noting that it is for non-payment. Act as Ken Adeyemi (USR-008).",
+  "difficulty": "easy",
+  "verifierId": "VER-003",
+  "entities": [
+    "CINV-403",
+    "CINV-407",
+    "CUS-003"
+  ]
+}

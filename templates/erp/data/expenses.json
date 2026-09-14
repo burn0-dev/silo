@@ -1,0 +1,97 @@
+[
+  {
+    "id": "EXP-001",
+    "number": "EXP-001",
+    "employeeUserId": "USR-002",
+    "departmentId": "DEPT-PROC",
+    "category": "travel",
+    "description": "Vendor audit trip — Kessler Bearing Works, Cleveland",
+    "amount": {
+      "amount": 1240,
+      "currency": "USD"
+    },
+    "status": "paid",
+    "incurredAt": "2026-02-05T00:00:00.000Z",
+    "submittedAt": "2026-02-06T08:20:00.000Z",
+    "approvalId": "APR-022",
+    "budgetId": "BUD-001",
+    "paymentId": "PAY-006",
+    "hasReceipt": true
+  },
+  {
+    "id": "EXP-002",
+    "number": "EXP-002",
+    "employeeUserId": "USR-011",
+    "departmentId": "DEPT-FAC",
+    "category": "maintenance",
+    "description": "Emergency HVAC filter purchase — Columbus site",
+    "amount": {
+      "amount": 480,
+      "currency": "USD"
+    },
+    "status": "submitted",
+    "incurredAt": "2026-03-11T00:00:00.000Z",
+    "submittedAt": "2026-03-12T13:40:00.000Z",
+    "approvalId": "APR-023",
+    "budgetId": "BUD-004",
+    "paymentId": null,
+    "hasReceipt": true
+  },
+  {
+    "id": "EXP-003",
+    "number": "EXP-003",
+    "employeeUserId": "USR-009",
+    "departmentId": "DEPT-SALES",
+    "category": "travel",
+    "description": "Customer site visit — Granite Peak Manufacturing",
+    "amount": {
+      "amount": 865.5,
+      "currency": "USD"
+    },
+    "status": "approved",
+    "incurredAt": "2026-03-03T00:00:00.000Z",
+    "submittedAt": "2026-03-04T16:05:00.000Z",
+    "approvalId": "APR-024",
+    "budgetId": "BUD-005",
+    "paymentId": null,
+    "hasReceipt": true
+  },
+  {
+    "id": "EXP-004",
+    "number": "EXP-004",
+    "employeeUserId": "USR-004",
+    "departmentId": "DEPT-OPS",
+    "category": "training",
+    "description": "Forklift certification renewal",
+    "amount": {
+      "amount": 1150,
+      "currency": "USD"
+    },
+    "status": "draft",
+    "incurredAt": "2026-03-14T00:00:00.000Z",
+    "submittedAt": null,
+    "approvalId": null,
+    "budgetId": "BUD-002",
+    "paymentId": null,
+    "hasReceipt": false
+  },
+  {
+    "id": "EXP-005",
+    "number": "EXP-005",
+    "employeeUserId": "USR-006",
+    "departmentId": "DEPT-FIN",
+    "category": "travel",
+    "description": "Mileage claim — duplicate submission",
+    "amount": {
+      "amount": 320,
+      "currency": "USD"
+    },
+    "status": "rejected",
+    "incurredAt": "2026-02-05T00:00:00.000Z",
+    "submittedAt": "2026-02-20T11:15:00.000Z",
+    "approvalId": "APR-025",
+    "budgetId": "BUD-006",
+    "paymentId": null,
+    "hasReceipt": false
+  }
+]

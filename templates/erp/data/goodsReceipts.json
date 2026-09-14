@@ -1,0 +1,158 @@
+[
+  {
+    "id": "GR-001",
+    "number": "GR-001",
+    "purchaseOrderId": "PO-201",
+    "warehouseId": "WH-001",
+    "status": "posted",
+    "lines": [
+      {
+        "id": "GR-001-L1",
+        "purchaseOrderLineId": "PO-201-L1",
+        "productId": "PRD-001",
+        "quantityReceived": 500,
+        "quantityRejected": 0,
+        "note": ""
+      },
+      {
+        "id": "GR-001-L2",
+        "purchaseOrderLineId": "PO-201-L2",
+        "productId": "PRD-002",
+        "quantityReceived": 300,
+        "quantityRejected": 0,
+        "note": ""
+      }
+    ],
+    "deliveryNote": "KBW-DN-77412",
+    "receivedByUserId": "USR-004",
+    "receivedAt": "2026-02-23T13:20:00.000Z",
+    "postedAt": "2026-02-23T13:45:00.000Z",
+    "cancelledAt": null
+  },
+  {
+    "id": "GR-002",
+    "number": "GR-002",
+    "purchaseOrderId": "PO-202",
+    "warehouseId": "WH-001",
+    "status": "posted",
+    "lines": [
+      {
+        "id": "GR-002-L1",
+        "purchaseOrderLineId": "PO-202-L1",
+        "productId": "PRD-007",
+        "quantityReceived": 25,
+        "quantityRejected": 0,
+        "note": "Balance of 15 cylinders still outstanding."
+      },
+      {
+        "id": "GR-002-L2",
+        "purchaseOrderLineId": "PO-202-L2",
+        "productId": "PRD-008",
+        "quantityReceived": 595,
+        "quantityRejected": 5,
+        "note": "Five metres crushed in transit."
+      }
+    ],
+    "deliveryNote": "HAL-DN-20881",
+    "receivedByUserId": "USR-004",
+    "receivedAt": "2026-03-09T10:05:00.000Z",
+    "postedAt": "2026-03-09T10:40:00.000Z",
+    "cancelledAt": null
+  },
+  {
+    "id": "GR-003",
+    "number": "GR-003",
+    "purchaseOrderId": "PO-203",
+    "warehouseId": "WH-002",
+    "status": "posted",
+    "lines": [
+      {
+        "id": "GR-003-L1",
+        "purchaseOrderLineId": "PO-203-L1",
+        "productId": "PRD-004",
+        "quantityReceived": 250,
+        "quantityRejected": 0,
+        "note": "Short shipment; 150 boxes backordered."
+      },
+      {
+        "id": "GR-003-L2",
+        "purchaseOrderLineId": "PO-203-L2",
+        "productId": "PRD-006",
+        "quantityReceived": 300,
+        "quantityRejected": 0,
+        "note": ""
+      }
+    ],
+    "deliveryNote": "TSF-DN-51240",
+    "receivedByUserId": "USR-012",
+    "receivedAt": "2026-03-07T09:15:00.000Z",
+    "postedAt": "2026-03-07T09:50:00.000Z",
+    "cancelledAt": null
+  },
+  {
+    "id": "GR-004",
+    "number": "GR-004",
+    "purchaseOrderId": "PO-206",
+    "warehouseId": "WH-002",
+    "status": "posted",
+    "lines": [
+      {
+        "id": "GR-004-L1",
+        "purchaseOrderLineId": "PO-206-L1",
+        "productId": "PRD-021",
+        "quantityReceived": 80,
+        "quantityRejected": 0,
+        "note": ""
+      }
+    ],
+    "deliveryNote": "NFL-DN-33107",
+    "receivedByUserId": "USR-012",
+    "receivedAt": "2026-03-08T14:30:00.000Z",
+    "postedAt": "2026-03-08T15:00:00.000Z",
+    "cancelledAt": null
+  },
+  {
+    "id": "GR-005",
+    "number": "GR-005",
+    "purchaseOrderId": "PO-206",
+    "warehouseId": "WH-002",
+    "status": "cancelled",
+    "lines": [
+      {
+        "id": "GR-005-L1",
+        "purchaseOrderLineId": "PO-206-L1",
+        "productId": "PRD-021",
+        "quantityReceived": 80,
+        "quantityRejected": 0,
+        "note": "Duplicate entry of GR-004."
+      }
+    ],
+    "deliveryNote": "NFL-DN-33107",
+    "receivedByUserId": "USR-012",
+    "receivedAt": "2026-03-08T15:20:00.000Z",
+    "postedAt": null,
+    "cancelledAt": "2026-03-08T15:35:00.000Z"
+  },
+  {
+    "id": "GR-006",
+    "number": "GR-006",
+    "purchaseOrderId": "PO-209",
+    "warehouseId": "WH-001",
+    "status": "posted",
+    "lines": [
+      {
+        "id": "GR-006-L1",
+        "purchaseOrderLineId": "PO-209-L1",
+        "productId": "PRD-017",
+        "quantityReceived": 50,
+        "quantityRejected": 0,
+        "note": ""
+      }
+    ],
+    "deliveryNote": "OKT-DN-90233",
+    "receivedByUserId": "USR-004",
+    "receivedAt": "2026-03-03T11:10:00.000Z",
+    "postedAt": "2026-03-03T11:30:00.000Z",
+    "cancelledAt": null
+  }
+]

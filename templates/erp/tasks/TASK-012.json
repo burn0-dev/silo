@@ -1,0 +1,13 @@
+{
+  "id": "TASK-012",
+  "title": "Work out why an invoice cannot be approved, and fix it",
+  "instruction": "Accounts payable cannot approve invoice VINV-104 from Tri-State Fasteners. Work out why. The vendor has confirmed that only 250 boxes were ever shipped and has agreed to credit the difference. Correct the invoice so it reflects what was actually received, re-run the match, and get the invoice approved. Marcus Lindqvist (USR-006) handles the invoice; Sofia Duarte (USR-007) approves.",
+  "difficulty": "hard",
+  "verifierId": "VER-012",
+  "entities": [
+    "VINV-104",
+    "PO-203",
+    "GR-003",
+    "DISC-001"
+  ]
+}

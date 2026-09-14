@@ -1,0 +1,74 @@
+[
+  {
+    "id": "FUL-001",
+    "number": "FUL-001",
+    "salesOrderId": "SO-301",
+    "warehouseId": "WH-001",
+    "status": "delivered",
+    "lines": [
+      {
+        "id": "FUL-001-L1",
+        "salesOrderLineId": "SO-301-L1",
+        "productId": "PRD-001",
+        "quantity": 200
+      },
+      {
+        "id": "FUL-001-L2",
+        "salesOrderLineId": "SO-301-L2",
+        "productId": "PRD-010",
+        "quantity": 150
+      }
+    ],
+    "carrier": "Midwest Freightways",
+    "trackingNumber": "MFW-4410882",
+    "shippedByUserId": "USR-004",
+    "shippedAt": "2026-02-18T15:00:00.000Z",
+    "deliveredAt": "2026-02-20T11:30:00.000Z"
+  },
+  {
+    "id": "FUL-002",
+    "number": "FUL-002",
+    "salesOrderId": "SO-302",
+    "warehouseId": "WH-002",
+    "status": "shipped",
+    "lines": [
+      {
+        "id": "FUL-002-L1",
+        "salesOrderLineId": "SO-302-L1",
+        "productId": "PRD-004",
+        "quantity": 60
+      },
+      {
+        "id": "FUL-002-L2",
+        "salesOrderLineId": "SO-302-L2",
+        "productId": "PRD-006",
+        "quantity": 80
+      }
+    ],
+    "carrier": "Lone Star Logistics",
+    "trackingNumber": "LSL-7729104",
+    "shippedByUserId": "USR-012",
+    "shippedAt": "2026-03-11T16:20:00.000Z",
+    "deliveredAt": null
+  },
+  {
+    "id": "FUL-003",
+    "number": "FUL-003",
+    "salesOrderId": "SO-306",
+    "warehouseId": "WH-001",
+    "status": "delivered",
+    "lines": [
+      {
+        "id": "FUL-003-L1",
+        "salesOrderLineId": "SO-306-L1",
+        "productId": "PRD-018",
+        "quantity": 120
+      }
+    ],
+    "carrier": "Midwest Freightways",
+    "trackingNumber": "MFW-4419337",
+    "shippedByUserId": "USR-004",
+    "shippedAt": "2026-03-05T14:10:00.000Z",
+    "deliveredAt": "2026-03-07T10:05:00.000Z"
+  }
+]

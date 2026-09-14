@@ -11,7 +11,7 @@ import {
   type Budget,
   type Customer,
   type CustomerInvoice,
-  type ErpState,
+  type State,
   type Expense,
   type Fulfillment,
   type GoodsReceipt,
@@ -58,68 +58,68 @@ function require_<T>(
   return value;
 }
 
-export const requireVendor = (state: ErpState, id: string): Vendor =>
+export const requireVendor = (state: State, id: string): Vendor =>
   require_(state.vendors, id, "Vendor");
 
-export const requireCustomer = (state: ErpState, id: string): Customer =>
+export const requireCustomer = (state: State, id: string): Customer =>
   require_(state.customers, id, "Customer");
 
-export const requireProduct = (state: ErpState, id: string): Product =>
+export const requireProduct = (state: State, id: string): Product =>
   require_(state.products, id, "Product");
 
-export const requireWarehouse = (state: ErpState, id: string): Warehouse =>
+export const requireWarehouse = (state: State, id: string): Warehouse =>
   require_(state.warehouses, id, "Warehouse");
 
-export const requireUser = (state: ErpState, id: string): User =>
+export const requireUser = (state: State, id: string): User =>
   require_(state.users, id, "User");
 
-export const requireRequisition = (state: ErpState, id: string): PurchaseRequisition =>
+export const requireRequisition = (state: State, id: string): PurchaseRequisition =>
   require_(state.requisitions, id, "Purchase requisition");
 
-export const requireApproval = (state: ErpState, id: string) =>
+export const requireApproval = (state: State, id: string) =>
   require_(state.approvals, id, "Approval");
 
-export const requireRfq = (state: ErpState, id: string): Rfq =>
+export const requireRfq = (state: State, id: string): Rfq =>
   require_(state.rfqs, id, "RFQ");
 
-export const requireQuotation = (state: ErpState, id: string): Quotation =>
+export const requireQuotation = (state: State, id: string): Quotation =>
   require_(state.quotations, id, "Quotation");
 
-export const requirePurchaseOrder = (state: ErpState, id: string): PurchaseOrder =>
+export const requirePurchaseOrder = (state: State, id: string): PurchaseOrder =>
   require_(state.purchaseOrders, id, "Purchase order");
 
-export const requireGoodsReceipt = (state: ErpState, id: string): GoodsReceipt =>
+export const requireGoodsReceipt = (state: State, id: string): GoodsReceipt =>
   require_(state.goodsReceipts, id, "Goods receipt");
 
-export const requireDiscrepancy = (state: ErpState, id: string): ReceivingDiscrepancy =>
+export const requireDiscrepancy = (state: State, id: string): ReceivingDiscrepancy =>
   require_(state.receivingDiscrepancies, id, "Receiving discrepancy");
 
-export const requireVendorInvoice = (state: ErpState, id: string): VendorInvoice =>
+export const requireVendorInvoice = (state: State, id: string): VendorInvoice =>
   require_(state.vendorInvoices, id, "Vendor invoice");
 
-export const requireMatch = (state: ErpState, id: string): ThreeWayMatch =>
+export const requireMatch = (state: State, id: string): ThreeWayMatch =>
   require_(state.threeWayMatches, id, "Three-way match");
 
-export const requirePayment = (state: ErpState, id: string): Payment =>
+export const requirePayment = (state: State, id: string): Payment =>
   require_(state.payments, id, "Payment");
 
-export const requireSalesOrder = (state: ErpState, id: string): SalesOrder =>
+export const requireSalesOrder = (state: State, id: string): SalesOrder =>
   require_(state.salesOrders, id, "Sales order");
 
-export const requireFulfillment = (state: ErpState, id: string): Fulfillment =>
+export const requireFulfillment = (state: State, id: string): Fulfillment =>
   require_(state.fulfillments, id, "Fulfillment");
 
-export const requireCustomerInvoice = (state: ErpState, id: string): CustomerInvoice =>
+export const requireCustomerInvoice = (state: State, id: string): CustomerInvoice =>
   require_(state.customerInvoices, id, "Customer invoice");
 
-export const requireExpense = (state: ErpState, id: string): Expense =>
+export const requireExpense = (state: State, id: string): Expense =>
   require_(state.expenses, id, "Expense");
 
-export const requireBudget = (state: ErpState, id: string): Budget =>
+export const requireBudget = (state: State, id: string): Budget =>
   require_(state.budgets, id, "Budget");
 
 export function requireInventory(
-  state: ErpState,
+  state: State,
   productId: string,
   warehouseId: string,
 ): InventoryRecord {
@@ -137,7 +137,7 @@ export function requireInventory(
 
 /** Creates the record on first use so receipts into a new bin are possible. */
 export function ensureInventory(
-  state: ErpState,
+  state: State,
   productId: string,
   warehouseId: string,
 ): InventoryRecord {
@@ -200,7 +200,7 @@ export type StockChange = {
  * records the movement.
  */
 export function applyStockChange(
-  state: ErpState,
+  state: State,
   change: StockChange,
 ): { record: InventoryRecord; movement: InventoryMovement } {
   const record = ensureInventory(state, change.productId, change.warehouseId);
@@ -255,7 +255,7 @@ export function applyStockChange(
 }
 
 /** Recalculates inbound quantities for one warehouse from live purchase orders. */
-export function refreshInboundQuantities(state: ErpState, warehouseId: string): void {
+export function refreshInboundQuantities(state: State, warehouseId: string): void {
   const expected = new Map<string, number>();
 
   for (const po of Object.values(state.purchaseOrders)) {
@@ -281,7 +281,7 @@ export function refreshInboundQuantities(state: ErpState, warehouseId: string): 
 }
 
 export function recomputePurchaseOrderStatus(
-  state: ErpState,
+  state: State,
   order: PurchaseOrder,
 ): void {
   if (order.status === "cancelled" || order.status === "closed") {
@@ -346,7 +346,7 @@ export function applyPaymentToInvoice(
 }
 
 export function createApproval(
-  state: ErpState,
+  state: State,
   spec: {
     entityType: Approval["entityType"];
     entityId: string;
@@ -376,7 +376,7 @@ export function createApproval(
 }
 
 export function decideApproval(
-  state: ErpState,
+  state: State,
   approval: Approval,
   decision: "approved" | "rejected",
   decidedByUserId: string,
@@ -402,7 +402,7 @@ export function decideApproval(
 }
 
 export function audit(
-  state: ErpState,
+  state: State,
   actorUserId: string,
   action: string,
   entityType: AuditEntityType,
@@ -421,7 +421,7 @@ export function audit(
 }
 
 /** Resolves and validates the acting user; every mutating tool takes one. */
-export function actor(state: ErpState, userId: string): User {
+export function actor(state: State, userId: string): User {
   const user = requireUser(state, userId);
 
   if (!user.isActive) {
@@ -500,7 +500,7 @@ export const productSummary = (product: Product) => ({
   standardCost: product.standardCost,
 });
 
-export const inventorySummary = (state: ErpState, record: InventoryRecord) => ({
+export const inventorySummary = (state: State, record: InventoryRecord) => ({
   productId: record.productId,
   warehouseId: record.warehouseId,
   quantityOnHand: record.quantityOnHand,

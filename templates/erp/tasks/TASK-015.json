@@ -1,0 +1,13 @@
+{
+  "id": "TASK-015",
+  "title": "Escalate a requisition that exceeds an approval limit",
+  "instruction": "Requisition PR-006 for the Reno automation programme is sitting with Priya Nair (USR-003), but it is above her approval limit. Route it to someone who is authorised to approve that amount, then have them approve it. Do not change the requisition's value.",
+  "difficulty": "hard",
+  "verifierId": "VER-015",
+  "entities": [
+    "PR-006",
+    "APR-005",
+    "USR-003",
+    "USR-008"
+  ]
+}

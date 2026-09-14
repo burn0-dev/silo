@@ -44,7 +44,7 @@ export {
   vendorTools,
 };
 
-export const erpTools: ErpTool[] = [
+export const tools: ErpTool[] = [
   ...clockTools,
   ...vendorTools,
   ...customerTools,
@@ -65,29 +65,3 @@ export const erpTools: ErpTool[] = [
   ...reportingTools,
   ...auditTools,
 ];
-
-export function getTool(name: string): ErpTool | undefined {
-  return erpTools.find((tool) => tool.name === name);
-}
-
-export const toolsByDomain: Record<string, ErpTool[]> = {
-  clock: clockTools,
-  vendors: vendorTools,
-  customers: customerTools,
-  products: productTools,
-  inventory: inventoryTools,
-  requisitions: requisitionTools,
-  approvals: approvalTools,
-  rfqs: rfqTools,
-  quotations: quotationTools,
-  purchaseOrders: purchaseOrderTools,
-  receiving: receivingTools,
-  vendorInvoices: vendorInvoiceTools,
-  payments: paymentTools,
-  salesOrders: salesOrderTools,
-  customerInvoices: customerInvoiceTools,
-  expenses: expenseTools,
-  budgets: budgetTools,
-  reporting: reportingTools,
-  audit: auditTools,
-};

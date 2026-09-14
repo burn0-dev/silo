@@ -1,0 +1,422 @@
+[
+  {
+    "id": "APR-001",
+    "entityType": "requisition",
+    "entityId": "PR-001",
+    "status": "approved",
+    "requestedByUserId": "USR-004",
+    "assignedToUserId": "USR-003",
+    "amount": {
+      "amount": 5665,
+      "currency": "USD"
+    },
+    "requestedAt": "2026-02-02T14:40:00.000Z",
+    "decidedAt": "2026-02-04T09:20:00.000Z",
+    "decidedByUserId": "USR-003",
+    "notes": [
+      "Within MRO budget."
+    ]
+  },
+  {
+    "id": "APR-002",
+    "entityType": "requisition",
+    "entityId": "PR-002",
+    "status": "pending",
+    "requestedByUserId": "USR-011",
+    "assignedToUserId": "USR-003",
+    "amount": {
+      "amount": 3900,
+      "currency": "USD"
+    },
+    "requestedAt": "2026-03-10T08:30:00.000Z",
+    "decidedAt": null,
+    "decidedByUserId": null,
+    "notes": []
+  },
+  {
+    "id": "APR-003",
+    "entityType": "requisition",
+    "entityId": "PR-003",
+    "status": "approved",
+    "requestedByUserId": "USR-004",
+    "assignedToUserId": "USR-003",
+    "amount": {
+      "amount": 7600,
+      "currency": "USD"
+    },
+    "requestedAt": "2026-02-24T11:25:00.000Z",
+    "decidedAt": "2026-02-25T15:10:00.000Z",
+    "decidedByUserId": "USR-003",
+    "notes": [
+      "Go to market for competitive quotes."
+    ]
+  },
+  {
+    "id": "APR-004",
+    "entityType": "requisition",
+    "entityId": "PR-004",
+    "status": "rejected",
+    "requestedByUserId": "USR-001",
+    "assignedToUserId": "USR-008",
+    "amount": {
+      "amount": 6150,
+      "currency": "USD"
+    },
+    "requestedAt": "2026-02-18T10:00:00.000Z",
+    "decidedAt": "2026-02-19T13:35:00.000Z",
+    "decidedByUserId": "USR-008",
+    "notes": [
+      "Deferred to Q3; retrofit schedule moved."
+    ]
+  },
+  {
+    "id": "APR-005",
+    "entityType": "requisition",
+    "entityId": "PR-006",
+    "status": "pending",
+    "requestedByUserId": "USR-005",
+    "assignedToUserId": "USR-003",
+    "amount": {
+      "amount": 176200,
+      "currency": "USD"
+    },
+    "requestedAt": "2026-03-12T08:10:00.000Z",
+    "decidedAt": null,
+    "decidedByUserId": null,
+    "notes": [
+      "Exceeds procurement manager limit; needs controller sign-off."
+    ]
+  },
+  {
+    "id": "APR-006",
+    "entityType": "purchase_order",
+    "entityId": "PO-201",
+    "status": "approved",
+    "requestedByUserId": "USR-002",
+    "assignedToUserId": "USR-003",
+    "amount": {
+      "amount": 5907.6,
+      "currency": "USD"
+    },
+    "requestedAt": "2026-02-13T13:05:00.000Z",
+    "decidedAt": "2026-02-14T08:40:00.000Z",
+    "decidedByUserId": "USR-003",
+    "notes": []
+  },
+  {
+    "id": "APR-007",
+    "entityType": "purchase_order",
+    "entityId": "PO-202",
+    "status": "approved",
+    "requestedByUserId": "USR-002",
+    "assignedToUserId": "USR-003",
+    "amount": {
+      "amount": 14731.2,
+      "currency": "USD"
+    },
+    "requestedAt": "2026-02-20T10:20:00.000Z",
+    "decidedAt": "2026-02-21T09:05:00.000Z",
+    "decidedByUserId": "USR-003",
+    "notes": []
+  },
+  {
+    "id": "APR-008",
+    "entityType": "purchase_order",
+    "entityId": "PO-203",
+    "status": "approved",
+    "requestedByUserId": "USR-002",
+    "assignedToUserId": "USR-003",
+    "amount": {
+      "amount": 8002.8,
+      "currency": "USD"
+    },
+    "requestedAt": "2026-02-25T14:10:00.000Z",
+    "decidedAt": "2026-02-26T08:55:00.000Z",
+    "decidedByUserId": "USR-003",
+    "notes": []
+  },
+  {
+    "id": "APR-009",
+    "entityType": "purchase_order",
+    "entityId": "PO-204",
+    "status": "approved",
+    "requestedByUserId": "USR-002",
+    "assignedToUserId": "USR-003",
+    "amount": {
+      "amount": 10346.4,
+      "currency": "USD"
+    },
+    "requestedAt": "2026-03-02T11:30:00.000Z",
+    "decidedAt": "2026-03-03T10:15:00.000Z",
+    "decidedByUserId": "USR-003",
+    "notes": []
+  },
+  {
+    "id": "APR-010",
+    "entityType": "purchase_order",
+    "entityId": "PO-205",
+    "status": "pending",
+    "requestedByUserId": "USR-002",
+    "assignedToUserId": "USR-003",
+    "amount": {
+      "amount": 14763.6,
+      "currency": "USD"
+    },
+    "requestedAt": "2026-03-11T15:45:00.000Z",
+    "decidedAt": null,
+    "decidedByUserId": null,
+    "notes": []
+  },
+  {
+    "id": "APR-011",
+    "entityType": "purchase_order",
+    "entityId": "PO-206",
+    "status": "approved",
+    "requestedByUserId": "USR-002",
+    "assignedToUserId": "USR-003",
+    "amount": {
+      "amount": 7084.8,
+      "currency": "USD"
+    },
+    "requestedAt": "2026-02-27T09:10:00.000Z",
+    "decidedAt": "2026-02-28T08:30:00.000Z",
+    "decidedByUserId": "USR-003",
+    "notes": []
+  },
+  {
+    "id": "APR-012",
+    "entityType": "purchase_order",
+    "entityId": "PO-207",
+    "status": "approved",
+    "requestedByUserId": "USR-002",
+    "assignedToUserId": "USR-003",
+    "amount": {
+      "amount": 4989.6,
+      "currency": "USD"
+    },
+    "requestedAt": "2026-02-24T10:05:00.000Z",
+    "decidedAt": "2026-02-25T09:40:00.000Z",
+    "decidedByUserId": "USR-003",
+    "notes": []
+  },
+  {
+    "id": "APR-013",
+    "entityType": "purchase_order",
+    "entityId": "PO-208",
+    "status": "approved",
+    "requestedByUserId": "USR-002",
+    "assignedToUserId": "USR-003",
+    "amount": {
+      "amount": 5637.6,
+      "currency": "USD"
+    },
+    "requestedAt": "2026-03-13T09:25:00.000Z",
+    "decidedAt": "2026-03-14T08:15:00.000Z",
+    "decidedByUserId": "USR-003",
+    "notes": []
+  },
+  {
+    "id": "APR-014",
+    "entityType": "purchase_order",
+    "entityId": "PO-209",
+    "status": "approved",
+    "requestedByUserId": "USR-002",
+    "assignedToUserId": "USR-003",
+    "amount": {
+      "amount": 5076,
+      "currency": "USD"
+    },
+    "requestedAt": "2026-02-26T13:50:00.000Z",
+    "decidedAt": "2026-02-27T08:20:00.000Z",
+    "decidedByUserId": "USR-003",
+    "notes": []
+  },
+  {
+    "id": "APR-015",
+    "entityType": "vendor_invoice",
+    "entityId": "VINV-101",
+    "status": "approved",
+    "requestedByUserId": "USR-006",
+    "assignedToUserId": "USR-007",
+    "amount": {
+      "amount": 5907.6,
+      "currency": "USD"
+    },
+    "requestedAt": "2026-02-26T10:00:00.000Z",
+    "decidedAt": "2026-02-27T11:20:00.000Z",
+    "decidedByUserId": "USR-007",
+    "notes": [
+      "Three-way match clean."
+    ]
+  },
+  {
+    "id": "APR-016",
+    "entityType": "vendor_invoice",
+    "entityId": "VINV-102",
+    "status": "approved",
+    "requestedByUserId": "USR-006",
+    "assignedToUserId": "USR-007",
+    "amount": {
+      "amount": 10775.16,
+      "currency": "USD"
+    },
+    "requestedAt": "2026-03-11T09:30:00.000Z",
+    "decidedAt": "2026-03-12T10:05:00.000Z",
+    "decidedByUserId": "USR-007",
+    "notes": [
+      "Damaged hose credited by vendor."
+    ]
+  },
+  {
+    "id": "APR-017",
+    "entityType": "vendor_invoice",
+    "entityId": "VINV-103",
+    "status": "pending",
+    "requestedByUserId": "USR-006",
+    "assignedToUserId": "USR-007",
+    "amount": {
+      "amount": 7430.4,
+      "currency": "USD"
+    },
+    "requestedAt": "2026-03-10T14:15:00.000Z",
+    "decidedAt": null,
+    "decidedByUserId": null,
+    "notes": [
+      "Blocked: unit price above purchase order price."
+    ]
+  },
+  {
+    "id": "APR-018",
+    "entityType": "vendor_invoice",
+    "entityId": "VINV-104",
+    "status": "pending",
+    "requestedByUserId": "USR-006",
+    "assignedToUserId": "USR-007",
+    "amount": {
+      "amount": 8002.8,
+      "currency": "USD"
+    },
+    "requestedAt": "2026-03-10T15:00:00.000Z",
+    "decidedAt": null,
+    "decidedByUserId": null,
+    "notes": [
+      "Blocked: invoiced quantity exceeds received quantity."
+    ]
+  },
+  {
+    "id": "APR-019",
+    "entityType": "vendor_invoice",
+    "entityId": "VINV-107",
+    "status": "approved",
+    "requestedByUserId": "USR-006",
+    "assignedToUserId": "USR-007",
+    "amount": {
+      "amount": 5076,
+      "currency": "USD"
+    },
+    "requestedAt": "2026-03-05T09:45:00.000Z",
+    "decidedAt": "2026-03-06T09:10:00.000Z",
+    "decidedByUserId": "USR-007",
+    "notes": []
+  },
+  {
+    "id": "APR-020",
+    "entityType": "vendor_invoice",
+    "entityId": "VINV-108",
+    "status": "approved",
+    "requestedByUserId": "USR-006",
+    "assignedToUserId": "USR-007",
+    "amount": {
+      "amount": 2527.2,
+      "currency": "USD"
+    },
+    "requestedAt": "2026-01-27T10:30:00.000Z",
+    "decidedAt": "2026-01-28T09:00:00.000Z",
+    "decidedByUserId": "USR-007",
+    "notes": [
+      "Non-PO freight invoice; coded to logistics."
+    ]
+  },
+  {
+    "id": "APR-021",
+    "entityType": "payment",
+    "entityId": "PAY-002",
+    "status": "pending",
+    "requestedByUserId": "USR-006",
+    "assignedToUserId": "USR-008",
+    "amount": {
+      "amount": 10775.16,
+      "currency": "USD"
+    },
+    "requestedAt": "2026-03-13T11:00:00.000Z",
+    "decidedAt": null,
+    "decidedByUserId": null,
+    "notes": []
+  },
+  {
+    "id": "APR-022",
+    "entityType": "expense",
+    "entityId": "EXP-001",
+    "status": "approved",
+    "requestedByUserId": "USR-002",
+    "assignedToUserId": "USR-008",
+    "amount": {
+      "amount": 1240,
+      "currency": "USD"
+    },
+    "requestedAt": "2026-02-06T08:20:00.000Z",
+    "decidedAt": "2026-02-09T10:45:00.000Z",
+    "decidedByUserId": "USR-008",
+    "notes": []
+  },
+  {
+    "id": "APR-023",
+    "entityType": "expense",
+    "entityId": "EXP-002",
+    "status": "pending",
+    "requestedByUserId": "USR-011",
+    "assignedToUserId": "USR-008",
+    "amount": {
+      "amount": 480,
+      "currency": "USD"
+    },
+    "requestedAt": "2026-03-12T13:40:00.000Z",
+    "decidedAt": null,
+    "decidedByUserId": null,
+    "notes": []
+  },
+  {
+    "id": "APR-024",
+    "entityType": "expense",
+    "entityId": "EXP-003",
+    "status": "approved",
+    "requestedByUserId": "USR-009",
+    "assignedToUserId": "USR-008",
+    "amount": {
+      "amount": 865.5,
+      "currency": "USD"
+    },
+    "requestedAt": "2026-03-04T16:05:00.000Z",
+    "decidedAt": "2026-03-05T09:30:00.000Z",
+    "decidedByUserId": "USR-008",
+    "notes": []
+  },
+  {
+    "id": "APR-025",
+    "entityType": "expense",
+    "entityId": "EXP-005",
+    "status": "rejected",
+    "requestedByUserId": "USR-006",
+    "assignedToUserId": "USR-008",
+    "amount": {
+      "amount": 320,
+      "currency": "USD"
+    },
+    "requestedAt": "2026-02-20T11:15:00.000Z",
+    "decidedAt": "2026-02-21T09:50:00.000Z",
+    "decidedByUserId": "USR-008",
+    "notes": [
+      "Duplicate of EXP-001 travel claim."
+    ]
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "id": "CMP-001",
+  "name": "Meridian Industrial Supply",
+  "legalName": "Meridian Industrial Supply Co., Inc.",
+  "taxId": "US-84-2310977",
+  "baseCurrency": "USD",
+  "fiscalYear": "FY2026",
+  "fiscalYearStart": "2026-01-01T00:00:00.000Z",
+  "address": {
+    "line1": "4400 Corporate Parkway",
+    "city": "Columbus",
+    "region": "OH",
+    "postalCode": "43219",
+    "country": "US"
+  }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "DISC-001",
+    "goodsReceiptId": "GR-003",
+    "purchaseOrderId": "PO-203",
+    "purchaseOrderLineId": "PO-203-L1",
+    "productId": "PRD-004",
+    "type": "shortage",
+    "quantityExpected": 400,
+    "quantityReceived": 250,
+    "status": "open",
+    "reportedByUserId": "USR-012",
+    "reportedAt": "2026-03-07T09:55:00.000Z",
+    "resolvedAt": null,
+    "resolution": null
+  },
+  {
+    "id": "DISC-002",
+    "goodsReceiptId": "GR-002",
+    "purchaseOrderId": "PO-202",
+    "purchaseOrderLineId": "PO-202-L2",
+    "productId": "PRD-008",
+    "type": "damage",
+    "quantityExpected": 600,
+    "quantityReceived": 595,
+    "status": "resolved",
+    "reportedByUserId": "USR-004",
+    "reportedAt": "2026-03-09T10:45:00.000Z",
+    "resolvedAt": "2026-03-11T09:20:00.000Z",
+    "resolution": "Vendor credited the 5 damaged metres on invoice VINV-102."
+  }
+]

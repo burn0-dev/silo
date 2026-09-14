@@ -1,0 +1,11 @@
+{
+  "id": "TASK-013",
+  "title": "Resolve a price mismatch on a grease invoice",
+  "instruction": "Invoice VINV-103 from Northfield Lubricants is blocked. Establish the cause. Procurement has confirmed the purchase order price of $82.00 per drum is the agreed price and the vendor billed the wrong rate. Correct the invoice to the agreed price, re-match it, and approve it. Marcus Lindqvist (USR-006) handles the invoice; Sofia Duarte (USR-007) approves.",
+  "difficulty": "hard",
+  "verifierId": "VER-013",
+  "entities": [
+    "VINV-103",
+    "PO-206"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "TASK-006",
+  "title": "Rebalance stock to a warehouse below its reorder point",
+  "instruction": "V-Belt A42 (PRD-010) at Warehouse South (WH-002) has fallen below its reorder point. Move 200 units from Warehouse North (WH-001), which is well stocked, so that Warehouse South is back above its reorder point. Act as Helen Vasquez (USR-005).",
+  "difficulty": "medium",
+  "verifierId": "VER-006",
+  "entities": [
+    "PRD-010",
+    "WH-001",
+    "WH-002"
+  ]
+}

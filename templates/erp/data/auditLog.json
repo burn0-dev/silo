@@ -1,0 +1,202 @@
+[
+  {
+    "id": "AUD-0001",
+    "at": "2026-02-04T09:20:00.000Z",
+    "actorUserId": "USR-003",
+    "action": "requisition.approved",
+    "entityType": "requisition",
+    "entityId": "PR-001",
+    "summary": "Approved requisition PR-001 for $5,665.00",
+    "changes": []
+  },
+  {
+    "id": "AUD-0002",
+    "at": "2026-02-13T09:30:00.000Z",
+    "actorUserId": "USR-002",
+    "action": "quotation.accepted",
+    "entityType": "quotation",
+    "entityId": "QUO-001",
+    "summary": "Accepted quotation QUO-001 from Kessler Bearing Works",
+    "changes": []
+  },
+  {
+    "id": "AUD-0003",
+    "at": "2026-02-14T08:40:00.000Z",
+    "actorUserId": "USR-003",
+    "action": "purchase_order.approved",
+    "entityType": "purchase_order",
+    "entityId": "PO-201",
+    "summary": "Approved purchase order PO-201 for $5,907.60",
+    "changes": []
+  },
+  {
+    "id": "AUD-0004",
+    "at": "2026-02-19T13:35:00.000Z",
+    "actorUserId": "USR-008",
+    "action": "requisition.rejected",
+    "entityType": "requisition",
+    "entityId": "PR-004",
+    "summary": "Rejected requisition PR-004 — deferred to Q3",
+    "changes": []
+  },
+  {
+    "id": "AUD-0005",
+    "at": "2026-02-23T13:45:00.000Z",
+    "actorUserId": "USR-004",
+    "action": "goods_receipt.posted",
+    "entityType": "goods_receipt",
+    "entityId": "GR-001",
+    "summary": "Posted goods receipt GR-001 against PO-201",
+    "changes": []
+  },
+  {
+    "id": "AUD-0006",
+    "at": "2026-02-27T11:20:00.000Z",
+    "actorUserId": "USR-007",
+    "action": "vendor_invoice.approved",
+    "entityType": "vendor_invoice",
+    "entityId": "VINV-101",
+    "summary": "Approved vendor invoice VINV-101 after clean three-way match",
+    "changes": []
+  },
+  {
+    "id": "AUD-0007",
+    "at": "2026-03-02T13:00:00.000Z",
+    "actorUserId": "USR-006",
+    "action": "payment.completed",
+    "entityType": "payment",
+    "entityId": "PAY-004",
+    "summary": "Recorded customer receipt of $4,482.00 against CINV-401",
+    "changes": []
+  },
+  {
+    "id": "AUD-0008",
+    "at": "2026-03-04T16:45:00.000Z",
+    "actorUserId": "USR-006",
+    "action": "payment.failed",
+    "entityType": "payment",
+    "entityId": "PAY-003",
+    "summary": "Payment PAY-003 failed — vendor bank details rejected",
+    "changes": []
+  },
+  {
+    "id": "AUD-0009",
+    "at": "2026-03-05T11:30:00.000Z",
+    "actorUserId": "USR-002",
+    "action": "purchase_order.cancelled",
+    "entityType": "purchase_order",
+    "entityId": "PO-207",
+    "summary": "Cancelled PO-207 — requirement withdrawn by Facilities",
+    "changes": []
+  },
+  {
+    "id": "AUD-0010",
+    "at": "2026-03-06T09:10:00.000Z",
+    "actorUserId": "USR-007",
+    "action": "vendor_invoice.approved",
+    "entityType": "vendor_invoice",
+    "entityId": "VINV-107",
+    "summary": "Approved vendor invoice VINV-107 for $5,076.00",
+    "changes": []
+  },
+  {
+    "id": "AUD-0011",
+    "at": "2026-03-06T14:00:00.000Z",
+    "actorUserId": "USR-006",
+    "action": "payment.completed",
+    "entityType": "payment",
+    "entityId": "PAY-001",
+    "summary": "Paid vendor invoice VINV-101 in full",
+    "changes": []
+  },
+  {
+    "id": "AUD-0012",
+    "at": "2026-03-06T15:10:00.000Z",
+    "actorUserId": "USR-008",
+    "action": "customer.status_changed",
+    "entityType": "customer",
+    "entityId": "CUS-005",
+    "summary": "Placed Ridgeway Mining Services on credit hold",
+    "changes": []
+  },
+  {
+    "id": "AUD-0013",
+    "at": "2026-03-07T09:55:00.000Z",
+    "actorUserId": "USR-012",
+    "action": "discrepancy.reported",
+    "entityType": "discrepancy",
+    "entityId": "DISC-001",
+    "summary": "Reported shortage on GR-003 — 250 of 400 boxes received",
+    "changes": []
+  },
+  {
+    "id": "AUD-0014",
+    "at": "2026-03-08T15:35:00.000Z",
+    "actorUserId": "USR-012",
+    "action": "goods_receipt.cancelled",
+    "entityType": "goods_receipt",
+    "entityId": "GR-005",
+    "summary": "Cancelled duplicate goods receipt GR-005",
+    "changes": []
+  },
+  {
+    "id": "AUD-0015",
+    "at": "2026-03-10T14:55:00.000Z",
+    "actorUserId": "USR-006",
+    "action": "three_way_match.failed",
+    "entityType": "three_way_match",
+    "entityId": "MATCH-004",
+    "summary": "Three-way match failed for VINV-104 — quantity variance on PO-203",
+    "changes": []
+  },
+  {
+    "id": "AUD-0016",
+    "at": "2026-03-10T14:10:00.000Z",
+    "actorUserId": "USR-006",
+    "action": "three_way_match.failed",
+    "entityType": "three_way_match",
+    "entityId": "MATCH-003",
+    "summary": "Three-way match failed for VINV-103 — price variance on PO-206",
+    "changes": []
+  },
+  {
+    "id": "AUD-0017",
+    "at": "2026-03-11T09:20:00.000Z",
+    "actorUserId": "USR-004",
+    "action": "discrepancy.resolved",
+    "entityType": "discrepancy",
+    "entityId": "DISC-002",
+    "summary": "Resolved damage discrepancy DISC-002 with vendor credit",
+    "changes": []
+  },
+  {
+    "id": "AUD-0018",
+    "at": "2026-03-11T16:20:00.000Z",
+    "actorUserId": "USR-012",
+    "action": "fulfillment.shipped",
+    "entityType": "fulfillment",
+    "entityId": "FUL-002",
+    "summary": "Shipped partial fulfillment FUL-002 against SO-302",
+    "changes": []
+  },
+  {
+    "id": "AUD-0019",
+    "at": "2026-03-13T09:00:00.000Z",
+    "actorUserId": "USR-010",
+    "action": "sales_order.reservation_released",
+    "entityType": "sales_order",
+    "entityId": "SO-305",
+    "summary": "Released 40 units of PRD-012 — customer on credit hold",
+    "changes": []
+  },
+  {
+    "id": "AUD-0020",
+    "at": "2026-03-14T08:15:00.000Z",
+    "actorUserId": "USR-003",
+    "action": "purchase_order.approved",
+    "entityType": "purchase_order",
+    "entityId": "PO-208",
+    "summary": "Approved purchase order PO-208 for $5,637.60",
+    "changes": []
+  }
+]

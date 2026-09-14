@@ -1,0 +1,272 @@
+[
+  {
+    "id": "PO-201",
+    "vendorId": "VEN-001",
+    "status": "closed",
+    "warehouseId": "WH-001",
+    "paymentTerms": "NET_30",
+    "createdByUserId": "USR-002",
+    "createdAt": "2026-02-13T13:00:00.000Z",
+    "expectedDeliveryDate": "2026-02-24T00:00:00.000Z",
+    "requisitionId": "PR-001",
+    "quotationId": "QUO-001",
+    "budgetId": "BUD-002",
+    "approvalId": "APR-006",
+    "approvedAt": "2026-02-14T08:40:00.000Z",
+    "approvedByUserId": "USR-003",
+    "sentAt": "2026-02-14T09:15:00.000Z",
+    "closedAt": "2026-03-06T16:00:00.000Z",
+    "lines": [
+      {
+        "productId": "PRD-001",
+        "description": "Deep Groove Ball Bearing 6205-2RS",
+        "ordered": 500,
+        "unitPrice": 4.1,
+        "received": 500,
+        "invoiced": 500,
+        "expectedDate": "2026-02-24T00:00:00.000Z"
+      },
+      {
+        "productId": "PRD-002",
+        "description": "Tapered Roller Bearing 30206",
+        "ordered": 300,
+        "unitPrice": 11.4,
+        "received": 300,
+        "invoiced": 300,
+        "expectedDate": "2026-02-24T00:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "PO-202",
+    "vendorId": "VEN-003",
+    "status": "partially_received",
+    "warehouseId": "WH-001",
+    "paymentTerms": "NET_30",
+    "createdByUserId": "USR-002",
+    "createdAt": "2026-02-20T10:15:00.000Z",
+    "expectedDeliveryDate": "2026-03-10T00:00:00.000Z",
+    "budgetId": "BUD-002",
+    "approvalId": "APR-007",
+    "approvedAt": "2026-02-21T09:05:00.000Z",
+    "approvedByUserId": "USR-003",
+    "sentAt": "2026-02-21T09:50:00.000Z",
+    "lines": [
+      {
+        "productId": "PRD-007",
+        "description": "Hydraulic Cylinder 50mm Bore",
+        "ordered": 40,
+        "unitPrice": 242,
+        "received": 25,
+        "invoiced": 25,
+        "expectedDate": "2026-03-10T00:00:00.000Z"
+      },
+      {
+        "productId": "PRD-008",
+        "description": "Hydraulic Hose 1/2in R2",
+        "ordered": 600,
+        "unitPrice": 6.6,
+        "received": 595,
+        "rejected": 5,
+        "invoiced": 595,
+        "expectedDate": "2026-03-10T00:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "PO-203",
+    "vendorId": "VEN-002",
+    "status": "partially_received",
+    "warehouseId": "WH-002",
+    "paymentTerms": "NET_45",
+    "createdByUserId": "USR-002",
+    "createdAt": "2026-02-25T14:05:00.000Z",
+    "expectedDeliveryDate": "2026-03-08T00:00:00.000Z",
+    "budgetId": "BUD-002",
+    "approvalId": "APR-008",
+    "approvedAt": "2026-02-26T08:55:00.000Z",
+    "approvedByUserId": "USR-003",
+    "sentAt": "2026-02-26T09:30:00.000Z",
+    "lines": [
+      {
+        "productId": "PRD-004",
+        "description": "Hex Bolt M8x40 Zinc (box of 100)",
+        "ordered": 400,
+        "unitPrice": 11.7,
+        "received": 250,
+        "invoiced": 400,
+        "expectedDate": "2026-03-08T00:00:00.000Z"
+      },
+      {
+        "productId": "PRD-006",
+        "description": "Nylon Lock Nut M8 (box of 200)",
+        "ordered": 300,
+        "unitPrice": 9.1,
+        "received": 300,
+        "invoiced": 300,
+        "expectedDate": "2026-03-08T00:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "PO-204",
+    "vendorId": "VEN-005",
+    "status": "sent",
+    "warehouseId": "WH-003",
+    "paymentTerms": "NET_30",
+    "createdByUserId": "USR-002",
+    "createdAt": "2026-03-02T11:25:00.000Z",
+    "expectedDeliveryDate": "2026-03-24T00:00:00.000Z",
+    "budgetId": "BUD-002",
+    "approvalId": "APR-009",
+    "approvedAt": "2026-03-03T10:15:00.000Z",
+    "approvedByUserId": "USR-003",
+    "sentAt": "2026-03-03T11:00:00.000Z",
+    "lines": [
+      {
+        "productId": "PRD-013",
+        "description": "Contactor 32A 3-Pole",
+        "ordered": 120,
+        "unitPrice": 41.5,
+        "expectedDate": "2026-03-24T00:00:00.000Z"
+      },
+      {
+        "productId": "PRD-015",
+        "description": "Control Cable 4-Core",
+        "ordered": 2000,
+        "unitPrice": 2.3,
+        "expectedDate": "2026-03-24T00:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "PO-205",
+    "vendorId": "VEN-004",
+    "status": "pending_approval",
+    "warehouseId": "WH-001",
+    "paymentTerms": "NET_60",
+    "createdByUserId": "USR-002",
+    "createdAt": "2026-03-11T15:40:00.000Z",
+    "expectedDeliveryDate": "2026-04-10T00:00:00.000Z",
+    "budgetId": "BUD-001",
+    "approvalId": "APR-010",
+    "lines": [
+      {
+        "productId": "PRD-011",
+        "description": "Timing Belt 8M-1600",
+        "ordered": 150,
+        "unitPrice": 33.8,
+        "expectedDate": "2026-04-10T00:00:00.000Z"
+      },
+      {
+        "productId": "PRD-012",
+        "description": "Roller Chain RC80 (10ft)",
+        "ordered": 100,
+        "unitPrice": 86,
+        "expectedDate": "2026-04-10T00:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "PO-206",
+    "vendorId": "VEN-010",
+    "status": "received",
+    "warehouseId": "WH-002",
+    "paymentTerms": "NET_45",
+    "createdByUserId": "USR-002",
+    "createdAt": "2026-02-27T09:05:00.000Z",
+    "expectedDeliveryDate": "2026-03-09T00:00:00.000Z",
+    "budgetId": "BUD-002",
+    "approvalId": "APR-011",
+    "approvedAt": "2026-02-28T08:30:00.000Z",
+    "approvedByUserId": "USR-003",
+    "sentAt": "2026-02-28T09:00:00.000Z",
+    "lines": [
+      {
+        "productId": "PRD-021",
+        "description": "EP2 Lithium Grease 18kg",
+        "ordered": 80,
+        "unitPrice": 82,
+        "received": 80,
+        "invoiced": 80,
+        "expectedDate": "2026-03-09T00:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "PO-207",
+    "vendorId": "VEN-009",
+    "status": "cancelled",
+    "warehouseId": "WH-001",
+    "paymentTerms": "NET_30",
+    "createdByUserId": "USR-002",
+    "createdAt": "2026-02-24T10:00:00.000Z",
+    "expectedDeliveryDate": "2026-03-12T00:00:00.000Z",
+    "budgetId": "BUD-004",
+    "approvalId": "APR-012",
+    "approvedAt": "2026-02-25T09:40:00.000Z",
+    "approvedByUserId": "USR-003",
+    "sentAt": "2026-02-25T10:10:00.000Z",
+    "cancelledAt": "2026-03-05T11:30:00.000Z",
+    "cancelReason": "Facilities withdrew the requirement; stock covered by transfer.",
+    "lines": [
+      {
+        "productId": "PRD-020",
+        "description": "Cut-Resistant Gloves Level 5 (case of 60)",
+        "ordered": 30,
+        "unitPrice": 154,
+        "invoiced": 30,
+        "expectedDate": "2026-03-12T00:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "PO-208",
+    "vendorId": "VEN-006",
+    "status": "approved",
+    "warehouseId": "WH-001",
+    "paymentTerms": "NET_15",
+    "createdByUserId": "USR-002",
+    "createdAt": "2026-03-13T09:20:00.000Z",
+    "expectedDeliveryDate": "2026-03-30T00:00:00.000Z",
+    "budgetId": "BUD-001",
+    "approvalId": "APR-013",
+    "approvedAt": "2026-03-14T08:15:00.000Z",
+    "approvedByUserId": "USR-003",
+    "lines": [
+      {
+        "productId": "PRD-016",
+        "description": "Impact Wrench 1/2in",
+        "ordered": 30,
+        "unitPrice": 174,
+        "expectedDate": "2026-03-30T00:00:00.000Z"
+      }
+    ]
+  },
+  {
+    "id": "PO-209",
+    "vendorId": "VEN-006",
+    "status": "received",
+    "warehouseId": "WH-001",
+    "paymentTerms": "NET_15",
+    "createdByUserId": "USR-002",
+    "createdAt": "2026-02-26T13:45:00.000Z",
+    "expectedDeliveryDate": "2026-03-04T00:00:00.000Z",
+    "budgetId": "BUD-001",
+    "approvalId": "APR-014",
+    "approvedAt": "2026-02-27T08:20:00.000Z",
+    "approvedByUserId": "USR-003",
+    "sentAt": "2026-02-27T08:55:00.000Z",
+    "lines": [
+      {
+        "productId": "PRD-017",
+        "description": "Torque Wrench 200Nm",
+        "ordered": 50,
+        "unitPrice": 94,
+        "received": 50,
+        "invoiced": 50,
+        "expectedDate": "2026-03-04T00:00:00.000Z"
+      }
+    ]
+  }
+]

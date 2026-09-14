@@ -1,0 +1,218 @@
+[
+  {
+    "id": "PR-001",
+    "number": "PR-001",
+    "requesterUserId": "USR-004",
+    "departmentId": "DEPT-OPS",
+    "status": "converted",
+    "lines": [
+      {
+        "id": "PR-001-L1",
+        "productId": "PRD-001",
+        "quantity": 500,
+        "estimatedUnitPrice": {
+          "amount": 4.25,
+          "currency": "USD"
+        },
+        "neededBy": "2026-03-01T00:00:00.000Z"
+      },
+      {
+        "id": "PR-001-L2",
+        "productId": "PRD-002",
+        "quantity": 300,
+        "estimatedUnitPrice": {
+          "amount": 11.8,
+          "currency": "USD"
+        },
+        "neededBy": "2026-03-01T00:00:00.000Z"
+      }
+    ],
+    "justification": "Bearing stock at Warehouse North is below reorder point.",
+    "estimatedTotal": {
+      "amount": 5665,
+      "currency": "USD"
+    },
+    "budgetId": "BUD-002",
+    "createdAt": "2026-02-02T10:15:00.000Z",
+    "submittedAt": "2026-02-02T14:40:00.000Z",
+    "decidedAt": "2026-02-04T09:20:00.000Z",
+    "approvalId": "APR-001",
+    "rfqId": "RFQ-001",
+    "purchaseOrderId": "PO-201"
+  },
+  {
+    "id": "PR-002",
+    "number": "PR-002",
+    "requesterUserId": "USR-011",
+    "departmentId": "DEPT-FAC",
+    "status": "pending_approval",
+    "lines": [
+      {
+        "id": "PR-002-L1",
+        "productId": "PRD-020",
+        "quantity": 25,
+        "estimatedUnitPrice": {
+          "amount": 156,
+          "currency": "USD"
+        },
+        "neededBy": "2026-04-01T00:00:00.000Z"
+      }
+    ],
+    "justification": "Q2 PPE replenishment for the maintenance crews.",
+    "estimatedTotal": {
+      "amount": 3900,
+      "currency": "USD"
+    },
+    "budgetId": "BUD-004",
+    "createdAt": "2026-03-10T08:05:00.000Z",
+    "submittedAt": "2026-03-10T08:30:00.000Z",
+    "decidedAt": null,
+    "approvalId": "APR-002",
+    "rfqId": null,
+    "purchaseOrderId": null
+  },
+  {
+    "id": "PR-003",
+    "number": "PR-003",
+    "requesterUserId": "USR-004",
+    "departmentId": "DEPT-OPS",
+    "status": "approved",
+    "lines": [
+      {
+        "id": "PR-003-L1",
+        "productId": "PRD-008",
+        "quantity": 600,
+        "estimatedUnitPrice": {
+          "amount": 6.75,
+          "currency": "USD"
+        },
+        "neededBy": "2026-04-10T00:00:00.000Z"
+      },
+      {
+        "id": "PR-003-L2",
+        "productId": "PRD-010",
+        "quantity": 500,
+        "estimatedUnitPrice": {
+          "amount": 7.1,
+          "currency": "USD"
+        },
+        "neededBy": "2026-04-10T00:00:00.000Z"
+      }
+    ],
+    "justification": "Hose and belt consumables for the spring maintenance window.",
+    "estimatedTotal": {
+      "amount": 7600,
+      "currency": "USD"
+    },
+    "budgetId": "BUD-002",
+    "createdAt": "2026-02-24T11:00:00.000Z",
+    "submittedAt": "2026-02-24T11:25:00.000Z",
+    "decidedAt": "2026-02-25T15:10:00.000Z",
+    "approvalId": "APR-003",
+    "rfqId": "RFQ-002",
+    "purchaseOrderId": null
+  },
+  {
+    "id": "PR-004",
+    "number": "PR-004",
+    "requesterUserId": "USR-001",
+    "departmentId": "DEPT-IT",
+    "status": "rejected",
+    "lines": [
+      {
+        "id": "PR-004-L1",
+        "productId": "PRD-014",
+        "quantity": 10,
+        "estimatedUnitPrice": {
+          "amount": 615,
+          "currency": "USD"
+        },
+        "neededBy": "2026-03-20T00:00:00.000Z"
+      }
+    ],
+    "justification": "Drive replacements for the conveyor control retrofit.",
+    "estimatedTotal": {
+      "amount": 6150,
+      "currency": "USD"
+    },
+    "budgetId": "BUD-003",
+    "createdAt": "2026-02-18T09:45:00.000Z",
+    "submittedAt": "2026-02-18T10:00:00.000Z",
+    "decidedAt": "2026-02-19T13:35:00.000Z",
+    "approvalId": "APR-004",
+    "rfqId": null,
+    "purchaseOrderId": null
+  },
+  {
+    "id": "PR-005",
+    "number": "PR-005",
+    "requesterUserId": "USR-009",
+    "departmentId": "DEPT-SALES",
+    "status": "draft",
+    "lines": [
+      {
+        "id": "PR-005-L1",
+        "productId": "PRD-016",
+        "quantity": 5,
+        "estimatedUnitPrice": {
+          "amount": 178,
+          "currency": "USD"
+        },
+        "neededBy": "2026-04-15T00:00:00.000Z"
+      }
+    ],
+    "justification": "Demo tools for the regional trade show.",
+    "estimatedTotal": {
+      "amount": 890,
+      "currency": "USD"
+    },
+    "budgetId": "BUD-005",
+    "createdAt": "2026-03-13T16:20:00.000Z",
+    "submittedAt": null,
+    "decidedAt": null,
+    "approvalId": null,
+    "rfqId": null,
+    "purchaseOrderId": null
+  },
+  {
+    "id": "PR-006",
+    "number": "PR-006",
+    "requesterUserId": "USR-005",
+    "departmentId": "DEPT-OPS",
+    "status": "pending_approval",
+    "lines": [
+      {
+        "id": "PR-006-L1",
+        "productId": "PRD-014",
+        "quantity": 120,
+        "estimatedUnitPrice": {
+          "amount": 615,
+          "currency": "USD"
+        },
+        "neededBy": "2026-05-01T00:00:00.000Z"
+      },
+      {
+        "id": "PR-006-L2",
+        "productId": "PRD-009",
+        "quantity": 200,
+        "estimatedUnitPrice": {
+          "amount": 512,
+          "currency": "USD"
+        },
+        "neededBy": "2026-05-01T00:00:00.000Z"
+      }
+    ],
+    "justification": "Capital spares package for the Reno automation programme.",
+    "estimatedTotal": {
+      "amount": 176200,
+      "currency": "USD"
+    },
+    "budgetId": "BUD-002",
+    "createdAt": "2026-03-12T07:50:00.000Z",
+    "submittedAt": "2026-03-12T08:10:00.000Z",
+    "decidedAt": null,
+    "approvalId": "APR-005",
+    "rfqId": null,
+    "purchaseOrderId": null
+  }
+]

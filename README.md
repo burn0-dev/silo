@@ -57,14 +57,18 @@ It writes to `.silo/environments/<name>/`:
 
 ```
 .silo/environments/support-desk/
-├── index.ts       # environment entry point
-├── state.ts       # environment state
-├── seed.ts        # seed data
-├── silo.json      # name, template, selected tools
-├── tools/
-├── tasks/
-└── verifiers/
+├── silo.environment.json  # name, template, entrypoint, selected tools
+├── index.ts               # environment entry point
+├── environment.ts         # loads data/ into a fresh world per rollout
+├── state.ts               # state types and domain helpers
+├── data/                  # datasets as plain JSON
+├── tasks/                 # one JSON file per task
+├── tools/                 # what the agent can call
+└── verifiers/             # what counts as success
 ```
+
+See [docs/authoring.md](docs/authoring.md) for the full authoring workflow, via
+either the CLI or the SDK.
 
 Two templates ship today: **Blank** and **ERP**. Both are copied from `templates/` as
 editable TypeScript source — they are yours to change once generated.

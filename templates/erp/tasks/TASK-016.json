@@ -1,0 +1,12 @@
+{
+  "id": "TASK-016",
+  "title": "Recover a failed vendor payment",
+  "instruction": "The payment against invoice VINV-108 failed because Tri-State Fasteners' bank details were out of date, and the invoice is now overdue. Their finance contact has confirmed new details. Record the corrected contact email as ar@tristatefasteners.example, then put through a fresh payment for the full outstanding amount and complete it so the invoice is settled. Marcus Lindqvist (USR-006) raises payments and Sofia Duarte (USR-007) approves them.",
+  "difficulty": "hard",
+  "verifierId": "VER-016",
+  "entities": [
+    "VINV-108",
+    "PAY-003",
+    "VEN-002"
+  ]
+}

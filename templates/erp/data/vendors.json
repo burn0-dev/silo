@@ -1,0 +1,352 @@
+[
+  {
+    "id": "VEN-001",
+    "code": "KESSLER",
+    "name": "Kessler Bearing Works",
+    "status": "active",
+    "categories": [
+      "bearings",
+      "power transmission"
+    ],
+    "paymentTerms": "NET_30",
+    "currency": "USD",
+    "contact": {
+      "name": "Erik Kessler",
+      "email": "sales@kesslerbearing.example",
+      "phone": "+1-614-555-0142"
+    },
+    "address": {
+      "line1": "1820 Foundry Road",
+      "city": "Cleveland",
+      "region": "OH",
+      "postalCode": "44103",
+      "country": "US"
+    },
+    "taxId": "US-34-7781209",
+    "rating": 4.6,
+    "leadTimeDays": 7,
+    "isPreferred": true,
+    "createdAt": "2021-04-12T00:00:00.000Z",
+    "statusReason": null
+  },
+  {
+    "id": "VEN-002",
+    "code": "TRISTATE",
+    "name": "Tri-State Fasteners",
+    "status": "active",
+    "categories": [
+      "fasteners"
+    ],
+    "paymentTerms": "NET_45",
+    "currency": "USD",
+    "contact": {
+      "name": "Denise Whitaker",
+      "email": "orders@tristatefasteners.example",
+      "phone": "+1-317-555-0118"
+    },
+    "address": {
+      "line1": "77 Industrial Loop",
+      "city": "Indianapolis",
+      "region": "IN",
+      "postalCode": "46241",
+      "country": "US"
+    },
+    "taxId": "US-35-2298471",
+    "rating": 4.1,
+    "leadTimeDays": 5,
+    "isPreferred": false,
+    "createdAt": "2020-09-30T00:00:00.000Z",
+    "statusReason": null
+  },
+  {
+    "id": "VEN-003",
+    "code": "HALVORSEN",
+    "name": "Halvorsen Hydraulics",
+    "status": "active",
+    "categories": [
+      "hydraulics"
+    ],
+    "paymentTerms": "NET_30",
+    "currency": "USD",
+    "contact": {
+      "name": "Nils Halvorsen",
+      "email": "quotes@halvorsenhydraulics.example",
+      "phone": "+1-414-555-0177"
+    },
+    "address": {
+      "line1": "6 Baltic Way",
+      "city": "Milwaukee",
+      "region": "WI",
+      "postalCode": "53204",
+      "country": "US"
+    },
+    "taxId": "US-39-5510923",
+    "rating": 4.4,
+    "leadTimeDays": 14,
+    "isPreferred": true,
+    "createdAt": "2019-06-03T00:00:00.000Z",
+    "statusReason": null
+  },
+  {
+    "id": "VEN-004",
+    "code": "PACBELT",
+    "name": "Pacific Belt & Chain",
+    "status": "active",
+    "categories": [
+      "power transmission"
+    ],
+    "paymentTerms": "NET_60",
+    "currency": "USD",
+    "contact": {
+      "name": "Marisol Vega",
+      "email": "info@pacificbeltchain.example",
+      "phone": "+1-503-555-0163"
+    },
+    "address": {
+      "line1": "2245 Willamette Drive",
+      "city": "Portland",
+      "region": "OR",
+      "postalCode": "97209",
+      "country": "US"
+    },
+    "taxId": "US-93-4417765",
+    "rating": 3.9,
+    "leadTimeDays": 30,
+    "isPreferred": false,
+    "createdAt": "2022-01-19T00:00:00.000Z",
+    "statusReason": null
+  },
+  {
+    "id": "VEN-005",
+    "code": "CASCADE",
+    "name": "Cascade Electrical Supply",
+    "status": "active",
+    "categories": [
+      "electrical"
+    ],
+    "paymentTerms": "NET_30",
+    "currency": "USD",
+    "contact": {
+      "name": "Grant Ibarra",
+      "email": "sales@cascadeelectrical.example",
+      "phone": "+1-206-555-0190"
+    },
+    "address": {
+      "line1": "510 Harbor Street",
+      "city": "Tacoma",
+      "region": "WA",
+      "postalCode": "98402",
+      "country": "US"
+    },
+    "taxId": "US-91-6628340",
+    "rating": 4.3,
+    "leadTimeDays": 10,
+    "isPreferred": false,
+    "createdAt": "2021-11-08T00:00:00.000Z",
+    "statusReason": null
+  },
+  {
+    "id": "VEN-006",
+    "code": "OKONKWO",
+    "name": "Okonkwo Tooling Group",
+    "status": "active",
+    "categories": [
+      "tools"
+    ],
+    "paymentTerms": "NET_15",
+    "currency": "USD",
+    "contact": {
+      "name": "Chidi Okonkwo",
+      "email": "orders@okonkwotooling.example",
+      "phone": "+1-313-555-0155"
+    },
+    "address": {
+      "line1": "930 Gratiot Avenue",
+      "city": "Detroit",
+      "region": "MI",
+      "postalCode": "48207",
+      "country": "US"
+    },
+    "taxId": "US-38-9903112",
+    "rating": 4.7,
+    "leadTimeDays": 14,
+    "isPreferred": true,
+    "createdAt": "2020-02-27T00:00:00.000Z",
+    "statusReason": null
+  },
+  {
+    "id": "VEN-007",
+    "code": "IRONLINE",
+    "name": "Ironline Abrasives",
+    "status": "inactive",
+    "categories": [
+      "abrasives"
+    ],
+    "paymentTerms": "NET_30",
+    "currency": "USD",
+    "contact": {
+      "name": "Paula Grimes",
+      "email": "service@ironlineabrasives.example",
+      "phone": "+1-205-555-0136"
+    },
+    "address": {
+      "line1": "14 Slag Mill Road",
+      "city": "Birmingham",
+      "region": "AL",
+      "postalCode": "35211",
+      "country": "US"
+    },
+    "taxId": "US-63-3320198",
+    "rating": 3.2,
+    "leadTimeDays": 7,
+    "isPreferred": false,
+    "createdAt": "2018-08-14T00:00:00.000Z",
+    "statusReason": "Dormant since 2025-10; no orders placed in two quarters."
+  },
+  {
+    "id": "VEN-008",
+    "code": "BALTICSEAL",
+    "name": "Baltic Seal & Gasket",
+    "status": "blocked",
+    "categories": [
+      "seals"
+    ],
+    "paymentTerms": "NET_30",
+    "currency": "USD",
+    "contact": {
+      "name": "Katrin Ozols",
+      "email": "support@balticseal.example",
+      "phone": "+1-773-555-0129"
+    },
+    "address": {
+      "line1": "3300 Kedzie Avenue",
+      "city": "Chicago",
+      "region": "IL",
+      "postalCode": "60618",
+      "country": "US"
+    },
+    "taxId": "US-36-4478215",
+    "rating": 2.4,
+    "leadTimeDays": 10,
+    "isPreferred": false,
+    "createdAt": "2019-03-22T00:00:00.000Z",
+    "statusReason": "Blocked 2026-01-22 after three consecutive quality rejections."
+  },
+  {
+    "id": "VEN-009",
+    "code": "SUMMIT",
+    "name": "Summit Safety Products",
+    "status": "active",
+    "categories": [
+      "safety"
+    ],
+    "paymentTerms": "NET_30",
+    "currency": "USD",
+    "contact": {
+      "name": "Bianca Serrano",
+      "email": "sales@summitsafety.example",
+      "phone": "+1-720-555-0148"
+    },
+    "address": {
+      "line1": "880 Alpine Court",
+      "city": "Denver",
+      "region": "CO",
+      "postalCode": "80216",
+      "country": "US"
+    },
+    "taxId": "US-84-1129056",
+    "rating": 4.5,
+    "leadTimeDays": 10,
+    "isPreferred": false,
+    "createdAt": "2022-05-16T00:00:00.000Z",
+    "statusReason": null
+  },
+  {
+    "id": "VEN-010",
+    "code": "NORTHFIELD",
+    "name": "Northfield Lubricants",
+    "status": "active",
+    "categories": [
+      "lubricants"
+    ],
+    "paymentTerms": "NET_45",
+    "currency": "USD",
+    "contact": {
+      "name": "Wesley Cho",
+      "email": "ar@northfieldlubricants.example",
+      "phone": "+1-612-555-0171"
+    },
+    "address": {
+      "line1": "41 Refinery Lane",
+      "city": "Saint Paul",
+      "region": "MN",
+      "postalCode": "55107",
+      "country": "US"
+    },
+    "taxId": "US-41-7734920",
+    "rating": 4,
+    "leadTimeDays": 14,
+    "isPreferred": false,
+    "createdAt": "2021-07-01T00:00:00.000Z",
+    "statusReason": null
+  },
+  {
+    "id": "VEN-011",
+    "code": "VANTAGE",
+    "name": "Vantage Packaging",
+    "status": "pending_approval",
+    "categories": [
+      "packaging"
+    ],
+    "paymentTerms": "NET_30",
+    "currency": "USD",
+    "contact": {
+      "name": "Ingrid Solheim",
+      "email": "hello@vantagepackaging.example",
+      "phone": "+1-402-555-0184"
+    },
+    "address": {
+      "line1": "1205 Cornhusker Highway",
+      "city": "Lincoln",
+      "region": "NE",
+      "postalCode": "68521",
+      "country": "US"
+    },
+    "taxId": "US-47-2218873",
+    "rating": 0,
+    "leadTimeDays": 12,
+    "isPreferred": false,
+    "createdAt": "2026-03-02T00:00:00.000Z",
+    "statusReason": "Awaiting supplier qualification and insurance certificate."
+  },
+  {
+    "id": "VEN-012",
+    "code": "REDWOOD",
+    "name": "Redwood Conveyor Parts",
+    "status": "active",
+    "categories": [
+      "power transmission",
+      "conveyor"
+    ],
+    "paymentTerms": "NET_30",
+    "currency": "USD",
+    "contact": {
+      "name": "Alan Prentice",
+      "email": "service@redwoodconveyor.example",
+      "phone": "+1-916-555-0107"
+    },
+    "address": {
+      "line1": "62 Sierra Point Road",
+      "city": "Sacramento",
+      "region": "CA",
+      "postalCode": "95826",
+      "country": "US"
+    },
+    "taxId": "US-68-5590447",
+    "rating": 3.8,
+    "leadTimeDays": 12,
+    "isPreferred": false,
+    "createdAt": "2023-10-05T00:00:00.000Z",
+    "statusReason": null
+  }
+]
