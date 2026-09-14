@@ -1,6 +1,6 @@
 {
-  "name": "silo",
-  "version": "0.2.0",
+  "name": "@burn0/silo",
+  "version": "0.3.0",
   "description": "Local-first framework for simulating environments and evaluating AI agents against them, with tools, tasks, and verifiers defined as TypeScript in your own repo.",
   "type": "module",
   "scripts": {
@@ -13,6 +13,21 @@
   "bin": {
     "silo": "./dist/index.js"
   },
+  "exports": {
+    ".": {
+      "types": "./dist/public.d.ts",
+      "default": "./dist/public.js"
+    }
+  },
+  "types": "./dist/public.d.ts",
+  "files": [
+    "dist",
+    "templates",
+    "examples",
+    "!examples/agents",
+    "docs",
+    "README.md"
+  ],
   "dependencies": {
     "@inkjs/ui": "^2.0.0",
     "@langchain/core": "^1.2.11",
@@ -20,14 +35,14 @@
     "ink": "^7.1.1",
     "react": "^19.3.0",
     "tsx": "4.20.5",
+    "typescript": "^5.9.2",
     "zod": "^4.1.5"
   },
   "devDependencies": {
     "@types/node": "^24.13.4",
-    "@types/react": "^19.3.0",
-    "typescript": "^5.9.2"
+    "@types/react": "^19.3.0"
   },
-  "main": "index.js",
+  "main": "./dist/public.js",
   "keywords": [
     "ai",
     "agents",

@@ -1,8 +1,7 @@
 import React from "react";
-import { join, relative } from "node:path";
+import { relative } from "node:path";
 import { Box, Text, render } from "ink";
 
-import { ENVIRONMENTS_DIR } from "../core/scaffold.js";
 import { runTask, type RunResult } from "../core/run.js";
 
 function getFlag(name: string): string | undefined {
@@ -92,14 +91,30 @@ export async function run() {
   if (!environmentName) throw new Error("Missing --env.");
   if (!taskId) throw new Error("Missing --task.");
 
-  const result = await runTask({
-    environmentDir: join(ENVIRONMENTS_DIR, environmentName),
-    environmentName,
-    taskId,
-    agentPath,
-    maxToolCalls,
-    timeoutMs,
-  });
+  let result: RunResult;
+
+  try {
+    result = await runTask({
+      environmentName,
+      taskId,
+      agentPath,
+      maxToolCalls,
+      timeoutMs,
+    });
+  } catch (error) {
+    // A misconfigured environment is a user error, not a crash: say what is
+    // wrong instead of printing a stack trace.
+    const instance = render(
+      <Box paddingX={2} paddingY={1}>
+        <Text color="red">{error instanceof Error ? error.message : String(error)}</Text>
+      </Box>,
+    );
+
+    await instance.waitUntilExit();
+
+    process.exitCode = 1;
+    return;
+  }
 
   const instance = render(<Result result={result} />);
   await instance.waitUntilExit();

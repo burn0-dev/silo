@@ -1,9 +1,8 @@
 /**
- * Blank environment.
+ * Profit environment.
  *
- * Silo loads an environment through the three exports below: `createState`,
- * `bindTools` and `verifiers`. Tasks are discovered from `tasks/*.json`.
- * This file is copied into your project, so edit it freely.
+ * A question-answering environment: the task asks for a figure, and the
+ * verifier grades the agent's answer against truth derived from state.
  */
 
 import { bindTools as bind, type EnvironmentModule, type Tool } from "@burn0/silo";

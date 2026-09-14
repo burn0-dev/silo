@@ -6,8 +6,8 @@ Silo lets you define a simulated environment — tools, tasks, and verifiers —
 TypeScript in your own repo, then run agents against it and score what they did. Nothing
 leaves your machine; environments live in `.silo/` next to your code.
 
-> **Status: early.** `silo init` is implemented and usable. The rollout runner exists but
-> does not yet score results, and `silo run` is a stub. Expect breaking changes.
+> **Status: early.** Environment authoring (CLI + SDK), validation and scored rollouts
+> all work. See [docs/authoring.md](docs/authoring.md). Expect breaking changes.
 
 ## Requirements
 

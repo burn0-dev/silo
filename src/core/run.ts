@@ -3,8 +3,8 @@ import { join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { tsImport } from "tsx/esm/api";
 
+import { openEnvironment } from "./environment.js";
 import type {
-  EnvironmentModule,
   SiloTask,
   TerminationReason,
   Tool,
@@ -13,8 +13,9 @@ import type {
 } from "./types.js";
 
 export type RunOptions = {
-  environmentDir: string;
   environmentName: string;
+  /** Project root holding `.silo/`. Defaults to the current working directory. */
+  cwd?: string;
   taskId: string;
   agentPath: string;
   maxToolCalls?: number;
@@ -65,7 +66,15 @@ function createRunId(startedAt: Date): string {
   return `run_${stamp}_${process.pid.toString(36)}`;
 }
 
-async function loadModule<T>(path: string): Promise<T> {
+/** Agents may return any shape; verifiers are handed text they can parse. */
+function asOutputText(output: unknown): string {
+  if (typeof output === "string") return output;
+  if (output === null || output === undefined) return "";
+
+  return JSON.stringify(output) ?? "";
+}
+
+async function loadAgentModule<T>(path: string): Promise<T> {
   return (await tsImport(pathToFileURL(resolve(path)).href, import.meta.url)) as T;
 }
 
@@ -118,21 +127,13 @@ export async function runTask(options: RunOptions): Promise<RunResult> {
   const maxToolCalls = options.maxToolCalls ?? DEFAULT_MAX_TOOL_CALLS;
   const timeoutMs = options.timeoutMs ?? DEFAULT_TIMEOUT_MS;
 
-  const environment = await loadModule<EnvironmentModule>(
-    join(options.environmentDir, "index.ts"),
-  );
+  const cwd = options.cwd ?? process.cwd();
+  const environment = await openEnvironment({ name: options.environmentName, cwd });
+  const { runtime } = environment;
 
-  for (const name of ["createState", "bindTools"] as const) {
-    if (typeof environment[name] !== "function") {
-      throw new Error(
-        `Environment "${options.environmentName}" does not export ${name}(). A runnable environment must export createState, bindTools, tasks and verifiers.`,
-      );
-    }
-  }
-
-  if (!Array.isArray(environment.tasks) || !Array.isArray(environment.verifiers)) {
+  if (environment.tasks.length === 0) {
     throw new Error(
-      `Environment "${options.environmentName}" exports no tasks or verifiers, so there is nothing to run.`,
+      `No tasks found in environment "${options.environmentName}".\nAdd a task before running.`,
     );
   }
 
@@ -142,13 +143,13 @@ export async function runTask(options: RunOptions): Promise<RunResult> {
     throw new Error(`Task "${options.taskId}" was not found in ${options.environmentName}.`);
   }
 
-  const verifier = environment.verifiers.find((candidate) => candidate.id === task.verifierId);
+  const verifier = runtime.verifiers.find((candidate) => candidate.id === task.verifierId);
 
   if (!verifier) {
     throw new Error(`Verifier "${task.verifierId}" for task "${task.id}" was not found.`);
   }
 
-  const agentModule = await loadModule<{ default?: unknown }>(options.agentPath);
+  const agentModule = await loadAgentModule<{ default?: unknown }>(options.agentPath);
 
   if (typeof agentModule.default !== "function") {
     throw new Error(`Agent "${options.agentPath}" must default-export a function.`);
@@ -162,14 +163,14 @@ export async function runTask(options: RunOptions): Promise<RunResult> {
   }) => Promise<{ output: unknown }>;
 
   // Every rollout starts from a fresh deterministic world.
-  const state = environment.createState();
+  const state = runtime.createState();
   const initialState = structuredClone(state);
-  const tools: Tool[] = environment.bindTools(state);
+  const tools: Tool[] = runtime.bindTools(state);
   const toolMap = new Map(tools.map((tool) => [tool.name, tool]));
 
   const startedAtDate = new Date();
   const runId = createRunId(startedAtDate);
-  const runsDir = options.runsDir ?? join(process.cwd(), ".silo", "runs");
+  const runsDir = options.runsDir ?? join(cwd, ".silo", "runs");
   const runDir = join(runsDir, runId);
   await mkdir(runDir, { recursive: true });
 
@@ -263,7 +264,10 @@ export async function runTask(options: RunOptions): Promise<RunResult> {
   }
 
   // The verifier runs whatever happened — a timed-out rollout still gets graded.
-  const verifierOutcome = verifier.check(state, initialState);
+  const verifierOutcome = verifier.check(state, initialState, {
+    agentOutput: asOutputText(agentOutput),
+    task,
+  });
 
   const finishedAtDate = new Date();
 

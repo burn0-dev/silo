@@ -1,0 +1,7 @@
+{
+  "id": "TASK-001",
+  "title": "Report the total profit",
+  "instruction": "What is the total profit across all recorded profit lines? Reply with the total amount as your final answer.",
+  "difficulty": "easy",
+  "verifierId": "VER-001"
+}
