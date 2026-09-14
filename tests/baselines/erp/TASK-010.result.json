@@ -1,0 +1,50 @@
+{
+  "passed": false,
+  "reward": 0,
+  "requiredPassed": 0,
+  "requiredTotal": 3,
+  "failedRequired": [
+    "An invoice was raised against SO-306",
+    "It bills the 120 units that shipped",
+    "The invoice was issued, not left in draft"
+  ],
+  "checksPassed": 0,
+  "checksFailed": 5,
+  "toolCalls": 0,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "",
+  "error": null,
+  "checks": [
+    {
+      "label": "An invoice was raised against SO-306",
+      "passed": false,
+      "detail": "none found",
+      "required": true
+    },
+    {
+      "label": "It bills the 120 units that shipped",
+      "passed": false,
+      "detail": "quantity = undefined",
+      "required": true
+    },
+    {
+      "label": "The invoice was issued, not left in draft",
+      "passed": false,
+      "detail": "status = undefined",
+      "required": true
+    },
+    {
+      "label": "Invoice value matches what shipped",
+      "passed": false,
+      "detail": "subtotal = undefined",
+      "required": false
+    },
+    {
+      "label": "SO-306 is marked invoiced",
+      "passed": false,
+      "detail": "status = fulfilled",
+      "required": false
+    }
+  ]
+}

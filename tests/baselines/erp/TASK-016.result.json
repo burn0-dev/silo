@@ -1,0 +1,50 @@
+{
+  "passed": false,
+  "reward": 0.2,
+  "requiredPassed": 1,
+  "requiredTotal": 4,
+  "failedRequired": [
+    "VINV-108 is paid",
+    "A completed payment covers the full amount",
+    "The vendor's contact email was corrected"
+  ],
+  "checksPassed": 1,
+  "checksFailed": 4,
+  "toolCalls": 0,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "",
+  "error": null,
+  "checks": [
+    {
+      "label": "VINV-108 is paid",
+      "passed": false,
+      "detail": "status = approved",
+      "required": true
+    },
+    {
+      "label": "A completed payment covers the full amount",
+      "passed": false,
+      "detail": "completed = 0 of 2527.2",
+      "required": true
+    },
+    {
+      "label": "The original failed payment was left on record",
+      "passed": true,
+      "detail": "PAY-003 = failed",
+      "required": true
+    },
+    {
+      "label": "The vendor's contact email was corrected",
+      "passed": false,
+      "detail": "email = orders@tristatefasteners.example",
+      "required": true
+    },
+    {
+      "label": "The invoice is no longer overdue",
+      "passed": false,
+      "detail": "outstanding = 2527.2",
+      "required": false
+    }
+  ]
+}

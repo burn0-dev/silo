@@ -1,0 +1,36 @@
+{
+  "passed": false,
+  "reward": 0.33,
+  "requiredPassed": 1,
+  "requiredTotal": 2,
+  "failedRequired": [
+    "CUS-003 (largest overdue balance) is on credit hold"
+  ],
+  "checksPassed": 1,
+  "checksFailed": 2,
+  "toolCalls": 0,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "",
+  "error": null,
+  "checks": [
+    {
+      "label": "CUS-003 (largest overdue balance) is on credit hold",
+      "passed": false,
+      "detail": "status = active",
+      "required": true
+    },
+    {
+      "label": "A reason was recorded",
+      "passed": false,
+      "detail": "statusReason = null",
+      "required": false
+    },
+    {
+      "label": "No overdue invoice was written off",
+      "passed": true,
+      "detail": "2 invoice(s) above $10k checked",
+      "required": true
+    }
+  ]
+}

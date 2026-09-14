@@ -1,0 +1,48 @@
+{
+  "passed": false,
+  "reward": 0.6,
+  "requiredPassed": 1,
+  "requiredTotal": 2,
+  "failedRequired": [
+    "VINV-106 can no longer be paid"
+  ],
+  "checksPassed": 3,
+  "checksFailed": 2,
+  "toolCalls": 0,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "",
+  "error": null,
+  "checks": [
+    {
+      "label": "VINV-106 can no longer be paid",
+      "passed": false,
+      "detail": "status = pending_match",
+      "required": true
+    },
+    {
+      "label": "PO-207 is still cancelled",
+      "passed": true,
+      "detail": "status = cancelled",
+      "required": false
+    },
+    {
+      "label": "Nothing was received against PO-207",
+      "passed": true,
+      "detail": "received units = 0",
+      "required": false
+    },
+    {
+      "label": "No money was paid against the invoice",
+      "passed": true,
+      "detail": "completed payments = 0",
+      "required": true
+    },
+    {
+      "label": "The action was recorded in the audit log",
+      "passed": false,
+      "detail": "audit entry present",
+      "required": false
+    }
+  ]
+}

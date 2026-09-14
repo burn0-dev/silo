@@ -1,0 +1,49 @@
+{
+  "passed": false,
+  "reward": 0.2,
+  "requiredPassed": 1,
+  "requiredTotal": 3,
+  "failedRequired": [
+    "All 150 units shipped",
+    "Stock came out of both warehouses"
+  ],
+  "checksPassed": 1,
+  "checksFailed": 4,
+  "toolCalls": 0,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "",
+  "error": null,
+  "checks": [
+    {
+      "label": "All 150 units shipped",
+      "passed": false,
+      "detail": "line fulfilled = 0, shipment units = 0",
+      "required": true
+    },
+    {
+      "label": "SO-307 is fulfilled",
+      "passed": false,
+      "detail": "status = confirmed",
+      "required": false
+    },
+    {
+      "label": "Stock came out of both warehouses",
+      "passed": false,
+      "detail": "WH-001 -0, WH-002 -0",
+      "required": true
+    },
+    {
+      "label": "The totals add up to 150 units",
+      "passed": false,
+      "detail": "0 + 0",
+      "required": false
+    },
+    {
+      "label": "No stock was transferred between warehouses first",
+      "passed": true,
+      "detail": "no transfers",
+      "required": true
+    }
+  ]
+}

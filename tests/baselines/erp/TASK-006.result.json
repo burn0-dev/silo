@@ -1,0 +1,44 @@
+{
+  "passed": false,
+  "reward": 0,
+  "requiredPassed": 0,
+  "requiredTotal": 3,
+  "failedRequired": [
+    "Warehouse South received 200 units",
+    "Warehouse North gave up 200 units",
+    "Warehouse South is back above its reorder point"
+  ],
+  "checksPassed": 0,
+  "checksFailed": 4,
+  "toolCalls": 0,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "",
+  "error": null,
+  "checks": [
+    {
+      "label": "Warehouse South received 200 units",
+      "passed": false,
+      "detail": "40 -> 40",
+      "required": true
+    },
+    {
+      "label": "Warehouse North gave up 200 units",
+      "passed": false,
+      "detail": "620 -> 620",
+      "required": true
+    },
+    {
+      "label": "Warehouse South is back above its reorder point",
+      "passed": false,
+      "detail": "on hand 40 vs reorder point 200",
+      "required": true
+    },
+    {
+      "label": "Movements were recorded for the transfer",
+      "passed": false,
+      "detail": "transfer movements present",
+      "required": false
+    }
+  ]
+}
