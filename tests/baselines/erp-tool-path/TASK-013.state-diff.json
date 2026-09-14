@@ -1,0 +1,26 @@
+{
+  "scalars": [],
+  "collections": {
+    "vendorInvoices": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        "VINV-103"
+      ]
+    },
+    "auditLog": {
+      "added": [
+        "AUD-0021"
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "sequences": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        "AUD"
+      ]
+    }
+  }
+}

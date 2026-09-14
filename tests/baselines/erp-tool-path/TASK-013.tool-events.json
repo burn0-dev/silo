@@ -1,0 +1,354 @@
+[
+  {
+    "seq": 2,
+    "type": "tool_call",
+    "callId": 1,
+    "tool": "get_vendor_invoice",
+    "input": {
+      "vendorInvoiceId": "VINV-103"
+    }
+  },
+  {
+    "seq": 3,
+    "type": "tool_result",
+    "callId": 1,
+    "tool": "get_vendor_invoice",
+    "output": {
+      "id": "VINV-103",
+      "number": "VINV-103",
+      "vendorInvoiceNumber": "NFL-2026-117",
+      "vendorId": "VEN-010",
+      "purchaseOrderId": "PO-206",
+      "goodsReceiptIds": [
+        "GR-004"
+      ],
+      "status": "pending_approval",
+      "lines": [
+        {
+          "id": "VINV-103-L1",
+          "purchaseOrderLineId": "PO-206-L1",
+          "productId": "PRD-021",
+          "description": "EP2 Lithium Grease 18kg",
+          "quantity": 80,
+          "unitPrice": {
+            "amount": 86,
+            "currency": "USD"
+          },
+          "lineTotal": {
+            "amount": 6880,
+            "currency": "USD"
+          }
+        }
+      ],
+      "subtotal": {
+        "amount": 6880,
+        "currency": "USD"
+      },
+      "taxAmount": {
+        "amount": 550.4,
+        "currency": "USD"
+      },
+      "totalAmount": {
+        "amount": 7430.4,
+        "currency": "USD"
+      },
+      "amountPaid": {
+        "amount": 0,
+        "currency": "USD"
+      },
+      "invoiceDate": "2026-03-09T00:00:00.000Z",
+      "dueDate": "2026-04-23T00:00:00.000Z",
+      "receivedAt": "2026-03-10T09:40:00.000Z",
+      "matchId": "MATCH-003",
+      "approvalId": "APR-017",
+      "approvedAt": null,
+      "approvedByUserId": null,
+      "disputeReason": null,
+      "paidAt": null,
+      "outstanding": {
+        "amount": 7430.4,
+        "currency": "USD"
+      },
+      "isOverdue": false,
+      "match": {
+        "id": "MATCH-003",
+        "vendorInvoiceId": "VINV-103",
+        "purchaseOrderId": "PO-206",
+        "goodsReceiptIds": [
+          "GR-004"
+        ],
+        "status": "failed",
+        "discrepancies": [
+          {
+            "type": "price",
+            "purchaseOrderLineId": "PO-206-L1",
+            "productId": "PRD-021",
+            "expected": 82,
+            "actual": 86,
+            "message": "Invoiced unit price 86.00 exceeds purchase order price 82.00 by 4.88%."
+          }
+        ],
+        "tolerance": {
+          "pricePercent": 2,
+          "quantityPercent": 0
+        },
+        "runAt": "2026-03-10T14:10:00.000Z",
+        "runByUserId": "USR-006"
+      },
+      "approval": {
+        "id": "APR-017",
+        "entityType": "vendor_invoice",
+        "entityId": "VINV-103",
+        "status": "pending",
+        "requestedByUserId": "USR-006",
+        "assignedToUserId": "USR-007",
+        "amount": {
+          "amount": 7430.4,
+          "currency": "USD"
+        },
+        "requestedAt": "2026-03-10T14:15:00.000Z",
+        "decidedAt": null,
+        "decidedByUserId": null,
+        "notes": [
+          "Blocked: unit price above purchase order price."
+        ]
+      },
+      "payments": []
+    },
+    "isError": false
+  },
+  {
+    "seq": 4,
+    "type": "tool_call",
+    "callId": 2,
+    "tool": "update_vendor_invoice_line",
+    "input": {
+      "vendorInvoiceId": "VINV-103",
+      "lineId": "VINV-103-L1",
+      "unitPrice": 82,
+      "actorUserId": "USR-006"
+    }
+  },
+  {
+    "seq": 5,
+    "type": "tool_result",
+    "callId": 2,
+    "tool": "update_vendor_invoice_line",
+    "output": {
+      "id": "VINV-103",
+      "number": "VINV-103",
+      "vendorInvoiceNumber": "NFL-2026-117",
+      "vendorId": "VEN-010",
+      "purchaseOrderId": "PO-206",
+      "goodsReceiptIds": [
+        "GR-004"
+      ],
+      "status": "pending_match",
+      "lines": [
+        {
+          "id": "VINV-103-L1",
+          "purchaseOrderLineId": "PO-206-L1",
+          "productId": "PRD-021",
+          "description": "EP2 Lithium Grease 18kg",
+          "quantity": 80,
+          "unitPrice": {
+            "amount": 82,
+            "currency": "USD"
+          },
+          "lineTotal": {
+            "amount": 6560,
+            "currency": "USD"
+          }
+        }
+      ],
+      "subtotal": {
+        "amount": 6560,
+        "currency": "USD"
+      },
+      "taxAmount": {
+        "amount": 524.8,
+        "currency": "USD"
+      },
+      "totalAmount": {
+        "amount": 7084.8,
+        "currency": "USD"
+      },
+      "amountPaid": {
+        "amount": 0,
+        "currency": "USD"
+      },
+      "invoiceDate": "2026-03-09T00:00:00.000Z",
+      "dueDate": "2026-04-23T00:00:00.000Z",
+      "receivedAt": "2026-03-10T09:40:00.000Z",
+      "matchId": null,
+      "approvalId": "APR-017",
+      "approvedAt": null,
+      "approvedByUserId": null,
+      "disputeReason": null,
+      "paidAt": null
+    },
+    "isError": false
+  },
+  {
+    "seq": 6,
+    "type": "tool_call",
+    "callId": 3,
+    "tool": "get_vendor_invoice",
+    "input": {
+      "vendorInvoiceId": "VINV-103"
+    }
+  },
+  {
+    "seq": 7,
+    "type": "tool_result",
+    "callId": 3,
+    "tool": "get_vendor_invoice",
+    "output": {
+      "id": "VINV-103",
+      "number": "VINV-103",
+      "vendorInvoiceNumber": "NFL-2026-117",
+      "vendorId": "VEN-010",
+      "purchaseOrderId": "PO-206",
+      "goodsReceiptIds": [
+        "GR-004"
+      ],
+      "status": "pending_match",
+      "lines": [
+        {
+          "id": "VINV-103-L1",
+          "purchaseOrderLineId": "PO-206-L1",
+          "productId": "PRD-021",
+          "description": "EP2 Lithium Grease 18kg",
+          "quantity": 80,
+          "unitPrice": {
+            "amount": 82,
+            "currency": "USD"
+          },
+          "lineTotal": {
+            "amount": 6560,
+            "currency": "USD"
+          }
+        }
+      ],
+      "subtotal": {
+        "amount": 6560,
+        "currency": "USD"
+      },
+      "taxAmount": {
+        "amount": 524.8,
+        "currency": "USD"
+      },
+      "totalAmount": {
+        "amount": 7084.8,
+        "currency": "USD"
+      },
+      "amountPaid": {
+        "amount": 0,
+        "currency": "USD"
+      },
+      "invoiceDate": "2026-03-09T00:00:00.000Z",
+      "dueDate": "2026-04-23T00:00:00.000Z",
+      "receivedAt": "2026-03-10T09:40:00.000Z",
+      "matchId": null,
+      "approvalId": "APR-017",
+      "approvedAt": null,
+      "approvedByUserId": null,
+      "disputeReason": null,
+      "paidAt": null,
+      "outstanding": {
+        "amount": 7084.8,
+        "currency": "USD"
+      },
+      "isOverdue": false,
+      "match": null,
+      "approval": {
+        "id": "APR-017",
+        "entityType": "vendor_invoice",
+        "entityId": "VINV-103",
+        "status": "pending",
+        "requestedByUserId": "USR-006",
+        "assignedToUserId": "USR-007",
+        "amount": {
+          "amount": 7430.4,
+          "currency": "USD"
+        },
+        "requestedAt": "2026-03-10T14:15:00.000Z",
+        "decidedAt": null,
+        "decidedByUserId": null,
+        "notes": [
+          "Blocked: unit price above purchase order price."
+        ]
+      },
+      "payments": []
+    },
+    "isError": false
+  },
+  {
+    "seq": 8,
+    "type": "tool_call",
+    "callId": 4,
+    "tool": "list_audit_events",
+    "input": {
+      "entityId": "VINV-103"
+    }
+  },
+  {
+    "seq": 9,
+    "type": "tool_result",
+    "callId": 4,
+    "tool": "list_audit_events",
+    "output": {
+      "code": "invalid_input",
+      "message": "Invalid arguments for \"list_audit_events\": \"entityId\" is not a parameter; expected one of: entityType, actorUserId, action, fromDate, toDate, limit, offset.",
+      "details": {
+        "problems": [
+          "\"entityId\" is not a parameter; expected one of: entityType, actorUserId, action, fromDate, toDate, limit, offset"
+        ]
+      }
+    },
+    "isError": true
+  },
+  {
+    "seq": 10,
+    "type": "tool_call",
+    "callId": 5,
+    "tool": "get_vendor_invoice",
+    "input": {}
+  },
+  {
+    "seq": 11,
+    "type": "tool_result",
+    "callId": 5,
+    "tool": "get_vendor_invoice",
+    "output": {
+      "code": "invalid_input",
+      "message": "Invalid arguments for \"get_vendor_invoice\": \"vendorInvoiceId\" is required.",
+      "details": {
+        "problems": [
+          "\"vendorInvoiceId\" is required"
+        ]
+      }
+    },
+    "isError": true
+  },
+  {
+    "seq": 12,
+    "type": "tool_call",
+    "callId": 6,
+    "tool": "definitely_not_a_tool",
+    "input": {
+      "foo": 1
+    }
+  },
+  {
+    "seq": 13,
+    "type": "tool_result",
+    "callId": 6,
+    "tool": "definitely_not_a_tool",
+    "output": {
+      "code": "tool_not_found",
+      "message": "Unknown tool \"definitely_not_a_tool\"."
+    },
+    "isError": true
+  }
+]

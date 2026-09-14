@@ -9,7 +9,9 @@
     "check:templates": "tsc -p tsconfig.templates.json",
     "check": "tsc --noEmit && tsc -p tsconfig.templates.json",
     "start": "node dist/index.js",
-    "test:erp": "tsx tests/erp-baseline.mjs"
+    "test:erp": "tsx tests/erp-baseline.mjs",
+    "test:tools": "tsx tests/erp-tool-path.mjs",
+    "test": "npm run check && npm run test:erp && npm run test:tools"
   },
   "bin": {
     "silo": "./dist/index.js"
