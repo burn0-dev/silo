@@ -2,6 +2,10 @@
 import { isAuthoringCommand, runAuthoringCommand } from "./cli/authoring.js";
 import { init } from "./cli/init.js";
 import { run } from "./cli/run.js";
+import { TEMPLATES } from "./core/templates.js";
+
+/** Derived, not written out, so adding a template cannot leave the help stale. */
+const templateIds = TEMPLATES.map((template) => template.id).join("|");
 
 const HELP = `Silo — local-first simulation and evaluation for AI agents.
 
@@ -10,7 +14,7 @@ Add --json to any of them for machine-readable output.
 
 Environments
   silo init                                  interactive wizard
-  silo init <name> [--template blank|erp] [--tools a,b]
+  silo init <name> [--template ${templateIds}] [--tools a,b]
   silo env validate --env <env>              check an environment without running it
 
 Data — raw facts, stored as data/<name>.json
