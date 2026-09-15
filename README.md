@@ -10,7 +10,7 @@ next to your code.
 > **Status: early.** Environment authoring (CLI + SDK), validation, scored rollouts,
 > traces and run artifacts all work. Expect breaking changes before 1.0.
 
-**[Documentation →](https://burn0.dev/silo/introduction)**
+**[Documentation →](https://docs.burn0.dev/silo/introduction)** · **[silo.burn0.dev](https://silo.burn0.dev)**
 
 ## Install
 
