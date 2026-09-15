@@ -1,0 +1,20 @@
+[
+  {
+    "id": "AUD-0001",
+    "at": "2026-03-02",
+    "actorMemberId": "MEM-001",
+    "action": "start_sprint",
+    "entityType": "sprint",
+    "entityId": "SPR-002",
+    "detail": "Started Atlas Sprint 12."
+  },
+  {
+    "id": "AUD-0002",
+    "at": "2026-03-12",
+    "actorMemberId": "MEM-005",
+    "action": "update_member",
+    "entityType": "member",
+    "entityId": "MEM-004",
+    "detail": "Deactivated Devon Ito after their last day."
+  }
+]

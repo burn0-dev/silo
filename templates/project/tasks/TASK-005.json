@@ -1,0 +1,8 @@
+{
+  "id": "TASK-005",
+  "title": "Note the blocker on the duplicate email bug",
+  "instruction": "Leave a note on the duplicate invoice emails bug explaining that it is waiting on the email service upgrade and naming that work item. Hassan Ali (MEM-008) is writing it.",
+  "difficulty": "easy",
+  "verifierId": "VER-005",
+  "entities": ["WI-006"]
+}

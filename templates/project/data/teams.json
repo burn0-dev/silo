@@ -1,0 +1,4 @@
+[
+  { "id": "TEAM-001", "name": "Platform", "leadId": "MEM-001" },
+  { "id": "TEAM-002", "name": "Mobile", "leadId": "MEM-005" }
+]

@@ -1,0 +1,8 @@
+{
+  "id": "TASK-009",
+  "title": "Report what is held up by a dependency",
+  "instruction": "Grace Kim wants to know how much of the plan is stuck behind work that has not finished yet. Report how many work items are currently held up by an unfinished dependency, and name them.",
+  "difficulty": "easy",
+  "verifierId": "VER-009",
+  "entities": []
+}

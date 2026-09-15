@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "reward": 1,
+  "requiredPassed": 2,
+  "requiredTotal": 2,
+  "failedRequired": [],
+  "checksPassed": 4,
+  "checksFailed": 0,
+  "toolCalls": 1,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "2 work items are held up by an unfinished dependency: WI-004, WI-006.",
+  "error": null,
+  "checks": [
+    {
+      "label": "The reported number of blocked work items is correct",
+      "passed": true,
+      "detail": "expected 2",
+      "required": true
+    },
+    {
+      "label": "Every blocked work item is named",
+      "passed": true,
+      "detail": "named 2 of 2",
+      "required": true
+    },
+    {
+      "label": "No unblocked work item was reported as blocked",
+      "passed": true,
+      "detail": "resolved dependencies not miscounted",
+      "required": false
+    },
+    {
+      "label": "Answering left the world unchanged",
+      "passed": true,
+      "detail": "state is untouched",
+      "required": false
+    }
+  ]
+}

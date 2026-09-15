@@ -1,0 +1,42 @@
+[
+  {
+    "id": "SPR-001",
+    "name": "Atlas Sprint 11",
+    "projectId": "PROJ-001",
+    "startDate": "2026-02-16",
+    "endDate": "2026-03-01",
+    "status": "completed"
+  },
+  {
+    "id": "SPR-002",
+    "name": "Atlas Sprint 12",
+    "projectId": "PROJ-001",
+    "startDate": "2026-03-02",
+    "endDate": "2026-03-15",
+    "status": "active"
+  },
+  {
+    "id": "SPR-003",
+    "name": "Atlas Sprint 13",
+    "projectId": "PROJ-001",
+    "startDate": "2026-03-16",
+    "endDate": "2026-03-29",
+    "status": "planned"
+  },
+  {
+    "id": "SPR-004",
+    "name": "Nimbus Sprint 4",
+    "projectId": "PROJ-002",
+    "startDate": "2026-02-16",
+    "endDate": "2026-03-01",
+    "status": "completed"
+  },
+  {
+    "id": "SPR-005",
+    "name": "Nimbus Sprint 5",
+    "projectId": "PROJ-002",
+    "startDate": "2026-03-02",
+    "endDate": "2026-03-15",
+    "status": "active"
+  }
+]

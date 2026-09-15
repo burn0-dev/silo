@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "reward": 1,
+  "requiredPassed": 3,
+  "requiredTotal": 3,
+  "failedRequired": [],
+  "checksPassed": 5,
+  "checksFailed": 0,
+  "toolCalls": 5,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "Finished WI-024 and closed PROJ-003.",
+  "error": null,
+  "checks": [
+    {
+      "label": "The project is marked completed",
+      "passed": true,
+      "detail": "status = completed",
+      "required": true
+    },
+    {
+      "label": "Every outstanding work item on it was finished first",
+      "passed": true,
+      "detail": "1 of 1 finished",
+      "required": true
+    },
+    {
+      "label": "The project was not already completed before the rollout",
+      "passed": true,
+      "detail": "started as active",
+      "required": true
+    },
+    {
+      "label": "The outstanding work was finished rather than deleted",
+      "passed": true,
+      "detail": "work items still present",
+      "required": false
+    },
+    {
+      "label": "No other project was closed",
+      "passed": true,
+      "detail": "other project statuses unchanged",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "reward": 1,
+  "requiredPassed": 1,
+  "requiredTotal": 1,
+  "failedRequired": [],
+  "checksPassed": 4,
+  "checksFailed": 0,
+  "toolCalls": 2,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "The total time logged against the Atlas billing platform is 44 hours.",
+  "error": null,
+  "checks": [
+    {
+      "label": "The reported total is correct",
+      "passed": true,
+      "detail": "answered 44, expected 44",
+      "required": true
+    },
+    {
+      "label": "The total is the figure the answer closes on",
+      "passed": true,
+      "detail": "final number = 44",
+      "required": false
+    },
+    {
+      "label": "Another project's total was not reported by mistake",
+      "passed": true,
+      "detail": "project totals are distinct in the seed data",
+      "required": false
+    },
+    {
+      "label": "Answering left the world unchanged",
+      "passed": true,
+      "detail": "state is untouched",
+      "required": false
+    }
+  ]
+}

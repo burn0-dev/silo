@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "reward": 1,
+  "requiredPassed": 1,
+  "requiredTotal": 1,
+  "failedRequired": [],
+  "checksPassed": 3,
+  "checksFailed": 0,
+  "toolCalls": 2,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "There are 3 work items in the Backlog state.",
+  "error": null,
+  "checks": [
+    {
+      "label": "The reported backlog count is correct",
+      "passed": true,
+      "detail": "answered 3, expected 3",
+      "required": true
+    },
+    {
+      "label": "The count is the figure the answer closes on",
+      "passed": true,
+      "detail": "final number = 3",
+      "required": false
+    },
+    {
+      "label": "Answering left the world unchanged",
+      "passed": true,
+      "detail": "state is untouched",
+      "required": false
+    }
+  ]
+}

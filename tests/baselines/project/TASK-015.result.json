@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "reward": 1,
+  "requiredPassed": 2,
+  "requiredTotal": 2,
+  "failedRequired": [],
+  "checksPassed": 4,
+  "checksFailed": 0,
+  "toolCalls": 1,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "Nimbus Sprint 4 was closed with work still unfinished: 2 points remain in it.",
+  "error": null,
+  "checks": [
+    {
+      "label": "The sprint that closed with unfinished work is named",
+      "passed": true,
+      "detail": "expected Nimbus Sprint 4",
+      "required": true
+    },
+    {
+      "label": "The points still unfinished in it are reported correctly",
+      "passed": true,
+      "detail": "expected 2",
+      "required": true
+    },
+    {
+      "label": "Exactly one completed sprint carries unfinished work in the seed data",
+      "passed": true,
+      "detail": "1 such sprint(s)",
+      "required": false
+    },
+    {
+      "label": "Answering left the world unchanged",
+      "passed": true,
+      "detail": "state is untouched",
+      "required": false
+    }
+  ]
+}

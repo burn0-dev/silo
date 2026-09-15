@@ -1,0 +1,8 @@
+{
+  "id": "TASK-004",
+  "title": "Find an owner for usage metering",
+  "instruction": "Usage metering has been sitting in the Atlas backlog with nobody on it. Give it to someone on the Platform team who can absorb the whole estimate without going over their weekly capacity. If more than one person could take it, pick the one who would have the least room left afterwards, so the slack stays where it is most useful. Alice Chen (MEM-001) is doing the work.",
+  "difficulty": "hard",
+  "verifierId": "VER-004",
+  "entities": ["WI-008"]
+}

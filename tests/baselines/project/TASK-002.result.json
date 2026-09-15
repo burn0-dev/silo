@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "reward": 1,
+  "requiredPassed": 3,
+  "requiredTotal": 3,
+  "failedRequired": [],
+  "checksPassed": 5,
+  "checksFailed": 0,
+  "toolCalls": 5,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "Closed the blocking work (WI-005) and then finished WI-004.",
+  "error": null,
+  "checks": [
+    {
+      "label": "Everything the scheduler was waiting on is finished",
+      "passed": true,
+      "detail": "1 of 1 blockers done",
+      "required": true
+    },
+    {
+      "label": "The payment retry scheduler itself is done",
+      "passed": true,
+      "detail": "WI-004 status = WFS-006",
+      "required": true
+    },
+    {
+      "label": "Nothing was closed while a dependency was still open",
+      "passed": true,
+      "detail": "no unresolved dependencies remain on the scheduler",
+      "required": true
+    },
+    {
+      "label": "The dependency was not simply deleted to get around the rule",
+      "passed": true,
+      "detail": "dependsOn kept 1 entries",
+      "required": false
+    },
+    {
+      "label": "No unrelated work item changed status",
+      "passed": true,
+      "detail": "other statuses unchanged",
+      "required": false
+    }
+  ]
+}

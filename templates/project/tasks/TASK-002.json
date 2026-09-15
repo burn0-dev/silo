@@ -1,0 +1,8 @@
+{
+  "id": "TASK-002",
+  "title": "Land the payment retry scheduler",
+  "instruction": "The payment retry scheduler on the Atlas billing project is past its due date and still cannot be signed off. Clear whatever is holding it up and get the scheduler itself finished too. Alice Chen (MEM-001) is doing the work.",
+  "difficulty": "medium",
+  "verifierId": "VER-002",
+  "entities": ["WI-004"]
+}

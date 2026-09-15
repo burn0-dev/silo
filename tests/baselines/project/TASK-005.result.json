@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "reward": 1,
+  "requiredPassed": 2,
+  "requiredTotal": 2,
+  "failedRequired": [],
+  "checksPassed": 4,
+  "checksFailed": 0,
+  "toolCalls": 3,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "Commented on WI-006 that it is waiting on WI-007.",
+  "error": null,
+  "checks": [
+    {
+      "label": "A comment was added to the duplicate invoice emails bug",
+      "passed": true,
+      "detail": "1 comment(s) before, 2 after",
+      "required": true
+    },
+    {
+      "label": "The comment names the work item that is holding it up",
+      "passed": true,
+      "detail": "looking for WI-007",
+      "required": true
+    },
+    {
+      "label": "The existing comments were left alone",
+      "passed": true,
+      "detail": "prior comments untouched",
+      "required": false
+    },
+    {
+      "label": "No other work item gained a comment",
+      "passed": true,
+      "detail": "comments added in one place only",
+      "required": false
+    }
+  ]
+}

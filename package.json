@@ -11,8 +11,9 @@
     "start": "node dist/index.js",
     "test:erp": "tsx tests/erp-baseline.mjs",
     "test:tools": "tsx tests/erp-tool-path.mjs",
-    "test": "npm run check && npm run test:erp && npm run test:tools && npm run test:crm",
-    "test:crm": "tsx tests/crm-baseline.mjs"
+    "test": "npm run check && npm run test:erp && npm run test:tools && npm run test:crm && npm run test:project",
+    "test:crm": "tsx tests/crm-baseline.mjs",
+    "test:project": "tsx tests/project-baseline.mjs"
   },
   "bin": {
     "silo": "./dist/index.js"

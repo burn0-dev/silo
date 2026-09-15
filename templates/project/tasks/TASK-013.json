@@ -1,0 +1,8 @@
+{
+  "id": "TASK-013",
+  "title": "Report who is over-committed",
+  "instruction": "Somebody on the team is carrying more work than their weekly capacity allows. Name them and say how many points over capacity they are.",
+  "difficulty": "medium",
+  "verifierId": "VER-013",
+  "entities": []
+}

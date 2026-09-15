@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "reward": 1,
+  "requiredPassed": 3,
+  "requiredTotal": 3,
+  "failedRequired": [],
+  "checksPassed": 5,
+  "checksFailed": 0,
+  "toolCalls": 6,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "Moved 3 unfinished work items (WI-014, WI-015, WI-016) from MEM-004 to MEM-006.",
+  "error": null,
+  "checks": [
+    {
+      "label": "Every unfinished item of the departed member moved to the new owner",
+      "passed": true,
+      "detail": "3 of 3 moved to MEM-006",
+      "required": true
+    },
+    {
+      "label": "The departed member holds no unfinished work",
+      "passed": true,
+      "detail": "0 still assigned to MEM-004",
+      "required": true
+    },
+    {
+      "label": "The moved items are still unfinished, not closed to make them go away",
+      "passed": true,
+      "detail": "3 of 3 still open",
+      "required": true
+    },
+    {
+      "label": "Work the departed member had already finished kept their name on it",
+      "passed": true,
+      "detail": "finished history preserved",
+      "required": false
+    },
+    {
+      "label": "Nobody else's work changed hands",
+      "passed": true,
+      "detail": "other assignees unchanged",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "reward": 1,
+  "requiredPassed": 2,
+  "requiredTotal": 2,
+  "failedRequired": [],
+  "checksPassed": 3,
+  "checksFailed": 0,
+  "toolCalls": 3,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "Marked WI-003 (tax rules engine) as done.",
+  "error": null,
+  "checks": [
+    {
+      "label": "The tax rules engine is in a done state",
+      "passed": true,
+      "detail": "WI-003 status = WFS-006",
+      "required": true
+    },
+    {
+      "label": "It was not already done before the rollout",
+      "passed": true,
+      "detail": "started in WFS-005",
+      "required": true
+    },
+    {
+      "label": "No other work item changed status",
+      "passed": true,
+      "detail": "other statuses unchanged",
+      "required": false
+    }
+  ]
+}

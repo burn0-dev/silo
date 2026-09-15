@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "reward": 1,
+  "requiredPassed": 2,
+  "requiredTotal": 2,
+  "failedRequired": [],
+  "checksPassed": 4,
+  "checksFailed": 0,
+  "toolCalls": 1,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "Overdue work held by members who are still active comes to 21 points.",
+  "error": null,
+  "checks": [
+    {
+      "label": "The reported total counts only work held by an active member",
+      "passed": true,
+      "detail": "answered 21, expected 21",
+      "required": true
+    },
+    {
+      "label": "The total that ignores the qualifier was not reported instead",
+      "passed": true,
+      "detail": "26 would be the answer without the 'still active' qualifier",
+      "required": true
+    },
+    {
+      "label": "The qualifier actually changes the answer in this world",
+      "passed": true,
+      "detail": "21 with the qualifier, 26 without",
+      "required": false
+    },
+    {
+      "label": "Answering left the world unchanged",
+      "passed": true,
+      "detail": "state is untouched",
+      "required": false
+    }
+  ]
+}

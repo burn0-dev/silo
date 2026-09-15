@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "reward": 1,
+  "requiredPassed": 3,
+  "requiredTotal": 3,
+  "failedRequired": [],
+  "checksPassed": 4,
+  "checksFailed": 0,
+  "toolCalls": 4,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "Completed SPR-002 and started SPR-003.",
+  "error": null,
+  "checks": [
+    {
+      "label": "The finished sprint is marked completed",
+      "passed": true,
+      "detail": "status = completed",
+      "required": true
+    },
+    {
+      "label": "The next sprint is running",
+      "passed": true,
+      "detail": "status = active",
+      "required": true
+    },
+    {
+      "label": "Exactly one Atlas sprint is running",
+      "passed": true,
+      "detail": "one active sprint on the project",
+      "required": true
+    },
+    {
+      "label": "Unfinished work stayed attached to the sprint it was in",
+      "passed": true,
+      "detail": "carry-over preserved",
+      "required": false
+    }
+  ]
+}

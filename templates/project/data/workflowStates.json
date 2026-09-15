@@ -1,0 +1,8 @@
+[
+  { "id": "WFS-001", "name": "Backlog", "order": 1, "isDone": false, "isBlockedState": false },
+  { "id": "WFS-002", "name": "To Do", "order": 2, "isDone": false, "isBlockedState": false },
+  { "id": "WFS-003", "name": "In Progress", "order": 3, "isDone": false, "isBlockedState": false },
+  { "id": "WFS-004", "name": "Blocked", "order": 4, "isDone": false, "isBlockedState": true },
+  { "id": "WFS-005", "name": "In Review", "order": 5, "isDone": false, "isBlockedState": false },
+  { "id": "WFS-006", "name": "Done", "order": 6, "isDone": true, "isBlockedState": false }
+]
