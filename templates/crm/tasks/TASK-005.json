@@ -1,0 +1,8 @@
+{
+  "id": "TASK-005",
+  "title": "Identify the rep with the most stalled deals",
+  "instruction": "Deals that have not moved stage in over 30 days are a problem. Work out which single sales rep has the most of them sitting open, and report that rep's name along with how many they have.",
+  "difficulty": "medium",
+  "verifierId": "VER-005",
+  "entities": []
+}

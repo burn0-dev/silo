@@ -1,0 +1,8 @@
+{
+  "id": "TASK-002",
+  "title": "Rehome a departed rep's open pipeline",
+  "instruction": "Tomas Bergstrom has left the company and his account is deactivated, but his open deals are still sitting under his name. Move every one of his open opportunities to Priya Nair (USR-003), who is picking up his territory. Deals he already closed stay as they are. Amara Osei (USR-001) is making the change.",
+  "difficulty": "medium",
+  "verifierId": "VER-002",
+  "entities": ["USR-004", "USR-003"]
+}

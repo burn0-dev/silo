@@ -1,0 +1,8 @@
+{
+  "id": "TASK-006",
+  "title": "Find the weakest active rep against quota",
+  "instruction": "Amara is preparing coaching plans and wants to start with whoever is furthest behind. Among the sales reps who are still with the company, work out which one has the lowest quota attainment measured on closed-won business, and report their name and their attainment as a percentage of quota.",
+  "difficulty": "hard",
+  "verifierId": "VER-006",
+  "entities": []
+}

@@ -1,0 +1,28 @@
+{
+  "scalars": [],
+  "collections": {
+    "opportunities": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        "OPP-005",
+        "OPP-006"
+      ]
+    },
+    "auditLog": {
+      "added": [
+        "AUD-0001",
+        "AUD-0002"
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "sequences": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        "AUD"
+      ]
+    }
+  }
+}

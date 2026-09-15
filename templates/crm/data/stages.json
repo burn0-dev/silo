@@ -1,0 +1,8 @@
+[
+  { "id": "STG-001", "name": "Prospecting", "order": 1, "probability": 10, "isClosed": false },
+  { "id": "STG-002", "name": "Discovery", "order": 2, "probability": 25, "isClosed": false },
+  { "id": "STG-003", "name": "Proposal", "order": 3, "probability": 50, "isClosed": false },
+  { "id": "STG-004", "name": "Negotiation", "order": 4, "probability": 75, "isClosed": false },
+  { "id": "STG-005", "name": "Closed Won", "order": 5, "probability": 100, "isClosed": true },
+  { "id": "STG-006", "name": "Closed Lost", "order": 6, "probability": 0, "isClosed": true }
+]

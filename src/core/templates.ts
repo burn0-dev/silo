@@ -11,7 +11,7 @@ import { fileURLToPath } from "node:url";
 
 import { siloError } from "./errors.js";
 
-export type TemplateId = "blank" | "erp";
+export type TemplateId = "blank" | "erp" | "crm";
 
 export type TemplateDefinition = {
   id: TemplateId;
@@ -23,6 +23,7 @@ const TEMPLATES_DIR = fileURLToPath(new URL("../../templates", import.meta.url))
 export const TEMPLATES: TemplateDefinition[] = [
   { id: "blank", label: "Blank" },
   { id: "erp", label: "ERP" },
+  { id: "crm", label: "CRM" },
 ];
 
 export const DEFAULT_TEMPLATE_ID: TemplateId = "blank";

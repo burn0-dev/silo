@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "reward": 1,
+  "requiredPassed": 1,
+  "requiredTotal": 1,
+  "failedRequired": [],
+  "checksPassed": 3,
+  "checksFailed": 0,
+  "toolCalls": 1,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "The probability-weighted value of all open pipeline is 507500",
+  "error": null,
+  "checks": [
+    {
+      "label": "The reported weighted total is correct",
+      "passed": true,
+      "detail": "answered 507500, expected 507500",
+      "required": true
+    },
+    {
+      "label": "The total is the figure the answer closes on",
+      "passed": true,
+      "detail": "final number = 507500",
+      "required": false
+    },
+    {
+      "label": "Answering left the world unchanged",
+      "passed": true,
+      "detail": "state is untouched",
+      "required": false
+    }
+  ]
+}

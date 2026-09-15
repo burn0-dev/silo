@@ -1,0 +1,8 @@
+{
+  "id": "TASK-004",
+  "title": "Report the weighted value of open pipeline",
+  "instruction": "Amara Osei needs a single number for the board: the probability-weighted value of everything currently open across the whole team, in US dollars. Report that figure.",
+  "difficulty": "easy",
+  "verifierId": "VER-004",
+  "entities": []
+}

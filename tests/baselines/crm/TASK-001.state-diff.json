@@ -1,0 +1,50 @@
+{
+  "scalars": [],
+  "collections": {
+    "accounts": {
+      "added": [
+        "ACC-012"
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "contacts": {
+      "added": [
+        "CON-015"
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "leads": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        "LEAD-004"
+      ]
+    },
+    "opportunities": {
+      "added": [
+        "OPP-017"
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "auditLog": {
+      "added": [
+        "AUD-0001"
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "sequences": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        "ACC",
+        "CON",
+        "OPP",
+        "AUD"
+      ]
+    }
+  }
+}

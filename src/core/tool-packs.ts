@@ -13,7 +13,7 @@ export type ToolPack = {
 export const TOOL_PACKS: ToolPack[] = [
   { id: "calendar", label: "Calendar" },
   { id: "email", label: "Email" },
-  { id: "crm", label: "CRM" },
+  { id: "crm-contacts", label: "CRM Contacts" },
   { id: "browser", label: "Browser" },
   { id: "files", label: "Files" },
 ];
