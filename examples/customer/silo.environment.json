@@ -1,0 +1,7 @@
+{
+  "name": "customer",
+  "template": "blank",
+  "templateVersion": "0.2.0",
+  "entrypoint": "./index.ts",
+  "tools": []
+}

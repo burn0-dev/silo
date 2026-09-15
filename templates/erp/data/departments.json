@@ -1,0 +1,44 @@
+[
+  {
+    "id": "DEPT-PROC",
+    "code": "PROC",
+    "name": "Procurement",
+    "managerUserId": "USR-003",
+    "costCenter": "CC-1200"
+  },
+  {
+    "id": "DEPT-OPS",
+    "code": "OPS",
+    "name": "Warehouse Operations",
+    "managerUserId": "USR-005",
+    "costCenter": "CC-1400"
+  },
+  {
+    "id": "DEPT-FIN",
+    "code": "FIN",
+    "name": "Finance",
+    "managerUserId": "USR-008",
+    "costCenter": "CC-1100"
+  },
+  {
+    "id": "DEPT-SALES",
+    "code": "SALES",
+    "name": "Sales",
+    "managerUserId": "USR-010",
+    "costCenter": "CC-1600"
+  },
+  {
+    "id": "DEPT-IT",
+    "code": "IT",
+    "name": "Information Technology",
+    "managerUserId": "USR-001",
+    "costCenter": "CC-1800"
+  },
+  {
+    "id": "DEPT-FAC",
+    "code": "FAC",
+    "name": "Facilities",
+    "managerUserId": "USR-005",
+    "costCenter": "CC-1900"
+  }
+]

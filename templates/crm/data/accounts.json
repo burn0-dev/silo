@@ -1,0 +1,101 @@
+[
+  {
+    "id": "ACC-001",
+    "name": "Helios Manufacturing",
+    "industry": "Industrial Equipment",
+    "tier": "enterprise",
+    "ownerId": "USR-002",
+    "website": "helios-mfg.example.com",
+    "createdDate": "2024-06-11"
+  },
+  {
+    "id": "ACC-002",
+    "name": "Northwind Logistics",
+    "industry": "Transportation",
+    "tier": "mid_market",
+    "ownerId": "USR-002",
+    "website": "northwind-logistics.example.com",
+    "createdDate": "2025-02-03"
+  },
+  {
+    "id": "ACC-003",
+    "name": "Vertex Analytics",
+    "industry": "Software",
+    "tier": "enterprise",
+    "ownerId": "USR-003",
+    "website": "vertexanalytics.example.com",
+    "createdDate": "2024-09-27"
+  },
+  {
+    "id": "ACC-004",
+    "name": "Brightpath Health",
+    "industry": "Healthcare",
+    "tier": "mid_market",
+    "ownerId": "USR-003",
+    "website": "brightpathhealth.example.com",
+    "createdDate": "2025-11-14"
+  },
+  {
+    "id": "ACC-005",
+    "name": "Cascade Foods",
+    "industry": "Food & Beverage",
+    "tier": "mid_market",
+    "ownerId": "USR-004",
+    "website": "cascadefoods.example.com",
+    "createdDate": "2025-01-20"
+  },
+  {
+    "id": "ACC-006",
+    "name": "Ridgeline Energy",
+    "industry": "Energy",
+    "tier": "enterprise",
+    "ownerId": "USR-004",
+    "website": "ridgelineenergy.example.com",
+    "createdDate": "2024-11-05"
+  },
+  {
+    "id": "ACC-007",
+    "name": "Lumen Retail",
+    "industry": "Retail",
+    "tier": "mid_market",
+    "ownerId": "USR-005",
+    "website": "lumenretail.example.com",
+    "createdDate": "2025-04-18"
+  },
+  {
+    "id": "ACC-008",
+    "name": "Anchor Financial",
+    "industry": "Financial Services",
+    "tier": "enterprise",
+    "ownerId": "USR-005",
+    "website": "anchorfinancial.example.com",
+    "createdDate": "2024-08-09"
+  },
+  {
+    "id": "ACC-009",
+    "name": "Peakform Sports",
+    "industry": "Consumer Goods",
+    "tier": "smb",
+    "ownerId": "USR-006",
+    "website": "peakformsports.example.com",
+    "createdDate": "2025-07-22"
+  },
+  {
+    "id": "ACC-010",
+    "name": "Solace Hospitality",
+    "industry": "Hospitality",
+    "tier": "smb",
+    "ownerId": "USR-006",
+    "website": "solacehospitality.example.com",
+    "createdDate": "2025-05-30"
+  },
+  {
+    "id": "ACC-011",
+    "name": "Crestline Media",
+    "industry": "Media",
+    "tier": "smb",
+    "ownerId": "USR-005",
+    "website": "crestlinemedia.example.com",
+    "createdDate": "2025-03-12"
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "id": "TASK-004",
+  "title": "Check stock availability before promising a delivery",
+  "instruction": "A customer wants 40 units of Roller Chain RC80 (PRD-012) from Warehouse North (WH-001). Check whether that is available today. If it is not, adjust nothing — instead raise a purchase requisition for the reorder quantity against the Operations MRO budget (BUD-002), requested by Tom Braddock (USR-004) for the Warehouse Operations department (DEPT-OPS).",
+  "difficulty": "easy",
+  "verifierId": "VER-004",
+  "entities": [
+    "PRD-012",
+    "WH-001",
+    "BUD-002"
+  ]
+}

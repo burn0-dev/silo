@@ -1,0 +1,8 @@
+{
+  "id": "TASK-010",
+  "title": "Report the strongest finished sprint",
+  "instruction": "Of the sprints that have already been completed, which one delivered the most points? Name the sprint and give the number of points it delivered.",
+  "difficulty": "medium",
+  "verifierId": "VER-010",
+  "entities": []
+}

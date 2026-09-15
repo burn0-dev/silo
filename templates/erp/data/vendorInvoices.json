@@ -1,0 +1,211 @@
+[
+  {
+    "id": "VINV-101",
+    "vendorInvoiceNumber": "KBW-2026-0451",
+    "vendorId": "VEN-001",
+    "status": "paid",
+    "purchaseOrderId": "PO-201",
+    "goodsReceiptIds": [
+      "GR-001"
+    ],
+    "amountPaid": 5907.6,
+    "invoiceDate": "2026-02-24T00:00:00.000Z",
+    "dueDate": "2026-03-26T00:00:00.000Z",
+    "receivedAt": "2026-02-25T09:00:00.000Z",
+    "matchId": "MATCH-001",
+    "approvalId": "APR-015",
+    "approvedAt": "2026-02-27T11:20:00.000Z",
+    "approvedByUserId": "USR-007",
+    "paidAt": "2026-03-06T14:00:00.000Z",
+    "lines": [
+      {
+        "purchaseOrderLineId": "PO-201-L1",
+        "productId": "PRD-001",
+        "description": "Deep Groove Ball Bearing 6205-2RS",
+        "quantity": 500,
+        "unitPrice": 4.1
+      },
+      {
+        "purchaseOrderLineId": "PO-201-L2",
+        "productId": "PRD-002",
+        "description": "Tapered Roller Bearing 30206",
+        "quantity": 300,
+        "unitPrice": 11.4
+      }
+    ]
+  },
+  {
+    "id": "VINV-102",
+    "vendorInvoiceNumber": "HAL-88231",
+    "vendorId": "VEN-003",
+    "status": "approved",
+    "purchaseOrderId": "PO-202",
+    "goodsReceiptIds": [
+      "GR-002"
+    ],
+    "invoiceDate": "2026-03-10T00:00:00.000Z",
+    "dueDate": "2026-04-09T00:00:00.000Z",
+    "receivedAt": "2026-03-11T08:30:00.000Z",
+    "matchId": "MATCH-002",
+    "approvalId": "APR-016",
+    "approvedAt": "2026-03-12T10:05:00.000Z",
+    "approvedByUserId": "USR-007",
+    "lines": [
+      {
+        "purchaseOrderLineId": "PO-202-L1",
+        "productId": "PRD-007",
+        "description": "Hydraulic Cylinder 50mm Bore",
+        "quantity": 25,
+        "unitPrice": 242
+      },
+      {
+        "purchaseOrderLineId": "PO-202-L2",
+        "productId": "PRD-008",
+        "description": "Hydraulic Hose 1/2in R2",
+        "quantity": 595,
+        "unitPrice": 6.6
+      }
+    ]
+  },
+  {
+    "id": "VINV-103",
+    "vendorInvoiceNumber": "NFL-2026-117",
+    "vendorId": "VEN-010",
+    "status": "pending_approval",
+    "purchaseOrderId": "PO-206",
+    "goodsReceiptIds": [
+      "GR-004"
+    ],
+    "invoiceDate": "2026-03-09T00:00:00.000Z",
+    "dueDate": "2026-04-23T00:00:00.000Z",
+    "receivedAt": "2026-03-10T09:40:00.000Z",
+    "matchId": "MATCH-003",
+    "approvalId": "APR-017",
+    "lines": [
+      {
+        "purchaseOrderLineId": "PO-206-L1",
+        "productId": "PRD-021",
+        "description": "EP2 Lithium Grease 18kg",
+        "quantity": 80,
+        "unitPrice": 86
+      }
+    ]
+  },
+  {
+    "id": "VINV-104",
+    "vendorInvoiceNumber": "TSF-INV-6620",
+    "vendorId": "VEN-002",
+    "status": "pending_approval",
+    "purchaseOrderId": "PO-203",
+    "goodsReceiptIds": [
+      "GR-003"
+    ],
+    "invoiceDate": "2026-03-09T00:00:00.000Z",
+    "dueDate": "2026-04-23T00:00:00.000Z",
+    "receivedAt": "2026-03-10T10:20:00.000Z",
+    "matchId": "MATCH-004",
+    "approvalId": "APR-018",
+    "lines": [
+      {
+        "purchaseOrderLineId": "PO-203-L1",
+        "productId": "PRD-004",
+        "description": "Hex Bolt M8x40 Zinc (box of 100)",
+        "quantity": 400,
+        "unitPrice": 11.7
+      },
+      {
+        "purchaseOrderLineId": "PO-203-L2",
+        "productId": "PRD-006",
+        "description": "Nylon Lock Nut M8 (box of 200)",
+        "quantity": 300,
+        "unitPrice": 9.1
+      }
+    ]
+  },
+  {
+    "id": "VINV-105",
+    "vendorInvoiceNumber": "RCP-4471",
+    "vendorId": "VEN-012",
+    "status": "disputed",
+    "invoiceDate": "2026-03-05T00:00:00.000Z",
+    "dueDate": "2026-04-04T00:00:00.000Z",
+    "receivedAt": "2026-03-06T11:15:00.000Z",
+    "matchId": "MATCH-005",
+    "disputeReason": "No purchase order or goods receipt on file for this delivery.",
+    "lines": [
+      {
+        "purchaseOrderLineId": null,
+        "productId": null,
+        "description": "Emergency conveyor roller replacement — Warehouse North",
+        "quantity": 1,
+        "unitPrice": 1450
+      }
+    ]
+  },
+  {
+    "id": "VINV-106",
+    "vendorInvoiceNumber": "SSP-2026-0312",
+    "vendorId": "VEN-009",
+    "status": "pending_match",
+    "purchaseOrderId": "PO-207",
+    "invoiceDate": "2026-03-02T00:00:00.000Z",
+    "dueDate": "2026-04-01T00:00:00.000Z",
+    "receivedAt": "2026-03-03T10:00:00.000Z",
+    "lines": [
+      {
+        "purchaseOrderLineId": "PO-207-L1",
+        "productId": "PRD-020",
+        "description": "Cut-Resistant Gloves Level 5 (case of 60)",
+        "quantity": 30,
+        "unitPrice": 154
+      }
+    ]
+  },
+  {
+    "id": "VINV-107",
+    "vendorInvoiceNumber": "OKT-19945",
+    "vendorId": "VEN-006",
+    "status": "approved",
+    "purchaseOrderId": "PO-209",
+    "goodsReceiptIds": [
+      "GR-006"
+    ],
+    "invoiceDate": "2026-03-04T00:00:00.000Z",
+    "dueDate": "2026-03-19T00:00:00.000Z",
+    "receivedAt": "2026-03-05T08:50:00.000Z",
+    "matchId": "MATCH-006",
+    "approvalId": "APR-019",
+    "approvedAt": "2026-03-06T09:10:00.000Z",
+    "approvedByUserId": "USR-007",
+    "lines": [
+      {
+        "purchaseOrderLineId": "PO-209-L1",
+        "productId": "PRD-017",
+        "description": "Torque Wrench 200Nm",
+        "quantity": 50,
+        "unitPrice": 94
+      }
+    ]
+  },
+  {
+    "id": "VINV-108",
+    "vendorInvoiceNumber": "TSF-FRT-2211",
+    "vendorId": "VEN-002",
+    "status": "approved",
+    "invoiceDate": "2026-01-20T00:00:00.000Z",
+    "dueDate": "2026-03-06T00:00:00.000Z",
+    "receivedAt": "2026-01-26T09:30:00.000Z",
+    "approvalId": "APR-020",
+    "approvedAt": "2026-01-28T09:00:00.000Z",
+    "approvedByUserId": "USR-007",
+    "lines": [
+      {
+        "purchaseOrderLineId": null,
+        "productId": null,
+        "description": "Freight and handling — February inbound shipments",
+        "quantity": 1,
+        "unitPrice": 2340
+      }
+    ]
+  }
+]

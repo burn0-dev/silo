@@ -1,0 +1,8 @@
+{
+  "id": "TASK-008",
+  "title": "Close out the ledger migration",
+  "instruction": "The ledger data migration is finished in practice — the decommissioning step has been through review and nothing else is outstanding. Get the project signed off and marked completed. Grace Kim (MEM-007) is doing the work.",
+  "difficulty": "hard",
+  "verifierId": "VER-008",
+  "entities": ["PROJ-003"]
+}

@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "reward": 1,
+  "requiredPassed": 2,
+  "requiredTotal": 2,
+  "failedRequired": [],
+  "checksPassed": 4,
+  "checksFailed": 0,
+  "toolCalls": 1,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "Tomas Bergstrom has the most stalled deals, with 2",
+  "error": null,
+  "checks": [
+    {
+      "label": "The named rep is the one with the most stalled deals",
+      "passed": true,
+      "detail": "expected Tomas Bergstrom, output = Tomas Bergstrom has the most stalled deals, with 2",
+      "required": true
+    },
+    {
+      "label": "The number of stalled deals is correct",
+      "passed": true,
+      "detail": "expected 2 stalled deals",
+      "required": true
+    },
+    {
+      "label": "The seeded world has a single clear leader",
+      "passed": true,
+      "detail": "top = 2, runner-up = 1",
+      "required": false
+    },
+    {
+      "label": "Answering left the world unchanged",
+      "passed": true,
+      "detail": "state is untouched",
+      "required": false
+    }
+  ]
+}

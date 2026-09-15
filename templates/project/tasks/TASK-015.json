@@ -1,0 +1,8 @@
+{
+  "id": "TASK-015",
+  "title": "Report the sprint that closed with work left in it",
+  "instruction": "One sprint was closed out while work was still unfinished inside it, and that work has been invisible since. Name that sprint and report how many estimate points are still unfinished in it.",
+  "difficulty": "hard",
+  "verifierId": "VER-015",
+  "entities": []
+}

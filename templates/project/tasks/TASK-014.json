@@ -1,0 +1,8 @@
+{
+  "id": "TASK-014",
+  "title": "Report the size of the backlog",
+  "instruction": "How many work items are sitting in the Backlog state right now, across every project? Report the count.",
+  "difficulty": "easy",
+  "verifierId": "VER-014",
+  "entities": []
+}

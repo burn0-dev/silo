@@ -1,0 +1,44 @@
+{
+  "passed": false,
+  "reward": 0,
+  "requiredPassed": 0,
+  "requiredTotal": 3,
+  "failedRequired": [
+    "All 40 cylinders are now received",
+    "PO-202 is fully received",
+    "Stock at Warehouse North rose by 15"
+  ],
+  "checksPassed": 0,
+  "checksFailed": 4,
+  "toolCalls": 0,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "",
+  "error": null,
+  "checks": [
+    {
+      "label": "All 40 cylinders are now received",
+      "passed": false,
+      "detail": "quantityReceived = 25",
+      "required": true
+    },
+    {
+      "label": "PO-202 is fully received",
+      "passed": false,
+      "detail": "status = partially_received",
+      "required": true
+    },
+    {
+      "label": "Stock at Warehouse North rose by 15",
+      "passed": false,
+      "detail": "31 -> 31",
+      "required": true
+    },
+    {
+      "label": "Nothing is still inbound for that line",
+      "passed": false,
+      "detail": "inbound = 15",
+      "required": false
+    }
+  ]
+}

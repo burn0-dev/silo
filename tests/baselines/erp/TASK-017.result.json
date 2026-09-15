@@ -1,0 +1,58 @@
+{
+  "passed": false,
+  "reward": 0,
+  "requiredPassed": 0,
+  "requiredTotal": 5,
+  "failedRequired": [
+    "A requisition was raised and approved",
+    "A purchase order was raised on VEN-009 for 20 cases",
+    "The goods were fully received",
+    "Stock at Warehouse North rose by 20",
+    "The invoice is paid in full"
+  ],
+  "checksPassed": 0,
+  "checksFailed": 6,
+  "toolCalls": 0,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "",
+  "error": null,
+  "checks": [
+    {
+      "label": "A requisition was raised and approved",
+      "passed": false,
+      "detail": "requisition none = undefined",
+      "required": true
+    },
+    {
+      "label": "A purchase order was raised on VEN-009 for 20 cases",
+      "passed": false,
+      "detail": "undefined @ undefined",
+      "required": true
+    },
+    {
+      "label": "The goods were fully received",
+      "passed": false,
+      "detail": "received = undefined, receipts = 0",
+      "required": true
+    },
+    {
+      "label": "Stock at Warehouse North rose by 20",
+      "passed": false,
+      "detail": "8 -> 8",
+      "required": true
+    },
+    {
+      "label": "An invoice was registered for what was received",
+      "passed": false,
+      "detail": "subtotal = undefined (expected 3080)",
+      "required": false
+    },
+    {
+      "label": "The invoice is paid in full",
+      "passed": false,
+      "detail": "status = undefined, completed payments = 0",
+      "required": true
+    }
+  ]
+}

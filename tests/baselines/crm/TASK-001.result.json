@@ -1,0 +1,76 @@
+{
+  "passed": true,
+  "reward": 1,
+  "requiredPassed": 7,
+  "requiredTotal": 7,
+  "failedRequired": [],
+  "checksPassed": 10,
+  "checksFailed": 0,
+  "toolCalls": 2,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "Converted LEAD-004 into account ACC-012, contact CON-015 and opportunity OPP-017 worth 140000, closing 2026-06-30.",
+  "error": null,
+  "checks": [
+    {
+      "label": "The lead is marked converted",
+      "passed": true,
+      "detail": "status = converted",
+      "required": true
+    },
+    {
+      "label": "The conversion produced an opportunity",
+      "passed": true,
+      "detail": "convertedOpportunityId = OPP-017",
+      "required": true
+    },
+    {
+      "label": "The opportunity is worth the agreed amount",
+      "passed": true,
+      "detail": "amount = 140000, expected 140000",
+      "required": true
+    },
+    {
+      "label": "The opportunity closes on the agreed date",
+      "passed": true,
+      "detail": "expectedCloseDate = 2026-06-30",
+      "required": true
+    },
+    {
+      "label": "The opportunity points back at the lead it came from",
+      "passed": true,
+      "detail": "sourceLeadId = LEAD-004",
+      "required": true
+    },
+    {
+      "label": "The conversion produced a contact on the new account",
+      "passed": true,
+      "detail": "contact CON-015 -> account ACC-012",
+      "required": true
+    },
+    {
+      "label": "The opportunity sits on the same account as the contact",
+      "passed": true,
+      "detail": "opportunity account = ACC-012, account = ACC-012",
+      "required": true
+    },
+    {
+      "label": "The account is new rather than an existing customer",
+      "passed": true,
+      "detail": "ACC-012 existed before = false",
+      "required": false
+    },
+    {
+      "label": "The opportunity is open",
+      "passed": true,
+      "detail": "status = open",
+      "required": false
+    },
+    {
+      "label": "The deal stayed with the lead's owner",
+      "passed": true,
+      "detail": "owner = USR-002",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "passed": false,
+  "reward": 0.5,
+  "requiredPassed": 1,
+  "requiredTotal": 2,
+  "failedRequired": [
+    "VEN-007 is blocked"
+  ],
+  "checksPassed": 1,
+  "checksFailed": 1,
+  "toolCalls": 0,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "",
+  "error": null,
+  "checks": [
+    {
+      "label": "VEN-007 is blocked",
+      "passed": false,
+      "detail": "status = inactive",
+      "required": true
+    },
+    {
+      "label": "A block reason was recorded",
+      "passed": true,
+      "detail": "statusReason = Dormant since 2025-10; no orders placed in two quarters.",
+      "required": true
+    }
+  ]
+}

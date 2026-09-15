@@ -1,0 +1,8 @@
+{
+  "id": "TASK-003",
+  "title": "Book the Lumen point-of-sale win",
+  "instruction": "Lumen Retail has signed for the point-of-sale refresh, but at $118,000 rather than the figure we last quoted. Record the win at the contracted number and note on the deal that the signed contract came back today. Lena Fischer (USR-005) owns the deal and is recording it.",
+  "difficulty": "medium",
+  "verifierId": "VER-003",
+  "entities": ["OPP-007"]
+}

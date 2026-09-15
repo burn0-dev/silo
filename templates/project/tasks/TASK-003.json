@@ -1,0 +1,8 @@
+{
+  "id": "TASK-003",
+  "title": "Rehome the work Devon Ito left behind",
+  "instruction": "Devon Ito has left the company and their unfinished work on the Nimbus mobile project is stranded. Move all of it to Farid Haddad. Elena Petrov (MEM-005) is doing the work.",
+  "difficulty": "medium",
+  "verifierId": "VER-003",
+  "entities": ["MEM-004", "MEM-006"]
+}

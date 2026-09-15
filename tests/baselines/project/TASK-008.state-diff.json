@@ -1,0 +1,34 @@
+{
+  "scalars": [],
+  "collections": {
+    "projects": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        "PROJ-003"
+      ]
+    },
+    "workItems": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        "WI-024"
+      ]
+    },
+    "auditLog": {
+      "added": [
+        "AUD-0003",
+        "AUD-0004"
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "sequences": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        "AUD"
+      ]
+    }
+  }
+}

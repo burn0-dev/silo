@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "reward": 1,
+  "requiredPassed": 3,
+  "requiredTotal": 3,
+  "failedRequired": [],
+  "checksPassed": 5,
+  "checksFailed": 0,
+  "toolCalls": 1,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "Daniel Reyes is furthest behind, at 36% of quota",
+  "error": null,
+  "checks": [
+    {
+      "label": "The named rep is the weakest active rep against quota",
+      "passed": true,
+      "detail": "expected Daniel Reyes, output = Daniel Reyes is furthest behind, at 36% of quota",
+      "required": true
+    },
+    {
+      "label": "The attainment percentage is correct",
+      "passed": true,
+      "detail": "expected 36%",
+      "required": true
+    },
+    {
+      "label": "The deactivated rep was not offered as the answer",
+      "passed": true,
+      "detail": "deactivated rep = Tomas Bergstrom",
+      "required": true
+    },
+    {
+      "label": "The seeded world has a single clear answer",
+      "passed": true,
+      "detail": "lowest = 36%, next = 52.8%",
+      "required": false
+    },
+    {
+      "label": "Answering left the world unchanged",
+      "passed": true,
+      "detail": "state is untouched",
+      "required": false
+    }
+  ]
+}

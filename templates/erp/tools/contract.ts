@@ -1,99 +1,25 @@
 /**
  * Tool contract for the ERP environment.
  *
- * Tools are plain data: a name, a description, a JSON Schema for the input, and a
- * synchronous `execute` that reads and mutates the simulated ERP state. Nothing
- * here knows about any model provider or agent framework — binding these to a
- * runtime is the caller's job (see `bindTools` in the template index).
+ * The contract comes from Silo. This module pins it to this environment's state
+ * type and re-exports it next to the schema builders and input readers every ERP
+ * tool shares, so a tool file imports one thing.
  */
 
-import type { ErpState } from "../state.js";
+import { toolError } from "@burn0/silo";
+import type { JsonSchema, SiloTool, ToolInput } from "@burn0/silo";
 
-export type JsonSchema = Record<string, unknown>;
+import type { State } from "../state.js";
 
-export type ToolInput = Record<string, unknown>;
+export { ToolError, toolError } from "@burn0/silo";
+export type { JsonSchema, ToolErrorCode, ToolInput } from "@burn0/silo";
 
-export type ToolErrorCode =
-  | "invalid_input"
-  | "not_found"
-  | "invalid_state"
-  | "not_allowed"
-  | "insufficient_stock"
-  | "limit_exceeded"
-  | "conflict";
+/** An ERP tool: a Silo tool bound to this environment's state. */
+export type ErpTool = SiloTool<State>;
 
-export type ToolOutcome =
-  | { ok: true; data: unknown }
-  | { ok: false; error: { code: ToolErrorCode; message: string; details?: unknown } };
-
-export type ErpTool = {
-  name: string;
-  description: string;
-  inputSchema: JsonSchema;
-  execute: (state: ErpState, input: ToolInput) => ToolOutcome;
-};
-
-/**
- * Thrown by the validation and lookup helpers; `defineTool` converts it into a
- * structured failure so individual tools never write try/catch boilerplate.
- */
-export class ToolError extends Error {
-  readonly code: ToolErrorCode;
-  readonly details: unknown;
-
-  constructor(code: ToolErrorCode, message: string, details?: unknown) {
-    super(message);
-    this.name = "ToolError";
-    this.code = code;
-    this.details = details;
-  }
-}
-
-export function toolError(
-  code: ToolErrorCode,
-  message: string,
-  details?: unknown,
-): ToolError {
-  return new ToolError(code, message, details);
-}
-
-export function defineTool(spec: {
-  name: string;
-  description: string;
-  inputSchema: JsonSchema;
-  run: (state: ErpState, input: ToolInput) => unknown;
-}): ErpTool {
-  return {
-    name: spec.name,
-    description: spec.description,
-    inputSchema: spec.inputSchema,
-    execute(state, input) {
-      try {
-        return { ok: true, data: spec.run(state, input ?? {}) };
-      } catch (error) {
-        if (error instanceof ToolError) {
-          return error.details === undefined
-            ? { ok: false, error: { code: error.code, message: error.message } }
-            : {
-                ok: false,
-                error: {
-                  code: error.code,
-                  message: error.message,
-                  details: error.details,
-                },
-              };
-        }
-
-        return {
-          ok: false,
-          error: {
-            code: "invalid_state",
-            message: error instanceof Error ? error.message : String(error),
-          },
-        };
-      }
-    },
-  };
+/** `defineTool` with the ERP state type already applied. */
+export function defineTool(tool: ErpTool): ErpTool {
+  return tool;
 }
 
 // --- schema builders -------------------------------------------------------

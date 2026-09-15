@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "reward": 1,
+  "requiredPassed": 3,
+  "requiredTotal": 3,
+  "failedRequired": [],
+  "checksPassed": 5,
+  "checksFailed": 0,
+  "toolCalls": 3,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "Moved 2 open opportunities (OPP-005, OPP-006) from USR-004 to USR-003.",
+  "error": null,
+  "checks": [
+    {
+      "label": "Every open deal of the departed rep moved to the new owner",
+      "passed": true,
+      "detail": "2 of 2 moved to USR-003",
+      "required": true
+    },
+    {
+      "label": "The departed rep owns no open deals",
+      "passed": true,
+      "detail": "0 still owned by USR-004",
+      "required": true
+    },
+    {
+      "label": "The moved deals are still open",
+      "passed": true,
+      "detail": "2 of 2 still open",
+      "required": true
+    },
+    {
+      "label": "Deals the departed rep already closed kept their owner",
+      "passed": true,
+      "detail": "closed history preserved",
+      "required": false
+    },
+    {
+      "label": "No other rep's deals changed hands",
+      "passed": true,
+      "detail": "other owners unchanged",
+      "required": false
+    }
+  ]
+}

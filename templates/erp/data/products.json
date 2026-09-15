@@ -1,0 +1,509 @@
+[
+  {
+    "id": "PRD-001",
+    "sku": "BRG-6205",
+    "name": "Deep Groove Ball Bearing 6205-2RS",
+    "category": "bearings",
+    "uom": "each",
+    "standardCost": {
+      "amount": 4.25,
+      "currency": "USD"
+    },
+    "listPrice": {
+      "amount": 9.5,
+      "currency": "USD"
+    },
+    "status": "active",
+    "reorderPoint": 200,
+    "reorderQuantity": 500,
+    "leadTimeDays": 7,
+    "preferredVendorIds": [
+      "VEN-001"
+    ],
+    "isStocked": true
+  },
+  {
+    "id": "PRD-002",
+    "sku": "BRG-30206",
+    "name": "Tapered Roller Bearing 30206",
+    "category": "bearings",
+    "uom": "each",
+    "standardCost": {
+      "amount": 11.8,
+      "currency": "USD"
+    },
+    "listPrice": {
+      "amount": 24,
+      "currency": "USD"
+    },
+    "status": "active",
+    "reorderPoint": 120,
+    "reorderQuantity": 300,
+    "leadTimeDays": 10,
+    "preferredVendorIds": [
+      "VEN-001"
+    ],
+    "isStocked": true
+  },
+  {
+    "id": "PRD-003",
+    "sku": "BRG-6309",
+    "name": "Deep Groove Ball Bearing 6309-ZZ",
+    "category": "bearings",
+    "uom": "each",
+    "standardCost": {
+      "amount": 18.4,
+      "currency": "USD"
+    },
+    "listPrice": {
+      "amount": 37.5,
+      "currency": "USD"
+    },
+    "status": "active",
+    "reorderPoint": 80,
+    "reorderQuantity": 200,
+    "leadTimeDays": 10,
+    "preferredVendorIds": [
+      "VEN-001"
+    ],
+    "isStocked": true
+  },
+  {
+    "id": "PRD-004",
+    "sku": "FAS-M8X40",
+    "name": "Hex Bolt M8x40 Zinc (box of 100)",
+    "category": "fasteners",
+    "uom": "box",
+    "standardCost": {
+      "amount": 12,
+      "currency": "USD"
+    },
+    "listPrice": {
+      "amount": 22.5,
+      "currency": "USD"
+    },
+    "status": "active",
+    "reorderPoint": 150,
+    "reorderQuantity": 400,
+    "leadTimeDays": 5,
+    "preferredVendorIds": [
+      "VEN-002"
+    ],
+    "isStocked": true
+  },
+  {
+    "id": "PRD-005",
+    "sku": "FAS-M12X60",
+    "name": "Hex Bolt M12x60 Grade 8.8 (box of 50)",
+    "category": "fasteners",
+    "uom": "box",
+    "standardCost": {
+      "amount": 18.75,
+      "currency": "USD"
+    },
+    "listPrice": {
+      "amount": 34,
+      "currency": "USD"
+    },
+    "status": "active",
+    "reorderPoint": 100,
+    "reorderQuantity": 250,
+    "leadTimeDays": 5,
+    "preferredVendorIds": [
+      "VEN-002"
+    ],
+    "isStocked": true
+  },
+  {
+    "id": "PRD-006",
+    "sku": "FAS-NUT-M8",
+    "name": "Nylon Lock Nut M8 (box of 200)",
+    "category": "fasteners",
+    "uom": "box",
+    "standardCost": {
+      "amount": 9.1,
+      "currency": "USD"
+    },
+    "listPrice": {
+      "amount": 18,
+      "currency": "USD"
+    },
+    "status": "active",
+    "reorderPoint": 120,
+    "reorderQuantity": 300,
+    "leadTimeDays": 5,
+    "preferredVendorIds": [
+      "VEN-002"
+    ],
+    "isStocked": true
+  },
+  {
+    "id": "PRD-007",
+    "sku": "HYD-CYL-50",
+    "name": "Hydraulic Cylinder 50mm Bore",
+    "category": "hydraulics",
+    "uom": "each",
+    "standardCost": {
+      "amount": 245,
+      "currency": "USD"
+    },
+    "listPrice": {
+      "amount": 468,
+      "currency": "USD"
+    },
+    "status": "active",
+    "reorderPoint": 15,
+    "reorderQuantity": 40,
+    "leadTimeDays": 21,
+    "preferredVendorIds": [
+      "VEN-003"
+    ],
+    "isStocked": true
+  },
+  {
+    "id": "PRD-008",
+    "sku": "HYD-HOSE-12",
+    "name": "Hydraulic Hose 1/2in R2",
+    "category": "hydraulics",
+    "uom": "metre",
+    "standardCost": {
+      "amount": 6.75,
+      "currency": "USD"
+    },
+    "listPrice": {
+      "amount": 14.2,
+      "currency": "USD"
+    },
+    "status": "active",
+    "reorderPoint": 300,
+    "reorderQuantity": 600,
+    "leadTimeDays": 14,
+    "preferredVendorIds": [
+      "VEN-003"
+    ],
+    "isStocked": true
+  },
+  {
+    "id": "PRD-009",
+    "sku": "HYD-PUMP-A12",
+    "name": "Gear Pump A12 Series",
+    "category": "hydraulics",
+    "uom": "each",
+    "standardCost": {
+      "amount": 512,
+      "currency": "USD"
+    },
+    "listPrice": {
+      "amount": 940,
+      "currency": "USD"
+    },
+    "status": "active",
+    "reorderPoint": 8,
+    "reorderQuantity": 20,
+    "leadTimeDays": 28,
+    "preferredVendorIds": [
+      "VEN-003"
+    ],
+    "isStocked": true
+  },
+  {
+    "id": "PRD-010",
+    "sku": "BLT-V-A42",
+    "name": "V-Belt A42",
+    "category": "power transmission",
+    "uom": "each",
+    "standardCost": {
+      "amount": 7.1,
+      "currency": "USD"
+    },
+    "listPrice": {
+      "amount": 15,
+      "currency": "USD"
+    },
+    "status": "active",
+    "reorderPoint": 200,
+    "reorderQuantity": 500,
+    "leadTimeDays": 7,
+    "preferredVendorIds": [
+      "VEN-004"
+    ],
+    "isStocked": true
+  },
+  {
+    "id": "PRD-011",
+    "sku": "BLT-TIM-8M",
+    "name": "Timing Belt 8M-1600",
+    "category": "power transmission",
+    "uom": "each",
+    "standardCost": {
+      "amount": 34.5,
+      "currency": "USD"
+    },
+    "listPrice": {
+      "amount": 68,
+      "currency": "USD"
+    },
+    "status": "active",
+    "reorderPoint": 60,
+    "reorderQuantity": 150,
+    "leadTimeDays": 14,
+    "preferredVendorIds": [
+      "VEN-004"
+    ],
+    "isStocked": true
+  },
+  {
+    "id": "PRD-012",
+    "sku": "CHN-RC80",
+    "name": "Roller Chain RC80 (10ft)",
+    "category": "power transmission",
+    "uom": "each",
+    "standardCost": {
+      "amount": 88,
+      "currency": "USD"
+    },
+    "listPrice": {
+      "amount": 165,
+      "currency": "USD"
+    },
+    "status": "active",
+    "reorderPoint": 40,
+    "reorderQuantity": 100,
+    "leadTimeDays": 14,
+    "preferredVendorIds": [
+      "VEN-004",
+      "VEN-012"
+    ],
+    "isStocked": true
+  },
+  {
+    "id": "PRD-013",
+    "sku": "ELE-CON-32",
+    "name": "Contactor 32A 3-Pole",
+    "category": "electrical",
+    "uom": "each",
+    "standardCost": {
+      "amount": 42,
+      "currency": "USD"
+    },
+    "listPrice": {
+      "amount": 86,
+      "currency": "USD"
+    },
+    "status": "active",
+    "reorderPoint": 50,
+    "reorderQuantity": 120,
+    "leadTimeDays": 10,
+    "preferredVendorIds": [
+      "VEN-005"
+    ],
+    "isStocked": true
+  },
+  {
+    "id": "PRD-014",
+    "sku": "ELE-VFD-5K",
+    "name": "Variable Frequency Drive 5kW",
+    "category": "electrical",
+    "uom": "each",
+    "standardCost": {
+      "amount": 615,
+      "currency": "USD"
+    },
+    "listPrice": {
+      "amount": 1150,
+      "currency": "USD"
+    },
+    "status": "active",
+    "reorderPoint": 6,
+    "reorderQuantity": 15,
+    "leadTimeDays": 28,
+    "preferredVendorIds": [
+      "VEN-005"
+    ],
+    "isStocked": true
+  },
+  {
+    "id": "PRD-015",
+    "sku": "ELE-CBL-4C",
+    "name": "Control Cable 4-Core",
+    "category": "electrical",
+    "uom": "metre",
+    "standardCost": {
+      "amount": 2.35,
+      "currency": "USD"
+    },
+    "listPrice": {
+      "amount": 5.1,
+      "currency": "USD"
+    },
+    "status": "active",
+    "reorderPoint": 800,
+    "reorderQuantity": 2000,
+    "leadTimeDays": 7,
+    "preferredVendorIds": [
+      "VEN-005"
+    ],
+    "isStocked": true
+  },
+  {
+    "id": "PRD-016",
+    "sku": "TOL-IMP-12",
+    "name": "Impact Wrench 1/2in",
+    "category": "tools",
+    "uom": "each",
+    "standardCost": {
+      "amount": 178,
+      "currency": "USD"
+    },
+    "listPrice": {
+      "amount": 329,
+      "currency": "USD"
+    },
+    "status": "active",
+    "reorderPoint": 12,
+    "reorderQuantity": 30,
+    "leadTimeDays": 14,
+    "preferredVendorIds": [
+      "VEN-006"
+    ],
+    "isStocked": true
+  },
+  {
+    "id": "PRD-017",
+    "sku": "TOL-TRQ-200",
+    "name": "Torque Wrench 200Nm",
+    "category": "tools",
+    "uom": "each",
+    "standardCost": {
+      "amount": 96.5,
+      "currency": "USD"
+    },
+    "listPrice": {
+      "amount": 189,
+      "currency": "USD"
+    },
+    "status": "active",
+    "reorderPoint": 20,
+    "reorderQuantity": 50,
+    "leadTimeDays": 14,
+    "preferredVendorIds": [
+      "VEN-006"
+    ],
+    "isStocked": true
+  },
+  {
+    "id": "PRD-018",
+    "sku": "ABR-DISC-125",
+    "name": "Grinding Disc 125mm (box of 25)",
+    "category": "abrasives",
+    "uom": "box",
+    "standardCost": {
+      "amount": 21,
+      "currency": "USD"
+    },
+    "listPrice": {
+      "amount": 42,
+      "currency": "USD"
+    },
+    "status": "active",
+    "reorderPoint": 90,
+    "reorderQuantity": 240,
+    "leadTimeDays": 7,
+    "preferredVendorIds": [
+      "VEN-007"
+    ],
+    "isStocked": true
+  },
+  {
+    "id": "PRD-019",
+    "sku": "SEL-ORING-K",
+    "name": "O-Ring Kit Nitrile 382pc",
+    "category": "seals",
+    "uom": "each",
+    "standardCost": {
+      "amount": 28,
+      "currency": "USD"
+    },
+    "listPrice": {
+      "amount": 59,
+      "currency": "USD"
+    },
+    "status": "active",
+    "reorderPoint": 40,
+    "reorderQuantity": 100,
+    "leadTimeDays": 10,
+    "preferredVendorIds": [
+      "VEN-008"
+    ],
+    "isStocked": true
+  },
+  {
+    "id": "PRD-020",
+    "sku": "SAF-GLV-CR5",
+    "name": "Cut-Resistant Gloves Level 5 (case of 60)",
+    "category": "safety",
+    "uom": "case",
+    "standardCost": {
+      "amount": 156,
+      "currency": "USD"
+    },
+    "listPrice": {
+      "amount": 285,
+      "currency": "USD"
+    },
+    "status": "active",
+    "reorderPoint": 25,
+    "reorderQuantity": 60,
+    "leadTimeDays": 10,
+    "preferredVendorIds": [
+      "VEN-009"
+    ],
+    "isStocked": true
+  },
+  {
+    "id": "PRD-021",
+    "sku": "LUB-GRS-EP2",
+    "name": "EP2 Lithium Grease 18kg",
+    "category": "lubricants",
+    "uom": "each",
+    "standardCost": {
+      "amount": 84,
+      "currency": "USD"
+    },
+    "listPrice": {
+      "amount": 155,
+      "currency": "USD"
+    },
+    "status": "active",
+    "reorderPoint": 30,
+    "reorderQuantity": 80,
+    "leadTimeDays": 10,
+    "preferredVendorIds": [
+      "VEN-010"
+    ],
+    "isStocked": true
+  },
+  {
+    "id": "PRD-022",
+    "sku": "LUB-HYD-46",
+    "name": "Hydraulic Oil ISO 46 (208L drum)",
+    "category": "lubricants",
+    "uom": "each",
+    "standardCost": {
+      "amount": 392,
+      "currency": "USD"
+    },
+    "listPrice": {
+      "amount": 690,
+      "currency": "USD"
+    },
+    "status": "active",
+    "reorderPoint": 10,
+    "reorderQuantity": 24,
+    "leadTimeDays": 14,
+    "preferredVendorIds": [
+      "VEN-010"
+    ],
+    "isStocked": true
+  }
+]

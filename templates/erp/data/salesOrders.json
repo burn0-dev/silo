@@ -1,0 +1,167 @@
+[
+  {
+    "id": "SO-301",
+    "customerId": "CUS-001",
+    "status": "closed",
+    "customerPoNumber": "GPM-PO-8841",
+    "orderDate": "2026-02-14T09:00:00.000Z",
+    "requestedDeliveryDate": "2026-02-20T00:00:00.000Z",
+    "createdByUserId": "USR-009",
+    "confirmedAt": "2026-02-14T10:30:00.000Z",
+    "closedAt": "2026-03-02T16:00:00.000Z",
+    "lines": [
+      {
+        "productId": "PRD-001",
+        "ordered": 200,
+        "unitPrice": 9.5,
+        "warehouseId": "WH-001",
+        "fulfilled": 200
+      },
+      {
+        "productId": "PRD-010",
+        "ordered": 150,
+        "unitPrice": 15,
+        "warehouseId": "WH-001",
+        "fulfilled": 150
+      }
+    ]
+  },
+  {
+    "id": "SO-302",
+    "customerId": "CUS-002",
+    "status": "partially_fulfilled",
+    "customerPoNumber": "LFP-4471",
+    "orderDate": "2026-03-04T08:45:00.000Z",
+    "requestedDeliveryDate": "2026-03-18T00:00:00.000Z",
+    "createdByUserId": "USR-009",
+    "confirmedAt": "2026-03-04T09:30:00.000Z",
+    "lines": [
+      {
+        "productId": "PRD-004",
+        "ordered": 100,
+        "unitPrice": 22.5,
+        "warehouseId": "WH-002",
+        "reserved": 40,
+        "fulfilled": 60
+      },
+      {
+        "productId": "PRD-006",
+        "ordered": 80,
+        "unitPrice": 18,
+        "warehouseId": "WH-002",
+        "fulfilled": 80
+      }
+    ]
+  },
+  {
+    "id": "SO-303",
+    "customerId": "CUS-003",
+    "status": "confirmed",
+    "customerPoNumber": "CORV-PO-20266",
+    "orderDate": "2026-03-12T11:15:00.000Z",
+    "requestedDeliveryDate": "2026-03-26T00:00:00.000Z",
+    "createdByUserId": "USR-009",
+    "confirmedAt": "2026-03-12T13:40:00.000Z",
+    "lines": [
+      {
+        "productId": "PRD-014",
+        "ordered": 8,
+        "unitPrice": 1150,
+        "warehouseId": "WH-003",
+        "reserved": 8
+      }
+    ]
+  },
+  {
+    "id": "SO-304",
+    "customerId": "CUS-004",
+    "status": "draft",
+    "customerPoNumber": "SUN-2026-0412",
+    "orderDate": "2026-03-15T15:20:00.000Z",
+    "requestedDeliveryDate": "2026-04-02T00:00:00.000Z",
+    "createdByUserId": "USR-009",
+    "lines": [
+      {
+        "productId": "PRD-021",
+        "ordered": 20,
+        "unitPrice": 155,
+        "warehouseId": "WH-002"
+      }
+    ]
+  },
+  {
+    "id": "SO-305",
+    "customerId": "CUS-005",
+    "status": "confirmed",
+    "customerPoNumber": "RMS-PO-7730",
+    "orderDate": "2026-03-09T10:05:00.000Z",
+    "requestedDeliveryDate": "2026-03-23T00:00:00.000Z",
+    "createdByUserId": "USR-010",
+    "confirmedAt": "2026-03-09T10:45:00.000Z",
+    "lines": [
+      {
+        "productId": "PRD-012",
+        "ordered": 40,
+        "unitPrice": 165,
+        "warehouseId": "WH-001"
+      }
+    ]
+  },
+  {
+    "id": "SO-306",
+    "customerId": "CUS-007",
+    "status": "fulfilled",
+    "customerPoNumber": "HPM-99120",
+    "orderDate": "2026-03-02T09:30:00.000Z",
+    "requestedDeliveryDate": "2026-03-10T00:00:00.000Z",
+    "createdByUserId": "USR-009",
+    "confirmedAt": "2026-03-02T10:00:00.000Z",
+    "lines": [
+      {
+        "productId": "PRD-018",
+        "ordered": 120,
+        "unitPrice": 42,
+        "warehouseId": "WH-001",
+        "fulfilled": 120
+      }
+    ]
+  },
+  {
+    "id": "SO-307",
+    "customerId": "CUS-008",
+    "status": "confirmed",
+    "customerPoNumber": "VTX-PO-55218",
+    "orderDate": "2026-03-13T14:00:00.000Z",
+    "requestedDeliveryDate": "2026-03-27T00:00:00.000Z",
+    "createdByUserId": "USR-009",
+    "confirmedAt": "2026-03-13T14:35:00.000Z",
+    "lines": [
+      {
+        "productId": "PRD-003",
+        "ordered": 150,
+        "unitPrice": 37.5,
+        "warehouseId": "WH-001"
+      }
+    ]
+  },
+  {
+    "id": "SO-308",
+    "customerId": "CUS-009",
+    "status": "cancelled",
+    "customerPoNumber": "BRM-PO-3390",
+    "orderDate": "2026-03-06T13:10:00.000Z",
+    "requestedDeliveryDate": "2026-03-20T00:00:00.000Z",
+    "createdByUserId": "USR-009",
+    "confirmedAt": "2026-03-06T13:50:00.000Z",
+    "cancelledAt": "2026-03-10T09:15:00.000Z",
+    "cancelReason": "Customer consolidated the requirement into a later order.",
+    "lines": [
+      {
+        "productId": "PRD-011",
+        "ordered": 40,
+        "unitPrice": 68,
+        "warehouseId": "WH-001"
+      }
+    ]
+  }
+]

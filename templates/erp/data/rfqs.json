@@ -1,0 +1,114 @@
+[
+  {
+    "id": "RFQ-001",
+    "number": "RFQ-001",
+    "title": "Bearing replenishment — Warehouse North",
+    "status": "awarded",
+    "requisitionId": "PR-001",
+    "lines": [
+      {
+        "id": "RFQ-001-L1",
+        "productId": "PRD-001",
+        "quantity": 500
+      },
+      {
+        "id": "RFQ-001-L2",
+        "productId": "PRD-002",
+        "quantity": 300
+      }
+    ],
+    "invitedVendorIds": [
+      "VEN-001",
+      "VEN-006",
+      "VEN-012"
+    ],
+    "issuedByUserId": "USR-002",
+    "createdAt": "2026-02-04T10:00:00.000Z",
+    "sentAt": "2026-02-05T09:00:00.000Z",
+    "responseDueDate": "2026-02-12T17:00:00.000Z",
+    "closedAt": "2026-02-13T09:30:00.000Z",
+    "awardedQuotationId": "QUO-001"
+  },
+  {
+    "id": "RFQ-002",
+    "number": "RFQ-002",
+    "title": "Hose and belt consumables — spring maintenance",
+    "status": "closed",
+    "requisitionId": "PR-003",
+    "lines": [
+      {
+        "id": "RFQ-002-L1",
+        "productId": "PRD-008",
+        "quantity": 600
+      },
+      {
+        "id": "RFQ-002-L2",
+        "productId": "PRD-010",
+        "quantity": 500
+      }
+    ],
+    "invitedVendorIds": [
+      "VEN-003",
+      "VEN-004",
+      "VEN-012"
+    ],
+    "issuedByUserId": "USR-002",
+    "createdAt": "2026-03-02T09:15:00.000Z",
+    "sentAt": "2026-03-03T08:45:00.000Z",
+    "responseDueDate": "2026-03-13T17:00:00.000Z",
+    "closedAt": "2026-03-14T10:00:00.000Z",
+    "awardedQuotationId": null
+  },
+  {
+    "id": "RFQ-003",
+    "number": "RFQ-003",
+    "title": "Control panel components — Reno retrofit",
+    "status": "sent",
+    "requisitionId": null,
+    "lines": [
+      {
+        "id": "RFQ-003-L1",
+        "productId": "PRD-013",
+        "quantity": 120
+      },
+      {
+        "id": "RFQ-003-L2",
+        "productId": "PRD-015",
+        "quantity": 2000
+      }
+    ],
+    "invitedVendorIds": [
+      "VEN-005",
+      "VEN-012"
+    ],
+    "issuedByUserId": "USR-002",
+    "createdAt": "2026-03-09T11:20:00.000Z",
+    "sentAt": "2026-03-10T09:00:00.000Z",
+    "responseDueDate": "2026-03-20T17:00:00.000Z",
+    "closedAt": null,
+    "awardedQuotationId": null
+  },
+  {
+    "id": "RFQ-004",
+    "number": "RFQ-004",
+    "title": "Hydraulic oil restock — Warehouse South",
+    "status": "draft",
+    "requisitionId": null,
+    "lines": [
+      {
+        "id": "RFQ-004-L1",
+        "productId": "PRD-022",
+        "quantity": 24
+      }
+    ],
+    "invitedVendorIds": [
+      "VEN-010"
+    ],
+    "issuedByUserId": "USR-002",
+    "createdAt": "2026-03-15T14:30:00.000Z",
+    "sentAt": null,
+    "responseDueDate": "2026-03-27T17:00:00.000Z",
+    "closedAt": null,
+    "awardedQuotationId": null
+  }
+]

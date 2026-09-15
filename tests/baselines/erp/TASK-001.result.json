@@ -1,0 +1,30 @@
+{
+  "passed": false,
+  "reward": 0.5,
+  "requiredPassed": 0,
+  "requiredTotal": 1,
+  "failedRequired": [
+    "VEN-002 is on NET_30"
+  ],
+  "checksPassed": 1,
+  "checksFailed": 1,
+  "toolCalls": 0,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "",
+  "error": null,
+  "checks": [
+    {
+      "label": "VEN-002 is on NET_30",
+      "passed": false,
+      "detail": "paymentTerms = NET_45",
+      "required": true
+    },
+    {
+      "label": "Vendor is still active",
+      "passed": true,
+      "detail": "status = active",
+      "required": false
+    }
+  ]
+}

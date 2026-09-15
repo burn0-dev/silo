@@ -1,0 +1,13 @@
+{
+  "id": "TASK-017",
+  "title": "Complete a procure-to-pay cycle end to end",
+  "instruction": "Facilities need 20 cases of cut-resistant gloves (PRD-020) into Warehouse North. Run the whole cycle: raise a requisition for Rina Kapoor (USR-011) in Facilities against budget BUD-004, get it approved, raise a purchase order on Summit Safety Products (VEN-009) at $154.00 per case, approve and send it, receive the goods in full, register the vendor's invoice for exactly what was received at the agreed price, match it, approve it and pay it so the invoice ends up paid. If the Facilities budget cannot cover the requisition, increase the budget allocation first and say so. Daniel Reyes (USR-002) buys, Priya Nair (USR-003) approves procurement, Tom Braddock (USR-004) receives, Marcus Lindqvist (USR-006) handles AP and Sofia Duarte (USR-007) approves payments. Ken Adeyemi (USR-008) can change budgets.",
+  "difficulty": "hard",
+  "verifierId": "VER-017",
+  "entities": [
+    "PRD-020",
+    "VEN-009",
+    "BUD-004",
+    "WH-001"
+  ]
+}

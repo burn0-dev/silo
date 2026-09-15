@@ -1,0 +1,8 @@
+{
+  "id": "TASK-001",
+  "title": "Convert a qualified maritime lead",
+  "instruction": "Ingrid Halvorsen at Fjord Maritime Group has been qualified and is ready to become a real opportunity. Fjord Maritime is not yet a customer of ours. Convert her, opening a deal worth $140,000 that we expect to close on 2026-06-30. Daniel Reyes (USR-002) owns the lead and is doing the work.",
+  "difficulty": "easy",
+  "verifierId": "VER-001",
+  "entities": ["LEAD-004"]
+}

@@ -1,0 +1,142 @@
+[
+  {
+    "id": "CON-001",
+    "accountId": "ACC-001",
+    "firstName": "Marta",
+    "lastName": "Velasquez",
+    "email": "marta.velasquez@helios-mfg.example.com",
+    "phone": "+1-415-555-0101",
+    "title": "VP Operations",
+    "isPrimary": true
+  },
+  {
+    "id": "CON-002",
+    "accountId": "ACC-001",
+    "firstName": "Owen",
+    "lastName": "Drummond",
+    "email": "owen.drummond@helios-mfg.example.com",
+    "phone": "+1-415-555-0102",
+    "title": "Plant Manager",
+    "isPrimary": false
+  },
+  {
+    "id": "CON-003",
+    "accountId": "ACC-002",
+    "firstName": "Sipho",
+    "lastName": "Ndlovu",
+    "email": "sipho.ndlovu@northwind-logistics.example.com",
+    "phone": "+1-312-555-0143",
+    "title": "Director of Fleet",
+    "isPrimary": true
+  },
+  {
+    "id": "CON-004",
+    "accountId": "ACC-003",
+    "firstName": "Hannah",
+    "lastName": "Liebermann",
+    "email": "hannah.liebermann@vertexanalytics.example.com",
+    "phone": "+1-206-555-0188",
+    "title": "Chief Data Officer",
+    "isPrimary": true
+  },
+  {
+    "id": "CON-005",
+    "accountId": "ACC-003",
+    "firstName": "Rafael",
+    "lastName": "Moreno",
+    "email": "rafael.moreno@vertexanalytics.example.com",
+    "phone": "+1-206-555-0189",
+    "title": "Procurement Lead",
+    "isPrimary": false
+  },
+  {
+    "id": "CON-006",
+    "accountId": "ACC-004",
+    "firstName": "Delphine",
+    "lastName": "Rousseau",
+    "email": "delphine.rousseau@brightpathhealth.example.com",
+    "phone": "+1-617-555-0122",
+    "title": "Head of IT",
+    "isPrimary": true
+  },
+  {
+    "id": "CON-007",
+    "accountId": "ACC-005",
+    "firstName": "Bruno",
+    "lastName": "Castellani",
+    "email": "bruno.castellani@cascadefoods.example.com",
+    "phone": "+1-503-555-0177",
+    "title": "Supply Chain Director",
+    "isPrimary": true
+  },
+  {
+    "id": "CON-008",
+    "accountId": "ACC-006",
+    "firstName": "Aisha",
+    "lastName": "Rahimi",
+    "email": "aisha.rahimi@ridgelineenergy.example.com",
+    "phone": "+1-713-555-0164",
+    "title": "VP Infrastructure",
+    "isPrimary": true
+  },
+  {
+    "id": "CON-009",
+    "accountId": "ACC-007",
+    "firstName": "Gideon",
+    "lastName": "Park",
+    "email": "gideon.park@lumenretail.example.com",
+    "phone": "+1-646-555-0155",
+    "title": "Director of Stores",
+    "isPrimary": true
+  },
+  {
+    "id": "CON-010",
+    "accountId": "ACC-008",
+    "firstName": "Colette",
+    "lastName": "Barnes",
+    "email": "colette.barnes@anchorfinancial.example.com",
+    "phone": "+1-212-555-0133",
+    "title": "COO",
+    "isPrimary": true
+  },
+  {
+    "id": "CON-011",
+    "accountId": "ACC-008",
+    "firstName": "Idris",
+    "lastName": "Okonkwo",
+    "email": "idris.okonkwo@anchorfinancial.example.com",
+    "phone": "+1-212-555-0134",
+    "title": "Head of Vendor Risk",
+    "isPrimary": false
+  },
+  {
+    "id": "CON-012",
+    "accountId": "ACC-009",
+    "firstName": "Freya",
+    "lastName": "Lindqvist",
+    "email": "freya.lindqvist@peakformsports.example.com",
+    "phone": "+1-720-555-0199",
+    "title": "Founder",
+    "isPrimary": true
+  },
+  {
+    "id": "CON-013",
+    "accountId": "ACC-010",
+    "firstName": "Mateo",
+    "lastName": "Duarte",
+    "email": "mateo.duarte@solacehospitality.example.com",
+    "phone": "+1-305-555-0111",
+    "title": "General Manager",
+    "isPrimary": true
+  },
+  {
+    "id": "CON-014",
+    "accountId": "ACC-011",
+    "firstName": "Noor",
+    "lastName": "Haddad",
+    "email": "noor.haddad@crestlinemedia.example.com",
+    "phone": "+1-323-555-0166",
+    "title": "Marketing Director",
+    "isPrimary": true
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "id": "TASK-011",
+  "title": "Report time spent on the billing platform",
+  "instruction": "Finance is costing the Atlas billing platform. Report the total number of hours that have been logged against that project, across everyone who worked on it.",
+  "difficulty": "medium",
+  "verifierId": "VER-011",
+  "entities": ["PROJ-001"]
+}

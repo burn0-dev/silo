@@ -1,0 +1,7 @@
+{
+  "id": "TASK-001",
+  "title": "Block a customer",
+  "instruction": "Acme Industrial (CUS-001) has failed compliance review. Block them so no further business can be transacted, recording the reason.",
+  "difficulty": "easy",
+  "verifierId": "VER-001"
+}

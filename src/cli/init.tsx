@@ -2,11 +2,16 @@ import React, { useState } from "react";
 import { Box, Text, render, useInput } from "ink";
 import { TextInput, Select, Spinner, StatusMessage } from "@inkjs/ui";
 
+import { boolFlag, flag, parseArgs, printJson } from "./args.js";
+import { listEnvironments } from "../core/environment.js";
+import { scaffoldEnvironment } from "../core/scaffold.js";
 import {
-  listEnvironments,
-  scaffoldEnvironment,
-  type Template,
-} from "../core/scaffold.js";
+  DEFAULT_TEMPLATE_ID,
+  TEMPLATES,
+  getTemplate,
+  type TemplateId,
+} from "../core/templates.js";
+import { TOOL_PACKS } from "../core/tool-packs.js";
 
 type Step =
   | "name"
@@ -17,18 +22,11 @@ type Step =
   | "done"
   | "error";
 
-const TEMPLATE_LABELS: Record<Template, string> = {
-  blank: "Blank",
-  erp: "ERP",
-};
+const templateOptions = TEMPLATES.map(({ id, label }) => ({ label, value: id }));
 
-const TOOL_OPTIONS = [
-  { label: "Calendar", value: "calendar" },
-  { label: "Email", value: "email" },
-  { label: "CRM", value: "crm" },
-  { label: "Browser", value: "browser" },
-  { label: "Files", value: "files" },
-];
+const toolPackOptions = TOOL_PACKS.map(({ id, label }) => ({ label, value: id }));
+
+const templateLabel = (id: TemplateId) => getTemplate(id)?.label ?? id;
 
 const WORDMARK = [
   "███████╗██╗██╗      ██████╗ ",
@@ -193,7 +191,7 @@ function InitApp() {
   const [step, setStep] = useState<Step>("name");
 
   const [name, setName] = useState("");
-  const [template, setTemplate] = useState<Template>("blank");
+  const [template, setTemplate] = useState<TemplateId>(DEFAULT_TEMPLATE_ID);
 
   const [tools, setTools] = useState<string[]>([]);
   const [error, setError] = useState("");
@@ -215,7 +213,7 @@ function InitApp() {
       return;
     }
 
-    const taken = await listEnvironments();
+    const taken = await listEnvironments(process.cwd());
 
     if (taken.includes(cleaned.toLowerCase())) {
       setError(`Environment "${cleaned}" already exists.`);
@@ -237,6 +235,7 @@ function InitApp() {
         name,
         template,
         tools: selectedTools,
+        cwd: process.cwd(),
       });
 
       setStep("done");
@@ -256,7 +255,7 @@ function InitApp() {
           {showEnvironment && <Row label="Environment" value={name} />}
 
           {showTemplate && (
-            <Row label="Template" value={TEMPLATE_LABELS[template]} />
+            <Row label="Template" value={templateLabel(template)} />
           )}
         </Box>
       )}
@@ -286,18 +285,9 @@ function InitApp() {
         <Box flexDirection="column" marginTop={1}>
           <Question title="Choose a template">
             <Select
-              options={[
-                {
-                  label: "Blank",
-                  value: "blank",
-                },
-                {
-                  label: "ERP",
-                  value: "erp",
-                },
-              ]}
+              options={templateOptions}
               onChange={(value) => {
-                setTemplate(value as Template);
+                setTemplate(value as TemplateId);
                 setStep("add-tools");
               }}
             />
@@ -324,7 +314,7 @@ function InitApp() {
         <Box flexDirection="column" marginTop={1}>
           <Question title="Select additional tools">
             <ToolSelect
-              options={TOOL_OPTIONS}
+              options={toolPackOptions}
               onSubmit={(values) => {
                 void finish(values);
               }}
@@ -355,7 +345,7 @@ function InitApp() {
 
           <Box flexDirection="column" marginTop={1}>
             <Row label="Environment" value={name} />
-            <Row label="Template" value={TEMPLATE_LABELS[template]} />
+            <Row label="Template" value={templateLabel(template)} />
             <Row
               label="Tools"
               value={tools.length ? tools.join(", ") : "none"}
@@ -374,7 +364,51 @@ function InitApp() {
   );
 }
 
-export async function init() {
+/**
+ * Non-interactive init, for scripts and coding agents.
+ *
+ * `silo init <name> --template blank [--tools a,b]` scaffolds without prompting;
+ * running `silo init` with no name still opens the wizard.
+ */
+async function initNonInteractive(name: string, argv: string[]) {
+  const args = parseArgs(argv);
+  const templateId = flag(args, "template") ?? DEFAULT_TEMPLATE_ID;
+  const template = getTemplate(templateId);
+
+  if (!template) {
+    throw new Error(
+      `Unknown template "${templateId}". Available: ${TEMPLATES.map((entry) => entry.id).join(", ")}.`,
+    );
+  }
+
+  const tools = (flag(args, "tools") ?? "")
+    .split(",")
+    .map((value) => value.trim())
+    .filter(Boolean);
+
+  const directory = await scaffoldEnvironment({ name, template: template.id, tools, cwd: process.cwd() });
+
+  if (boolFlag(args, "json")) {
+    printJson({ ok: true, name, template: template.id, tools, directory });
+  } else {
+    console.log(`Created environment "${name}" from ${template.label} at ${directory}`);
+  }
+}
+
+export async function init(argv: string[] = []) {
+  const [name] = parseArgs(argv).positionals;
+
+  if (name) {
+    try {
+      await initNonInteractive(name, argv);
+    } catch (error) {
+      console.error(`error: ${error instanceof Error ? error.message : String(error)}`);
+      process.exitCode = 1;
+    }
+
+    return;
+  }
+
   const instance = render(<InitApp />);
 
   await instance.waitUntilExit();

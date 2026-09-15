@@ -1,0 +1,8 @@
+{
+  "id": "TASK-007",
+  "title": "Turn over the Atlas sprint",
+  "instruction": "Atlas Sprint 12 ran to its end date yesterday. Close it out and get Atlas Sprint 13 running instead. Alice Chen (MEM-001) is doing the work.",
+  "difficulty": "medium",
+  "verifierId": "VER-007",
+  "entities": ["SPR-002", "SPR-003"]
+}

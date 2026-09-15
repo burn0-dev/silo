@@ -1,0 +1,42 @@
+{
+  "passed": false,
+  "reward": 0.25,
+  "requiredPassed": 1,
+  "requiredTotal": 2,
+  "failedRequired": [
+    "PR-002 was rejected, not approved"
+  ],
+  "checksPassed": 1,
+  "checksFailed": 3,
+  "toolCalls": 0,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "",
+  "error": null,
+  "checks": [
+    {
+      "label": "PR-002 was rejected, not approved",
+      "passed": false,
+      "detail": "status = pending_approval",
+      "required": true
+    },
+    {
+      "label": "The approval records the rejection",
+      "passed": false,
+      "detail": "approval = pending, by null",
+      "required": false
+    },
+    {
+      "label": "A reason was captured",
+      "passed": false,
+      "detail": "0 note(s)",
+      "required": false
+    },
+    {
+      "label": "No budget was committed",
+      "passed": true,
+      "detail": "committed = 3120",
+      "required": true
+    }
+  ]
+}

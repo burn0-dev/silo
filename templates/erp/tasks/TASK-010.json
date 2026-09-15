@@ -1,0 +1,11 @@
+{
+  "id": "TASK-010",
+  "title": "Invoice a shipment that was never billed",
+  "instruction": "Sales order SO-306 for Halcyon Paper Mills was shipped and delivered but never invoiced. Raise the customer invoice for what actually shipped and issue it. Act as Lucia Moretti (USR-009).",
+  "difficulty": "medium",
+  "verifierId": "VER-010",
+  "entities": [
+    "SO-306",
+    "CUS-007"
+  ]
+}

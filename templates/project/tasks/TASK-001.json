@@ -1,0 +1,8 @@
+{
+  "id": "TASK-001",
+  "title": "Sign off the tax rules engine",
+  "instruction": "The tax rules engine on the Atlas billing project has cleared review and is finished. Record that it is done. Alice Chen (MEM-001) is doing the work.",
+  "difficulty": "easy",
+  "verifierId": "VER-001",
+  "entities": ["WI-003"]
+}

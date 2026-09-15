@@ -1,0 +1,29 @@
+[
+  {
+    "id": "PROJ-001",
+    "name": "Atlas Billing Platform",
+    "key": "ATL",
+    "status": "active",
+    "leadId": "MEM-001",
+    "startDate": "2025-11-03",
+    "targetDate": "2026-06-30"
+  },
+  {
+    "id": "PROJ-002",
+    "name": "Nimbus Mobile App",
+    "key": "NIM",
+    "status": "active",
+    "leadId": "MEM-005",
+    "startDate": "2026-01-12",
+    "targetDate": "2026-09-30"
+  },
+  {
+    "id": "PROJ-003",
+    "name": "Ledger Data Migration",
+    "key": "LED",
+    "status": "active",
+    "leadId": "MEM-007",
+    "startDate": "2025-09-01",
+    "targetDate": "2026-03-31"
+  }
+]

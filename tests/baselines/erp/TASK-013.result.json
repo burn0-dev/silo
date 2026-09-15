@@ -1,0 +1,50 @@
+{
+  "passed": false,
+  "reward": 0.2,
+  "requiredPassed": 1,
+  "requiredTotal": 4,
+  "failedRequired": [
+    "The line is priced at the agreed $82.00",
+    "The latest three-way match passes",
+    "The invoice is approved"
+  ],
+  "checksPassed": 1,
+  "checksFailed": 4,
+  "toolCalls": 0,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "",
+  "error": null,
+  "checks": [
+    {
+      "label": "The line is priced at the agreed $82.00",
+      "passed": false,
+      "detail": "unitPrice = 86",
+      "required": true
+    },
+    {
+      "label": "The quantity was left at 80 drums",
+      "passed": true,
+      "detail": "quantity = 80",
+      "required": true
+    },
+    {
+      "label": "Invoice total was recalculated to 7084.80",
+      "passed": false,
+      "detail": "total = 7430.4",
+      "required": false
+    },
+    {
+      "label": "The latest three-way match passes",
+      "passed": false,
+      "detail": "match MATCH-003 = failed",
+      "required": true
+    },
+    {
+      "label": "The invoice is approved",
+      "passed": false,
+      "detail": "status = pending_approval",
+      "required": true
+    }
+  ]
+}

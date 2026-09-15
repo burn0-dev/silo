@@ -1,18 +1,48 @@
 {
-  "name": "silo",
-  "version": "0.2.0",
+  "name": "@burn0/silo",
+  "version": "0.4.0",
   "description": "Local-first framework for simulating environments and evaluating AI agents against them, with tools, tasks, and verifiers defined as TypeScript in your own repo.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/burn0-dev/silo.git"
+  },
+  "homepage": "https://burn0.dev/docs/silo/introduction",
+  "bugs": {
+    "url": "https://github.com/burn0-dev/silo/issues"
+  },
   "type": "module",
   "scripts": {
     "dev": "tsx src/index.ts",
     "build": "tsc",
     "check:templates": "tsc -p tsconfig.templates.json",
     "check": "tsc --noEmit && tsc -p tsconfig.templates.json",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "test:erp": "tsx tests/erp-baseline.mjs",
+    "test:tools": "tsx tests/erp-tool-path.mjs",
+    "test": "npm run check && npm run test:erp && npm run test:tools && npm run test:crm && npm run test:project",
+    "test:crm": "tsx tests/crm-baseline.mjs",
+    "test:project": "tsx tests/project-baseline.mjs"
   },
   "bin": {
     "silo": "./dist/index.js"
   },
+  "exports": {
+    ".": {
+      "types": "./dist/public.d.ts",
+      "default": "./dist/public.js"
+    }
+  },
+  "types": "./dist/public.d.ts",
+  "files": [
+    "dist",
+    "templates",
+    "examples",
+    "!examples/agents",
+    "docs",
+    "README.md",
+    "LICENSE"
+  ],
   "dependencies": {
     "@inkjs/ui": "^2.0.0",
     "@langchain/core": "^1.2.11",
@@ -20,14 +50,14 @@
     "ink": "^7.1.1",
     "react": "^19.3.0",
     "tsx": "4.20.5",
+    "typescript": "^5.9.2",
     "zod": "^4.1.5"
   },
   "devDependencies": {
     "@types/node": "^24.13.4",
-    "@types/react": "^19.3.0",
-    "typescript": "^5.9.2"
+    "@types/react": "^19.3.0"
   },
-  "main": "index.js",
+  "main": "./dist/public.js",
   "keywords": [
     "ai",
     "agents",

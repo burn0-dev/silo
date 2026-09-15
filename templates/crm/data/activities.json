@@ -1,0 +1,152 @@
+[
+  {
+    "id": "ACT-001",
+    "type": "meeting",
+    "subject": "Discovery workshop with operations team",
+    "ownerId": "USR-002",
+    "relatedTo": { "type": "opportunity", "id": "OPP-001" },
+    "dueDate": "2026-03-02",
+    "completedDate": "2026-03-02",
+    "notes": "Walked the line with Marta. Two bottlenecks confirmed."
+  },
+  {
+    "id": "ACT-002",
+    "type": "email",
+    "subject": "Proposal sent for review",
+    "ownerId": "USR-002",
+    "relatedTo": { "type": "opportunity", "id": "OPP-001" },
+    "dueDate": "2026-03-04",
+    "completedDate": "2026-03-04",
+    "notes": "Pricing for three lines, valid 30 days."
+  },
+  {
+    "id": "ACT-003",
+    "type": "call",
+    "subject": "Follow up on telematics scope",
+    "ownerId": "USR-002",
+    "relatedTo": { "type": "opportunity", "id": "OPP-002" },
+    "dueDate": "2026-02-10",
+    "completedDate": null,
+    "notes": "Sipho has not returned the last two calls."
+  },
+  {
+    "id": "ACT-004",
+    "type": "meeting",
+    "subject": "Contract terms review with legal",
+    "ownerId": "USR-003",
+    "relatedTo": { "type": "opportunity", "id": "OPP-003" },
+    "dueDate": "2026-03-18",
+    "completedDate": null,
+    "notes": "Redlines expected back before the 20th."
+  },
+  {
+    "id": "ACT-005",
+    "type": "note",
+    "subject": "Budget confirmed for next fiscal year",
+    "ownerId": "USR-003",
+    "relatedTo": { "type": "opportunity", "id": "OPP-003" },
+    "dueDate": null,
+    "completedDate": "2026-03-09",
+    "notes": "Hannah confirmed the number is approved."
+  },
+  {
+    "id": "ACT-006",
+    "type": "call",
+    "subject": "Intro call with head of IT",
+    "ownerId": "USR-003",
+    "relatedTo": { "type": "opportunity", "id": "OPP-004" },
+    "dueDate": "2026-02-20",
+    "completedDate": "2026-02-20",
+    "notes": "Scheduling pain is real but the timeline is soft."
+  },
+  {
+    "id": "ACT-007",
+    "type": "email",
+    "subject": "Checking in on the cold chain proposal",
+    "ownerId": "USR-004",
+    "relatedTo": { "type": "opportunity", "id": "OPP-005" },
+    "dueDate": "2026-01-20",
+    "completedDate": null,
+    "notes": "No reply since the proposal went out."
+  },
+  {
+    "id": "ACT-008",
+    "type": "call",
+    "subject": "Quarterly check-in",
+    "ownerId": "USR-004",
+    "relatedTo": { "type": "opportunity", "id": "OPP-006" },
+    "dueDate": "2026-02-14",
+    "completedDate": null,
+    "notes": "Aisha asked to reconnect after their board meeting."
+  },
+  {
+    "id": "ACT-009",
+    "type": "meeting",
+    "subject": "Final pricing negotiation",
+    "ownerId": "USR-005",
+    "relatedTo": { "type": "opportunity", "id": "OPP-007" },
+    "dueDate": "2026-03-17",
+    "completedDate": null,
+    "notes": "Gideon wants a volume tier at 40 stores."
+  },
+  {
+    "id": "ACT-010",
+    "type": "email",
+    "subject": "Compliance questionnaire returned",
+    "ownerId": "USR-005",
+    "relatedTo": { "type": "opportunity", "id": "OPP-008" },
+    "dueDate": "2026-01-22",
+    "completedDate": "2026-01-22",
+    "notes": "Vendor risk review passed."
+  },
+  {
+    "id": "ACT-011",
+    "type": "call",
+    "subject": "Qualification call",
+    "ownerId": "USR-002",
+    "relatedTo": { "type": "lead", "id": "LEAD-004" },
+    "dueDate": "2026-03-12",
+    "completedDate": "2026-03-12",
+    "notes": "Fleet of 18 vessels, budget approved, wants a proposal in April."
+  },
+  {
+    "id": "ACT-012",
+    "type": "email",
+    "subject": "Sent capability overview",
+    "ownerId": "USR-003",
+    "relatedTo": { "type": "lead", "id": "LEAD-002" },
+    "dueDate": "2026-03-09",
+    "completedDate": "2026-03-09",
+    "notes": "Adaeze asked for reference customers in shipping."
+  },
+  {
+    "id": "ACT-013",
+    "type": "call",
+    "subject": "Discovery call",
+    "ownerId": "USR-006",
+    "relatedTo": { "type": "lead", "id": "LEAD-008" },
+    "dueDate": "2026-03-06",
+    "completedDate": "2026-03-06",
+    "notes": "Grid monitoring need confirmed, procurement cycle starts in May."
+  },
+  {
+    "id": "ACT-014",
+    "type": "note",
+    "subject": "Account handover pending",
+    "ownerId": "USR-001",
+    "relatedTo": { "type": "account", "id": "ACC-005" },
+    "dueDate": null,
+    "completedDate": "2026-03-14",
+    "notes": "Tomas has left. Open work needs a new owner."
+  },
+  {
+    "id": "ACT-015",
+    "type": "note",
+    "subject": "Account handover pending",
+    "ownerId": "USR-001",
+    "relatedTo": { "type": "account", "id": "ACC-006" },
+    "dueDate": null,
+    "completedDate": "2026-03-14",
+    "notes": "Tomas has left. Open work needs a new owner."
+  }
+]

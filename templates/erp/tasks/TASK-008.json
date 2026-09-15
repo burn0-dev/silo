@@ -1,0 +1,11 @@
+{
+  "id": "TASK-008",
+  "title": "Pay the approved invoice that falls due this week",
+  "instruction": "Exactly one approved vendor invoice falls due within the next 7 days. Find it and pay it in full by bank transfer, taking the payment all the way through to completion so the invoice shows as paid. Marcus Lindqvist (USR-006) raises payments and Sofia Duarte (USR-007) approves them.",
+  "difficulty": "medium",
+  "verifierId": "VER-008",
+  "entities": [
+    "VINV-107",
+    "VEN-006"
+  ]
+}

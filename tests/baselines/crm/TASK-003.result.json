@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "reward": 1,
+  "requiredPassed": 4,
+  "requiredTotal": 4,
+  "failedRequired": [],
+  "checksPassed": 6,
+  "checksFailed": 0,
+  "toolCalls": 2,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "Closed OPP-007 as won at 118000 and noted that the signed contract arrived today.",
+  "error": null,
+  "checks": [
+    {
+      "label": "The deal is won",
+      "passed": true,
+      "detail": "status = won",
+      "required": true
+    },
+    {
+      "label": "The amount is the contracted figure",
+      "passed": true,
+      "detail": "amount = 118000, expected 118000",
+      "required": true
+    },
+    {
+      "label": "The deal sits in the closed-won stage",
+      "passed": true,
+      "detail": "stage = STG-005, closed-won = STG-005",
+      "required": true
+    },
+    {
+      "label": "The close date is today",
+      "passed": true,
+      "detail": "closedDate = 2026-03-16, today = 2026-03-16",
+      "required": true
+    },
+    {
+      "label": "The signed contract was noted on the deal",
+      "passed": true,
+      "detail": "activity recorded today",
+      "required": false
+    },
+    {
+      "label": "No other deal was opened or closed",
+      "passed": true,
+      "detail": "other opportunities unchanged",
+      "required": false
+    }
+  ]
+}

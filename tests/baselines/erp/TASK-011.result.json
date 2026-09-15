@@ -1,0 +1,57 @@
+{
+  "passed": false,
+  "reward": 0.17,
+  "requiredPassed": 1,
+  "requiredTotal": 5,
+  "failedRequired": [
+    "RFQ-002 was awarded to QUO-006",
+    "A purchase order was raised on VEN-012",
+    "It carries the quoted quantities and prices",
+    "It is approved but not yet sent"
+  ],
+  "checksPassed": 1,
+  "checksFailed": 5,
+  "toolCalls": 0,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "",
+  "error": null,
+  "checks": [
+    {
+      "label": "RFQ-002 was awarded to QUO-006",
+      "passed": false,
+      "detail": "awarded = null, QUO-006 = received",
+      "required": true
+    },
+    {
+      "label": "The expired cheaper quotation was not awarded",
+      "passed": true,
+      "detail": "QUO-005 = expired",
+      "required": true
+    },
+    {
+      "label": "A purchase order was raised on VEN-012",
+      "passed": false,
+      "detail": "none found",
+      "required": true
+    },
+    {
+      "label": "It carries the quoted quantities and prices",
+      "passed": false,
+      "detail": "hose undefined @ undefined, belt undefined @ undefined",
+      "required": true
+    },
+    {
+      "label": "It is approved but not yet sent",
+      "passed": false,
+      "detail": "status = undefined, sentAt = undefined",
+      "required": true
+    },
+    {
+      "label": "It delivers to WH-001 against BUD-002",
+      "passed": false,
+      "detail": "warehouse = undefined, budget = undefined",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "passed": false,
+  "reward": 0.25,
+  "requiredPassed": 0,
+  "requiredTotal": 2,
+  "failedRequired": [
+    "PO-205 is cancelled",
+    "A cancellation reason was recorded"
+  ],
+  "checksPassed": 1,
+  "checksFailed": 3,
+  "toolCalls": 0,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "",
+  "error": null,
+  "checks": [
+    {
+      "label": "PO-205 is cancelled",
+      "passed": false,
+      "detail": "status = pending_approval",
+      "required": true
+    },
+    {
+      "label": "A cancellation reason was recorded",
+      "passed": false,
+      "detail": "reason = null",
+      "required": true
+    },
+    {
+      "label": "Its pending approval is no longer outstanding",
+      "passed": false,
+      "detail": "approval = pending",
+      "required": false
+    },
+    {
+      "label": "No budget was left committed for it",
+      "passed": true,
+      "detail": "committed = 20401.2",
+      "required": false
+    }
+  ]
+}

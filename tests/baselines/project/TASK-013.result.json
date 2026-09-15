@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "reward": 1,
+  "requiredPassed": 2,
+  "requiredTotal": 2,
+  "failedRequired": [],
+  "checksPassed": 4,
+  "checksFailed": 0,
+  "toolCalls": 1,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "Carla Nunez is over capacity by 3 points.",
+  "error": null,
+  "checks": [
+    {
+      "label": "The over-committed member is named",
+      "passed": true,
+      "detail": "expected Carla Nunez",
+      "required": true
+    },
+    {
+      "label": "The number of points they are over by is correct",
+      "passed": true,
+      "detail": "expected 3",
+      "required": true
+    },
+    {
+      "label": "Exactly one member is over capacity in the seed data",
+      "passed": true,
+      "detail": "1 over capacity",
+      "required": false
+    },
+    {
+      "label": "Answering left the world unchanged",
+      "passed": true,
+      "detail": "state is untouched",
+      "required": false
+    }
+  ]
+}

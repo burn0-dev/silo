@@ -1,0 +1,62 @@
+[
+  {
+    "id": "WH-001",
+    "code": "NORTH",
+    "name": "Warehouse North",
+    "type": "distribution",
+    "address": {
+      "line1": "4400 Corporate Parkway Dock A",
+      "city": "Columbus",
+      "region": "OH",
+      "postalCode": "43219",
+      "country": "US"
+    },
+    "managerUserId": "USR-005",
+    "isActive": true
+  },
+  {
+    "id": "WH-002",
+    "code": "SOUTH",
+    "name": "Warehouse South",
+    "type": "distribution",
+    "address": {
+      "line1": "1900 Stemmons Freeway",
+      "city": "Dallas",
+      "region": "TX",
+      "postalCode": "75207",
+      "country": "US"
+    },
+    "managerUserId": "USR-013",
+    "isActive": true
+  },
+  {
+    "id": "WH-003",
+    "code": "WEST",
+    "name": "West Coast Hub",
+    "type": "distribution",
+    "address": {
+      "line1": "300 Vista Industrial Way",
+      "city": "Reno",
+      "region": "NV",
+      "postalCode": "89506",
+      "country": "US"
+    },
+    "managerUserId": "USR-013",
+    "isActive": true
+  },
+  {
+    "id": "WH-004",
+    "code": "CENTRAL",
+    "name": "Central Overflow Store",
+    "type": "overflow",
+    "address": {
+      "line1": "715 Rail Spur Road",
+      "city": "Kansas City",
+      "region": "MO",
+      "postalCode": "64120",
+      "country": "US"
+    },
+    "managerUserId": "USR-005",
+    "isActive": true
+  }
+]

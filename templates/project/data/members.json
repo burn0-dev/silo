@@ -1,0 +1,74 @@
+[
+  {
+    "id": "MEM-001",
+    "name": "Alice Chen",
+    "email": "alice.chen@example.com",
+    "role": "lead",
+    "teamId": "TEAM-001",
+    "weeklyCapacityPoints": 20,
+    "active": true
+  },
+  {
+    "id": "MEM-002",
+    "name": "Brian Osei",
+    "email": "brian.osei@example.com",
+    "role": "engineer",
+    "teamId": "TEAM-001",
+    "weeklyCapacityPoints": 25,
+    "active": true
+  },
+  {
+    "id": "MEM-003",
+    "name": "Carla Nunez",
+    "email": "carla.nunez@example.com",
+    "role": "engineer",
+    "teamId": "TEAM-001",
+    "weeklyCapacityPoints": 18,
+    "active": true
+  },
+  {
+    "id": "MEM-004",
+    "name": "Devon Ito",
+    "email": "devon.ito@example.com",
+    "role": "engineer",
+    "teamId": "TEAM-002",
+    "weeklyCapacityPoints": 25,
+    "active": false
+  },
+  {
+    "id": "MEM-005",
+    "name": "Elena Petrov",
+    "email": "elena.petrov@example.com",
+    "role": "lead",
+    "teamId": "TEAM-002",
+    "weeklyCapacityPoints": 20,
+    "active": true
+  },
+  {
+    "id": "MEM-006",
+    "name": "Farid Haddad",
+    "email": "farid.haddad@example.com",
+    "role": "engineer",
+    "teamId": "TEAM-002",
+    "weeklyCapacityPoints": 22,
+    "active": true
+  },
+  {
+    "id": "MEM-007",
+    "name": "Grace Kim",
+    "email": "grace.kim@example.com",
+    "role": "manager",
+    "teamId": null,
+    "weeklyCapacityPoints": 8,
+    "active": true
+  },
+  {
+    "id": "MEM-008",
+    "name": "Hassan Ali",
+    "email": "hassan.ali@example.com",
+    "role": "engineer",
+    "teamId": "TEAM-001",
+    "weeklyCapacityPoints": 24,
+    "active": true
+  }
+]

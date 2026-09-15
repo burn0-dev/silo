@@ -1,0 +1,8 @@
+{
+  "CUS-001": {
+    "id": "CUS-001",
+    "name": "Acme Industrial",
+    "status": "active",
+    "statusReason": null
+  }
+}

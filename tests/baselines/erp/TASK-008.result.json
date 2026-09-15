@@ -1,0 +1,44 @@
+{
+  "passed": false,
+  "reward": 0,
+  "requiredPassed": 0,
+  "requiredTotal": 3,
+  "failedRequired": [
+    "VINV-107 is paid",
+    "The full amount was paid",
+    "A completed payment covers it"
+  ],
+  "checksPassed": 0,
+  "checksFailed": 4,
+  "toolCalls": 0,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "",
+  "error": null,
+  "checks": [
+    {
+      "label": "VINV-107 is paid",
+      "passed": false,
+      "detail": "status = approved",
+      "required": true
+    },
+    {
+      "label": "The full amount was paid",
+      "passed": false,
+      "detail": "paid 0 of 5076",
+      "required": true
+    },
+    {
+      "label": "A completed payment covers it",
+      "passed": false,
+      "detail": "completed payments = 0",
+      "required": true
+    },
+    {
+      "label": "Nothing remains outstanding",
+      "passed": false,
+      "detail": "outstanding = 5076",
+      "required": false
+    }
+  ]
+}

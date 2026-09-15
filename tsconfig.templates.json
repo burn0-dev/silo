@@ -12,6 +12,15 @@
 
     "types": ["node"],
 
+    // Templates author against the published package name; resolve it to source
+    // here so `npm run check:templates` validates them against the real types.
+    "baseUrl": ".",
+    "paths": {
+      "@burn0/silo": ["./src/public.ts"]
+    },
+
+    "resolveJsonModule": true,
+
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
@@ -20,6 +29,6 @@
     "exactOptionalPropertyTypes": true
   },
 
-  "include": ["templates/**/*.ts"],
+  "include": ["templates/**/*.ts", "examples/**/*.ts"],
   "exclude": ["node_modules", "dist"]
 }

@@ -1,5 +1,25 @@
 export type JsonSchema = Record<string, unknown>;
 
+/** Any value that survives a JSON round trip. Datasets may be any shape. */
+export type JsonValue =
+  | null
+  | boolean
+  | number
+  | string
+  | JsonValue[]
+  | { [key: string]: JsonValue };
+
+/**
+ * Names one environment inside one project.
+ *
+ * Every store operation takes this rather than reading `process.cwd()`, so a
+ * single process can work across several projects.
+ */
+export type EnvironmentRef = {
+  name: string;
+  cwd: string;
+};
+
 export type ToolDefinition = {
   name: string;
   description: string;
@@ -15,33 +35,31 @@ export type Tool = ToolDefinition & {
   execute: (input: unknown) => Promise<ToolResult>;
 };
 
-export type AgentInput = {
-  task: string;
-  tools: ToolDefinition[];
-  callTool: (name: string, input: unknown) => Promise<ToolResult>;
-};
+/** Whatever the agent passed as tool arguments. Always validate before use. */
+export type ToolInput = Record<string, unknown>;
 
-export type AgentResult = {
-  output: string;
-};
+/**
+ * Conventional failure codes. Any string is accepted so an environment can add
+ * its own vocabulary; prefer one of these when it fits.
+ */
+export type ToolErrorCode =
+  | "invalid_input"
+  | "not_found"
+  | "invalid_state"
+  | "not_allowed"
+  | "limit_exceeded"
+  | "conflict"
+  | (string & {});
 
-export type Agent = (input: AgentInput) => Promise<AgentResult>;
-
-export type VerifierResult = {
+/**
+ * A tool as authored inside an environment: it receives the live state plus the
+ * agent's input. `bindTools` turns these into the runtime `Tool` shape.
+ */
+export type SiloTool<State> = {
   name: string;
-  passed: boolean;
-  message?: string;
-  reward?: number;
-};
-
-export type RolloutResult = {
-  task: string;
-  output: string;
-
-  passed: boolean;
-  reward: number;
-
-  verifierResults: VerifierResult[];
+  description: string;
+  inputSchema: JsonSchema;
+  run: (state: State, input: ToolInput) => unknown;
 };
 
 export type VerifierCheck = {
@@ -70,19 +88,40 @@ export type SiloTask = {
   verifierId: string;
 };
 
+/**
+ * What the rollout produced besides state.
+ *
+ * State-changing tasks are normally graded on `finalState` alone. Tasks that
+ * ask a question — where answering correctly changes nothing — grade
+ * `agentOutput` against truth derived from the world.
+ */
+export type VerifierContext = {
+  /** The agent's final output, coerced to text. Empty string if it produced none. */
+  agentOutput: string;
+  task: SiloTask;
+};
+
 export type SiloVerifier = {
   id: string;
   taskId: string;
   name: string;
-  check: (finalState: unknown, initialState: unknown) => VerifierOutcome;
+  check: (
+    finalState: unknown,
+    initialState: unknown,
+    context: VerifierContext,
+  ) => VerifierOutcome;
 };
 
-/** The contract every environment template exposes from its index.ts. */
+/** The contract every environment exposes from its index.ts. */
 export type EnvironmentModule = {
   createState(): unknown;
   bindTools(state: unknown): Tool[];
-  tasks: SiloTask[];
   verifiers: SiloVerifier[];
+  /**
+   * Tasks normally come from `tasks/*.json`. This export is only consulted when
+   * that directory holds no JSON files.
+   */
+  tasks?: SiloTask[];
 };
 
 export type TerminationReason =
@@ -91,11 +130,39 @@ export type TerminationReason =
   | "timeout"
   | "agent_error";
 
+/** Everything a rollout was configured with, recorded so a trace can be replayed. */
+export type RunConfig = {
+  maxToolCalls: number;
+  timeoutMs: number;
+  agentPath: string;
+};
+
+/**
+ * One line of `trace.jsonl`.
+ *
+ * The trace is written to be self-contained: it opens with what was asked and
+ * what was offered, and closes with what happened and how it was graded. A run
+ * that never calls a tool still produces a readable trace, which matters because
+ * those are usually the ones worth reading.
+ */
 export type TraceEvent =
+  | {
+      seq: number;
+      type: "run_start";
+      at: string;
+      runId: string;
+      environment: string;
+      task: SiloTask;
+      config: RunConfig;
+      /** Names of the tools handed to the agent, in the order it saw them. */
+      tools: string[];
+    }
   | {
       seq: number;
       type: "tool_call";
       at: string;
+      /** Pairs this call with its result; adjacency is not a safe assumption. */
+      callId: number;
       tool: string;
       input: unknown;
     }
@@ -103,7 +170,34 @@ export type TraceEvent =
       seq: number;
       type: "tool_result";
       at: string;
+      callId: number;
       tool: string;
       output: unknown;
       isError: boolean;
+      durationMs: number;
+    }
+  | {
+      seq: number;
+      type: "agent_output";
+      at: string;
+      output: string;
+    }
+  | {
+      seq: number;
+      type: "run_end";
+      at: string;
+      terminationReason: TerminationReason;
+      error: string | null;
+      toolCalls: number;
+      toolErrors: number;
+      durationMs: number;
+    }
+  | {
+      seq: number;
+      type: "verifier_result";
+      at: string;
+      verifierId: string;
+      passed: boolean;
+      reward: number;
+      checks: VerifierCheck[];
     };

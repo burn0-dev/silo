@@ -1,0 +1,8 @@
+{
+  "id": "TASK-006",
+  "title": "Fill the next Atlas sprint from the backlog",
+  "instruction": "Atlas Sprint 13 is empty. Every Atlas work item still sitting in the Backlog state with nobody assigned to it should go into that sprint. Alice Chen (MEM-001) is doing the work.",
+  "difficulty": "medium",
+  "verifierId": "VER-006",
+  "entities": ["SPR-003"]
+}

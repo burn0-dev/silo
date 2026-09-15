@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "reward": 1,
+  "requiredPassed": 2,
+  "requiredTotal": 2,
+  "failedRequired": [],
+  "checksPassed": 4,
+  "checksFailed": 0,
+  "toolCalls": 6,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "Moved 2 unassigned backlog items (WI-008, WI-009) into SPR-003.",
+  "error": null,
+  "checks": [
+    {
+      "label": "Every unassigned Atlas backlog item is in the next sprint",
+      "passed": true,
+      "detail": "2 of 2 moved into SPR-003",
+      "required": true
+    },
+    {
+      "label": "The sprint started empty, so the items are the agent's work",
+      "passed": true,
+      "detail": "sprint had no work items before the rollout",
+      "required": true
+    },
+    {
+      "label": "Nothing else was swept into that sprint",
+      "passed": true,
+      "detail": "only the backlog items landed there",
+      "required": false
+    },
+    {
+      "label": "The moved items were not reassigned or closed on the way",
+      "passed": true,
+      "detail": "statuses unchanged",
+      "required": false
+    }
+  ]
+}

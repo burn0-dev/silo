@@ -1,0 +1,8 @@
+{
+  "id": "TASK-012",
+  "title": "Size the overdue work someone is actually holding",
+  "instruction": "Grace Kim is planning this week's recovery effort and only cares about work that someone on the team can still pick up today. Across every project, add up the estimate points of the overdue work items that are assigned to a member who is still active, and report that total.",
+  "difficulty": "hard",
+  "verifierId": "VER-012",
+  "entities": []
+}

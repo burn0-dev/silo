@@ -1,0 +1,56 @@
+[
+  {
+    "id": "USR-001",
+    "name": "Amara Osei",
+    "email": "amara.osei@example.com",
+    "role": "manager",
+    "managerId": null,
+    "quota": { "amount": 0, "currency": "USD" },
+    "active": true
+  },
+  {
+    "id": "USR-002",
+    "name": "Daniel Reyes",
+    "email": "daniel.reyes@example.com",
+    "role": "rep",
+    "managerId": "USR-001",
+    "quota": { "amount": 250000, "currency": "USD" },
+    "active": true
+  },
+  {
+    "id": "USR-003",
+    "name": "Priya Nair",
+    "email": "priya.nair@example.com",
+    "role": "rep",
+    "managerId": "USR-001",
+    "quota": { "amount": 250000, "currency": "USD" },
+    "active": true
+  },
+  {
+    "id": "USR-004",
+    "name": "Tomas Bergstrom",
+    "email": "tomas.bergstrom@example.com",
+    "role": "rep",
+    "managerId": "USR-001",
+    "quota": { "amount": 200000, "currency": "USD" },
+    "active": false
+  },
+  {
+    "id": "USR-005",
+    "name": "Lena Fischer",
+    "email": "lena.fischer@example.com",
+    "role": "rep",
+    "managerId": "USR-001",
+    "quota": { "amount": 220000, "currency": "USD" },
+    "active": true
+  },
+  {
+    "id": "USR-006",
+    "name": "Kofi Mensah",
+    "email": "kofi.mensah@example.com",
+    "role": "rep",
+    "managerId": "USR-001",
+    "quota": { "amount": 180000, "currency": "USD" },
+    "active": true
+  }
+]

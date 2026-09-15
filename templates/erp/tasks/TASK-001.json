@@ -1,0 +1,10 @@
+{
+  "id": "TASK-001",
+  "title": "Update vendor payment terms",
+  "instruction": "Tri-State Fasteners (VEN-002) has renegotiated its contract. Change their payment terms to NET_30. Act as Priya Nair (USR-003).",
+  "difficulty": "easy",
+  "verifierId": "VER-001",
+  "entities": [
+    "VEN-002"
+  ]
+}

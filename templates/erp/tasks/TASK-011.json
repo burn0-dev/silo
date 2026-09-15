@@ -1,0 +1,13 @@
+{
+  "id": "TASK-011",
+  "title": "Award the best valid quotation and raise the order",
+  "instruction": "RFQ-002 is closed with three quotations. Award the cheapest quotation that is still valid today, then raise a purchase order to that vendor for the quoted lines, delivering into Warehouse North (WH-001) and charging the Operations MRO budget (BUD-002). Take the order through approval so it is approved, but do not send it yet. Daniel Reyes (USR-002) is the buyer and Priya Nair (USR-003) approves.",
+  "difficulty": "hard",
+  "verifierId": "VER-011",
+  "entities": [
+    "RFQ-002",
+    "QUO-005",
+    "QUO-006",
+    "BUD-002"
+  ]
+}

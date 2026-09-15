@@ -1,0 +1,28 @@
+{
+  "scalars": [],
+  "collections": {
+    "sprints": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        "SPR-002",
+        "SPR-003"
+      ]
+    },
+    "auditLog": {
+      "added": [
+        "AUD-0003",
+        "AUD-0004"
+      ],
+      "removed": [],
+      "changed": []
+    },
+    "sequences": {
+      "added": [],
+      "removed": [],
+      "changed": [
+        "AUD"
+      ]
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "passed": false,
+  "reward": 0,
+  "requiredPassed": 0,
+  "requiredTotal": 4,
+  "failedRequired": [
+    "The bolt line now bills the 250 boxes received",
+    "The purchase order no longer shows over-invoicing",
+    "The latest three-way match passes",
+    "The invoice is approved"
+  ],
+  "checksPassed": 0,
+  "checksFailed": 5,
+  "toolCalls": 0,
+  "toolErrors": 0,
+  "terminationReason": "completed",
+  "agentOutput": "",
+  "error": null,
+  "checks": [
+    {
+      "label": "The bolt line now bills the 250 boxes received",
+      "passed": false,
+      "detail": "quantity = 400",
+      "required": true
+    },
+    {
+      "label": "Invoice totals were recalculated",
+      "passed": false,
+      "detail": "subtotal = 7410 (expected 5655)",
+      "required": false
+    },
+    {
+      "label": "The purchase order no longer shows over-invoicing",
+      "passed": false,
+      "detail": "invoiced 400 vs received 250",
+      "required": true
+    },
+    {
+      "label": "The latest three-way match passes",
+      "passed": false,
+      "detail": "match MATCH-004 = failed",
+      "required": true
+    },
+    {
+      "label": "The invoice is approved",
+      "passed": false,
+      "detail": "status = pending_approval",
+      "required": true
+    }
+  ]
+}

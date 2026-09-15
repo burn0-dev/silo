@@ -1,0 +1,146 @@
+[
+  {
+    "id": "USR-001",
+    "name": "Amara Okafor",
+    "email": "amara.okafor@meridian-industrial.example",
+    "role": "admin",
+    "departmentId": "DEPT-IT",
+    "approvalLimit": {
+      "amount": 50000,
+      "currency": "USD"
+    },
+    "isActive": true
+  },
+  {
+    "id": "USR-002",
+    "name": "Daniel Reyes",
+    "email": "daniel.reyes@meridian-industrial.example",
+    "role": "procurement_officer",
+    "departmentId": "DEPT-PROC",
+    "approvalLimit": {
+      "amount": 25000,
+      "currency": "USD"
+    },
+    "isActive": true
+  },
+  {
+    "id": "USR-003",
+    "name": "Priya Nair",
+    "email": "priya.nair@meridian-industrial.example",
+    "role": "procurement_manager",
+    "departmentId": "DEPT-PROC",
+    "approvalLimit": {
+      "amount": 150000,
+      "currency": "USD"
+    },
+    "isActive": true
+  },
+  {
+    "id": "USR-004",
+    "name": "Tom Braddock",
+    "email": "tom.braddock@meridian-industrial.example",
+    "role": "warehouse_operator",
+    "departmentId": "DEPT-OPS",
+    "approvalLimit": null,
+    "isActive": true
+  },
+  {
+    "id": "USR-005",
+    "name": "Helen Vasquez",
+    "email": "helen.vasquez@meridian-industrial.example",
+    "role": "warehouse_manager",
+    "departmentId": "DEPT-OPS",
+    "approvalLimit": {
+      "amount": 20000,
+      "currency": "USD"
+    },
+    "isActive": true
+  },
+  {
+    "id": "USR-006",
+    "name": "Marcus Lindqvist",
+    "email": "marcus.lindqvist@meridian-industrial.example",
+    "role": "ap_clerk",
+    "departmentId": "DEPT-FIN",
+    "approvalLimit": {
+      "amount": 10000,
+      "currency": "USD"
+    },
+    "isActive": true
+  },
+  {
+    "id": "USR-007",
+    "name": "Sofia Duarte",
+    "email": "sofia.duarte@meridian-industrial.example",
+    "role": "ap_manager",
+    "departmentId": "DEPT-FIN",
+    "approvalLimit": {
+      "amount": 100000,
+      "currency": "USD"
+    },
+    "isActive": true
+  },
+  {
+    "id": "USR-008",
+    "name": "Ken Adeyemi",
+    "email": "ken.adeyemi@meridian-industrial.example",
+    "role": "finance_controller",
+    "departmentId": "DEPT-FIN",
+    "approvalLimit": {
+      "amount": 500000,
+      "currency": "USD"
+    },
+    "isActive": true
+  },
+  {
+    "id": "USR-009",
+    "name": "Lucia Moretti",
+    "email": "lucia.moretti@meridian-industrial.example",
+    "role": "sales_rep",
+    "departmentId": "DEPT-SALES",
+    "approvalLimit": null,
+    "isActive": true
+  },
+  {
+    "id": "USR-010",
+    "name": "Jonah Wexler",
+    "email": "jonah.wexler@meridian-industrial.example",
+    "role": "sales_manager",
+    "departmentId": "DEPT-SALES",
+    "approvalLimit": {
+      "amount": 50000,
+      "currency": "USD"
+    },
+    "isActive": true
+  },
+  {
+    "id": "USR-011",
+    "name": "Rina Kapoor",
+    "email": "rina.kapoor@meridian-industrial.example",
+    "role": "requester",
+    "departmentId": "DEPT-FAC",
+    "approvalLimit": null,
+    "isActive": true
+  },
+  {
+    "id": "USR-012",
+    "name": "Oscar Bell",
+    "email": "oscar.bell@meridian-industrial.example",
+    "role": "warehouse_operator",
+    "departmentId": "DEPT-OPS",
+    "approvalLimit": null,
+    "isActive": true
+  },
+  {
+    "id": "USR-013",
+    "name": "Grace Yamamoto",
+    "email": "grace.yamamoto@meridian-industrial.example",
+    "role": "warehouse_manager",
+    "departmentId": "DEPT-OPS",
+    "approvalLimit": {
+      "amount": 20000,
+      "currency": "USD"
+    },
+    "isActive": true
+  }
+]

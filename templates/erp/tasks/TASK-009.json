@@ -1,0 +1,10 @@
+{
+  "id": "TASK-009",
+  "title": "Cancel an unapproved purchase order",
+  "instruction": "Purchase order PO-205 was raised in error and has not been approved. Cancel it, recording that it was a duplicate request. Act as Daniel Reyes (USR-002).",
+  "difficulty": "medium",
+  "verifierId": "VER-009",
+  "entities": [
+    "PO-205"
+  ]
+}
