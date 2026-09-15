@@ -1,7 +1,16 @@
 {
   "name": "@burn0/silo",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Local-first framework for simulating environments and evaluating AI agents against them, with tools, tasks, and verifiers defined as TypeScript in your own repo.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/burn0-dev/silo.git"
+  },
+  "homepage": "https://burn0.dev/docs/silo/introduction",
+  "bugs": {
+    "url": "https://github.com/burn0-dev/silo/issues"
+  },
   "type": "module",
   "scripts": {
     "dev": "tsx src/index.ts",
@@ -31,7 +40,8 @@
     "examples",
     "!examples/agents",
     "docs",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
   "dependencies": {
     "@inkjs/ui": "^2.0.0",
