@@ -7,7 +7,7 @@
     "type": "git",
     "url": "git+https://github.com/burn0-dev/silo.git"
   },
-  "homepage": "https://burn0.dev/docs/silo/introduction",
+  "homepage": "https://silo.burn0.dev",
   "bugs": {
     "url": "https://github.com/burn0-dev/silo/issues"
   },
@@ -72,5 +72,8 @@
     "local-first",
     "cli",
     "typescript"
-  ]
+  ],
+  "engines": {
+    "node": ">=22"
+  }
 }

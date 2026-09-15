@@ -2,184 +2,213 @@
 
 Local-first simulation and evaluation framework for AI agents.
 
-Silo lets you define a simulated environment — tools, tasks, and verifiers — as plain
-TypeScript in your own repo, then run agents against it and score what they did. Nothing
-leaves your machine; environments live in `.silo/` next to your code.
+Silo lets you define a simulated world — data, state, tools, tasks and verifiers — as
+plain TypeScript in your own repo, then run agents inside it and score what they actually
+**did**, not what they said. Nothing leaves your machine; environments live in `.silo/`
+next to your code.
 
-> **Status: early.** Environment authoring (CLI + SDK), validation and scored rollouts
-> all work. See [docs/authoring.md](docs/authoring.md). Expect breaking changes.
+> **Status: early.** Environment authoring (CLI + SDK), validation, scored rollouts,
+> traces and run artifacts all work. Expect breaking changes before 1.0.
 
-## Requirements
+**[Documentation →](https://docs.burn0.dev/silo/introduction)** · **[silo.burn0.dev](https://silo.burn0.dev)**
 
-- Node.js 22 or newer (the CLI uses `node:fs/promises` and ESM-only imports)
+## Install
 
-## Getting started
+```bash
+npm i @burn0/silo
+```
 
-The package is not published to npm yet, so work from a clone:
+Requires Node.js 22 or newer. Your project needs `"type": "module"` in its
+`package.json` — environments and agents are ES modules.
+
+> Invoke the CLI as `npx @burn0/silo`. An unrelated package named `silo` exists on the
+> public registry.
+
+## Quickstart
+
+```bash
+npx @burn0/silo init demo --template crm
+npx @burn0/silo task list --env demo
+```
+
+Write an agent — any module that default-exports a function:
+
+```js
+// silo.agent.js
+export default async function agent({ callTool }) {
+  const forecast = await callTool("forecast_report", {});
+  const { weightedAmount } = forecast.output;
+
+  return { output: `Open pipeline is worth $${weightedAmount.amount}` };
+}
+```
+
+Run it:
+
+```bash
+npx @burn0/silo run --env demo --task TASK-004 --agent ./silo.agent.js
+```
+
+Name it `silo.agent.ts` in the directory you run from and `--agent` is optional.
+
+```
+  Task          TASK-004 — Report the weighted value of open pipeline
+  Result        PASS
+  Reward        1.00
+
+  Tool calls    1
+  Checks        3 / 3
+  Required      1 / 1
+
+  Run saved: .silo/runs/run_20260915012734_4t01
+```
+
+## How it works
+
+> **Data** defines the world. **State** gives that world behaviour. **Tools** expose
+> controlled access. **Tasks** define objectives. **Verifiers** decide whether the
+> objective was achieved.
+
+Silo loads an environment through three exports and nothing else:
+
+```ts
+createState(): State          // a fresh world per rollout
+bindTools(state): Tool[]      // what the agent may call
+verifiers: SiloVerifier[]     // how success is judged
+```
+
+Tasks are discovered from `tasks/*.json` rather than exported.
+
+Every environment has the same shape, whatever it models:
+
+```
+.silo/environments/demo/
+├── silo.environment.json  # name, template, entrypoint
+├── index.ts               # the three exports
+├── environment.ts         # data/ → a fresh cloned world
+├── state.ts               # `export type State` + domain helpers
+├── data/                  # facts only, as JSON
+├── tasks/                 # one JSON file per objective
+├── tools/                 # what the agent can call, explicitly registered
+└── verifiers/             # deterministic grading
+```
+
+The agent never sees state. It sees the task instruction, the tool schemas, and cloned
+tool output — so anything it should be able to look up needs a tool.
+
+## Templates
+
+Four ship today, copied verbatim into your project as editable TypeScript.
+
+| Template | Data | Tasks | Tools | Verifiers |
+| --- | --- | --- | --- | --- |
+| **Blank** | 0 | 0 | 0 | 0 |
+| **CRM** | 9 | 6 | 42 | 6 |
+| **Project tracking** | 9 | 15 | 54 | 15 |
+| **ERP** | 26 | 18 | 185 | 18 |
+
+**Blank** is the reference architecture — the contract wired up and nothing in it.
+
+**CRM** is a staged B2B sales pipeline, and the best one to read: populated, but small
+enough to hold in your head.
+
+**Project tracking** models software delivery — work items, sprints, dependencies and
+member capacity.
+
+**ERP** is a mid-sized industrial distributor with connected procure-to-pay,
+order-to-cash, inventory and budgeting. Its seed contains deliberate messes: an invoice
+billing more than was received, a payment that failed on stale bank details, a quotation
+that is cheapest but expired, a sales order no single warehouse can fill.
+
+Two rules shape every template:
+
+- **Time is simulated.** `state.now` is the only clock; nothing reads `Date.now()`, so
+  runs are reproducible.
+- **Verifiers inspect the world, not the transcript.** A task passes because stock moved
+  or a status changed, never because the agent said it was done.
+
+## Run artifacts
+
+Every rollout writes a directory:
+
+```
+.silo/runs/<runId>/
+├── trace.jsonl       every event, append-only, in order
+├── result.json       checks, reward, agent output, tool errors
+├── state-diff.json   what the rollout changed
+└── run.json          task, verifier, resolved config, timings
+```
+
+`result.json` and `state-diff.json` carry no timestamps or run ids, which makes them an
+exact regression oracle — any diff between two runs is a real behavioural change.
+
+Repeat a task to read a non-deterministic agent honestly:
+
+```bash
+npx @burn0/silo run --env demo --task TASK-002 --runs 5
+```
+
+## SDK
+
+The CLI and the SDK are two interfaces over the same store.
+
+```ts
+import { Silo } from "@burn0/silo";
+
+const silo = await Silo.open({ cwd });
+const env = await silo.environments.create({ name: "support", template: "blank" });
+
+await env.data.add("tickets", [{ id: "TKT-001", status: "open" }]);
+await env.tools.scaffold({ name: "close_ticket", description: "..." });
+
+const report = await env.validate();
+```
+
+## Validate before you trust a run
+
+```bash
+npx @burn0/silo env validate --env demo
+```
+
+```
+OK	demo	data=9 tasks=6 tools=42 verifiers=6
+```
+
+This runs the real TypeScript compiler, not a file-presence check. Type-only imports are
+erased before execution, so an environment can load and run perfectly while being
+uncompilable — "it ran" is not evidence that it is correct.
+
+## Development
 
 ```bash
 git clone https://github.com/burn0-dev/silo.git
 cd silo
 npm install
-npm run dev -- init
+npm test
 ```
-
-`npm run dev` runs the CLI through [tsx](https://github.com/privatenumber/tsx) without a
-build step. Add `--silent` if you'd rather not see npm's own run banner.
-
-## Creating an environment
-
-`silo init` is an interactive wizard:
-
-```
-███████╗██╗██╗      ██████╗
-██╔════╝██║██║     ██╔═══██╗
-███████╗██║██║     ██║   ██║
-╚════██║██║██║     ██║   ██║
-███████║██║███████╗╚██████╔╝
-╚══════╝╚═╝╚══════╝ ╚═════╝
-
-Environment Name: support-desk
-
-Choose a template: ❯ Blank
-                     ERP
-
-Add more tools? (Y/N): y
-
-Select additional tools: ❯ ◉ Calendar
-                           ◯ Email
-                           ◯ CRM
-
-↑↓ Move   Space ␣ Select   Enter ⏎ Confirm
-```
-
-It writes to `.silo/environments/<name>/`:
-
-```
-.silo/environments/support-desk/
-├── silo.environment.json  # name, template, entrypoint, selected tools
-├── index.ts               # environment entry point
-├── environment.ts         # loads data/ into a fresh world per rollout
-├── state.ts               # state types and domain helpers
-├── data/                  # datasets as plain JSON
-├── tasks/                 # one JSON file per task
-├── tools/                 # what the agent can call
-└── verifiers/             # what counts as success
-```
-
-See [docs/authoring.md](docs/authoring.md) for the full authoring workflow, via
-either the CLI or the SDK.
-
-Two templates ship today: **Blank** and **ERP**. Both are copied from `templates/` as
-editable TypeScript source — they are yours to change once generated.
-
-### The ERP template
-
-A simulated mid-sized industrial distributor: 12 vendors, 12 customers, 22 products across
-4 warehouses, with connected procure-to-pay, order-to-cash, inventory and budget data. It
-ships with **185 tools**, 18 tasks spanning easy to hard, and a deterministic verifier for
-each task.
-
-The seed contains deliberate, realistic messes for agents to work through — an invoice
-billing more than was received, another billing above the agreed price, a payment that
-failed on stale bank details, a quotation that is cheapest but expired, a sales order no
-single warehouse can fill, and a requisition above its approver's limit.
-
-Two rules shape the whole environment:
-
-- **Time is simulated.** `state.now` is the only clock; nothing reads `Date.now()`. It
-  never advances on its own, so a task that does not call `advance_clock` runs at a single
-  instant and is perfectly reproducible.
-- **Verifiers inspect the world, not the transcript.** A task passes because stock moved,
-  an invoice settled or a status changed — never because the agent said it was done.
-
-### Environment names
-
-Names must be unique within a project and may contain letters, numbers, hyphens, and
-underscores. Collisions are detected **case-insensitively** (`test`, `Test`, and `TEST`
-all collide), so behavior is identical on macOS and Linux.
-
-If a name is taken, the prompt stays put and offers the next free name:
-
-```
-Environment Name: support-desk-2
-
-Environment "support-desk" already exists.
-```
-
-Press Enter to accept the suggestion or type something else. Silo never overwrites or
-merges into an existing environment.
-
-Generation is atomic: files are built in a hidden staging directory and moved into place
-with a single `rename()`. A failure partway through leaves nothing behind — you never end
-up with a half-created environment.
-
-## Writing an environment
-
-The core types live in [`src/core/types.ts`](src/core/types.ts). Import paths are
-relative while the package is unpublished — they will become `silo/...` specifiers once an
-exports map lands. A tool is a JSON-schema definition plus an executor:
-
-```ts
-import type { Tool } from "../../../src/core/types.js";
-
-export const searchCustomers: Tool = {
-  name: "search_customers",
-  description: "Find customers by name.",
-  inputSchema: {
-    type: "object",
-    properties: { query: { type: "string" } },
-    required: ["query"],
-  },
-  async execute(input) {
-    const { query } = input as { query: string };
-    return { output: await db.customers.search(query) };
-  },
-};
-```
-
-An agent is any function that takes a task plus the available tools and returns output:
-
-```ts
-import { runRollout } from "../../../src/core/runner.js";
-
-const result = await runRollout({
-  agent: myAgent,
-  task: "Refund the most recent order for Acme Corp.",
-  tools: [searchCustomers],
-});
-```
-
-`runRollout` builds the tool map, hands the agent a `callTool` bridge, and catches
-per-tool errors so a throwing tool returns `{ isError: true }` to the agent rather than
-killing the rollout.
-
-**Not wired up yet:** verifiers do not run, so `runRollout` currently returns
-`passed: false`, `reward: 0`, and an empty `verifierResults`.
-
-## Project layout
-
-```
-src/
-├── cli/init.tsx        # the init wizard (Ink)
-├── core/scaffold.ts    # environment creation
-├── core/runner.ts      # rollout execution
-├── core/types.ts       # tool / agent / verifier types
-└── index.ts            # CLI entry point
-templates/              # built-in environment templates, copied verbatim
-```
-
-## Scripts
 
 | Command | What it does |
 | --- | --- |
-| `npm run dev -- init` | Run the CLI from source |
-| `npm run build` | Type-check and emit to `dist/` |
-| `npm start` | Run the built CLI from `dist/` |
+| `npm run dev -- <cmd>` | Run the CLI from source via tsx |
+| `npm run check` | Type-check src, templates and examples |
+| `npm run build` | Emit to `dist/` |
+| `npm test` | check + every template gate |
+| `npm run test:erp` | ERP baselines, no-op agent |
+| `npm run test:tools` | The tool execution path |
+| `npm run test:crm` | CRM baselines, scripted solver |
+| `npm run test:project` | Project tracking baselines |
+
+Gates byte-compare run artifacts against recorded baselines. Re-record deliberately with
+`npm run test:crm -- --update`.
 
 ## Roadmap
 
-- `silo run` — execute rollouts against an environment
-- Verifier execution and reward scoring
-- Non-interactive init, e.g. `silo init my-env --template erp --tools email,calendar`
-- Environment management commands (`silo env edit`, `silo env delete`)
+- Packaged adapters for LangChain, Vercel AI SDK, OpenAI, Anthropic and Mastra
+- An MCP server exposing an environment's tools
+- LLM judges for non-deterministic verification, alongside deterministic checks
+- `model_step` trace events, so Silo can see model turns
+- Eval summaries and agent comparison
+
+## License
+
+MIT
