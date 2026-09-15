@@ -1,6 +1,22 @@
-# Silo
+<p align="center">
+  <img src="https://raw.githubusercontent.com/burn0-dev/silo/main/assets/logo.png" width="72" alt="">
+</p>
 
-Local-first simulation and evaluation framework for AI agents.
+<h1 align="center">Silo</h1>
+
+<p align="center">
+  Local-first simulation and evaluation framework for AI agents.
+</p>
+
+<p align="center">
+  <a href="https://www.npmjs.com/package/@burn0/silo"><img src="https://img.shields.io/npm/v/@burn0/silo?color=FA5D19&label=npm" alt="npm version"></a>
+  <a href="https://github.com/burn0-dev/silo/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/@burn0/silo?color=FA5D19" alt="MIT license"></a>
+  <img src="https://img.shields.io/node/v/@burn0/silo?color=FA5D19" alt="Node 22+">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/burn0-dev/silo/main/assets/hero.jpg" width="100%" alt="An agent climbing a staircase through a dark, simulated world">
+</p>
 
 Silo lets you define a simulated world — data, state, tools, tasks and verifiers — as
 plain TypeScript in your own repo, then run agents inside it and score what they actually
